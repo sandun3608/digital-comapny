@@ -590,7 +590,7 @@ const renderMediaManager = async () => {
           <input type="text" placeholder="https://example.com/image.jpg" value="${urlValue}" class="media-url-input" />
         </div>
         <div class="media-input-group">
-          <label>Or Upload File (max 750KB)</label>
+          <label>Or Upload File (max 5MB)</label>
           <label class="media-upload-btn-label" for="file-${safeId}">
             <i data-lucide="upload"></i> <span>Choose Local File</span>
             <input type="file" id="file-${safeId}" accept="image/*" class="media-file-input" />
@@ -621,8 +621,8 @@ const renderMediaManager = async () => {
       const file = e.target.files[0]
       if (!file) return
 
-      if (file.size > 750 * 1024) {
-        showToast('File is too large! Maximum limit is 750KB for cloud storage.', true)
+      if (file.size > 5 * 1024 * 1024) {
+        showToast('File is too large! Maximum limit is 5MB for cloud storage.', true)
         fileInput.value = ''
         return
       }
