@@ -590,7 +590,7 @@ const renderMediaManager = async () => {
           <input type="text" placeholder="https://example.com/image.jpg" value="${urlValue}" class="media-url-input" />
         </div>
         <div class="media-input-group">
-          <label>Or Upload File (max 5MB)</label>
+          <label>Or Upload File (max 1MB)</label>
           <label class="media-upload-btn-label" for="file-${safeId}">
             <i data-lucide="upload"></i> <span>Choose Local File</span>
             <input type="file" id="file-${safeId}" accept="image/*" class="media-file-input" />
@@ -617,74 +617,24 @@ const renderMediaManager = async () => {
     const resetBtn = card.querySelector('.media-btn-reset')
     let base64String = null
 
-    // Helper function to compress images client-side
-    const compressImage = (file, maxWidth = 1400, maxHeight = 1400, quality = 0.7) => {
-      return new Promise((resolve, reject) => {
-        const reader = new FileReader()
-        reader.readAsDataURL(file)
-        reader.onload = (event) => {
-          const img = new Image()
-          img.src = event.target.result
-          img.onload = () => {
-            const canvas = document.createElement('canvas')
-            let width = img.width
-            let height = img.height
-
-            if (width > height) {
-              if (width > maxWidth) {
-                height = Math.round((height * maxWidth) / width)
-                width = maxWidth
-              }
-            } else {
-              if (height > maxHeight) {
-                width = Math.round((width * maxHeight) / height)
-                height = maxHeight
-              }
-            }
-
-            canvas.width = width
-            canvas.height = height
-            const ctx = canvas.getContext('2d')
-            ctx.drawImage(img, 0, 0, width, height)
-            
-            // Output as compressed JPEG
-            resolve(canvas.toDataURL('image/jpeg', quality))
-          }
-          img.onerror = (err) => reject(err)
-        }
-        reader.onerror = (err) => reject(err)
-      })
-    }
-
-    fileInput.addEventListener('change', async (e) => {
+    fileInput.addEventListener('change', (e) => {
       const file = e.target.files[0]
       if (!file) return
 
-      if (file.size > 5 * 1024 * 1024) {
-        showToast('File is too large! Maximum limit is 5MB.', true)
+      if (file.size > 1 * 1024 * 1024) {
+        showToast('File is too large! Maximum limit is 1MB for database storage.', true)
         fileInput.value = ''
         return
       }
 
       fileNameText.textContent = file.name
-      showToast('Compressing image for fast web loading...')
-      
-      try {
-        base64String = await compressImage(file)
+      const reader = new FileReader()
+      reader.onload = (evt) => {
+        base64String = evt.target.result
         previewImg.src = base64String
         urlInput.value = ''
-        showToast('Image compressed and ready!')
-      } catch (err) {
-        console.error('Compression failed:', err)
-        showToast('Compression failed, trying default load...', true)
-        const reader = new FileReader()
-        reader.onload = (evt) => {
-          base64String = evt.target.result
-          previewImg.src = base64String
-          urlInput.value = ''
-        }
-        reader.readAsDataURL(file)
       }
+      reader.readAsDataURL(file)
     })
 
     saveBtn.addEventListener('click', async () => {
