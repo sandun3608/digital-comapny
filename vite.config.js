@@ -10,8 +10,6 @@ export default defineConfig({
         dashboard: resolve(__dirname, 'dashboard.html'),
         mobileApp: resolve(__dirname, 'services/mobile-app.html'),
         webDev: resolve(__dirname, 'services/web-dev.html'),
-        ecomStore: resolve(__dirname, 'services/ecom-store.html'),
-        systems: resolve(__dirname, 'services/systems.html'),
         uiuxDesign: resolve(__dirname, 'services/uiux-design.html'),
         socialMedia: resolve(__dirname, 'services/social-media.html'),
         brandingDesign: resolve(__dirname, 'services/branding-design.html'),
