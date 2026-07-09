@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | MYLAB.LK</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/dashboard.css">
+  </head>
+  <body class="dashboard-body">
+    <!-- Custom Cursor -->
+    <div id="custom-cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <!-- Admin Authentication Overlay -->
+    <div class="auth-overlay" id="auth-overlay">
+      <div class="auth-card">
+        <div class="auth-logo">MYLAB.LK<span>.</span></div>
+        <h2>Admin Portal</h2>
+        <form class="auth-form" id="auth-form">
+          <div class="auth-input-group">
+            <input type="password" id="admin-password" placeholder="ENTER ACCESS PASSWORD" required autocomplete="current-password" />
+          </div>
+          <p class="auth-error" id="auth-error-msg">Incorrect password. Please try again.</p>
+          <button type="submit" class="btn btn-primary magnetic" style="width: 100%; justify-content: center;">AUTHENTICATE</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Dashboard Content Wrapper (Initially hidden) -->
+    <div class="dashboard-wrapper" id="dashboard-wrapper">
+      <header class="admin-header">
+        <div class="admin-logo-area">
+          <div class="logo">MYLAB.LK<span>.</span></div>
+          <span class="admin-logo-badge">SYSTEMS</span>
+        </div>
+        <div class="admin-nav-actions">
+          <button class="theme-toggle" aria-label="Toggle Theme" style="background: none; border: none; cursor: pointer; color: inherit;">
+            <i data-lucide="sun"></i>
+          </button>
+          <button class="btn-admin-logout" id="btn-logout">
+            <i data-lucide="log-out"></i> Logout
+          </button>
+        </div>
+      </header>
+
+      <main class="dashboard-content-area">
+        <div class="dashboard-tabs">
+          <button class="tab-btn active" id="tab-inquiries-btn"><i data-lucide="file-text"></i> Inquiries</button>
+          <button class="tab-btn" id="tab-media-btn"><i data-lucide="image"></i> Media Manager</button>
+        </div>
+
+        <!-- Inquiries Tab Content -->
+        <div id="tab-content-inquiries" class="tab-content">
+          <div class="dashboard-intro">
+            <h1>Quote Submissions</h1>
+            <p>Manage and track service inquiries from clients in real-time.</p>
+          </div>
+
+          <!-- Stats Dashboard Grid -->
+          <div class="stats-dashboard-grid">
+            <div class="stat-dashboard-card">
+              <div class="stat-dashboard-icon"><i data-lucide="file-text"></i></div>
+              <div class="stat-dashboard-info">
+                <span class="stat-dashboard-num" id="stat-total">0</span>
+                <span class="stat-dashboard-label">Total Submissions</span>
+              </div>
+            </div>
+            <div class="stat-dashboard-card">
+              <div class="stat-dashboard-icon"><i data-lucide="clock"></i></div>
+              <div class="stat-dashboard-info">
+                <span class="stat-dashboard-num" id="stat-pending">0</span>
+                <span class="stat-dashboard-label">Pending Review</span>
+              </div>
+            </div>
+            <div class="stat-dashboard-card">
+              <div class="stat-dashboard-icon"><i data-lucide="phone-call"></i></div>
+              <div class="stat-dashboard-info">
+                <span class="stat-dashboard-num" id="stat-contacted">0</span>
+                <span class="stat-dashboard-label">Contacted</span>
+              </div>
+            </div>
+            <div class="stat-dashboard-card">
+              <div class="stat-dashboard-icon"><i data-lucide="check-circle-2"></i></div>
+              <div class="stat-dashboard-info">
+                <span class="stat-dashboard-num" id="stat-completed">0</span>
+                <span class="stat-dashboard-label">Completed</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Analytics Row -->
+          <div class="analytics-grid">
+            <div class="chart-card">
+              <h3>Submissions by Category</h3>
+              <div class="chart-container-visual" id="chart-bars-container">
+                <!-- Dynamically generated bars -->
+                <div class="chart-bar-group">
+                  <div class="chart-bar" style="height: 0%;" data-value="0" id="bar-uiux"></div>
+                  <span class="chart-label">UI/UX</span>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="chart-bar" style="height: 0%;" data-value="0" id="bar-web"></div>
+                  <span class="chart-label">Web Dev</span>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="chart-bar" style="height: 0%;" data-value="0" id="bar-ecom"></div>
+                  <span class="chart-label">E-com</span>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="chart-bar" style="height: 0%;" data-value="0" id="bar-mobile"></div>
+                  <span class="chart-label">Mobile</span>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="chart-bar" style="height: 0%;" data-value="0" id="bar-systems"></div>
+                  <span class="chart-label">Systems</span>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="chart-bar" style="height: 0%;" data-value="0" id="bar-social"></div>
+                  <span class="chart-label">Social</span>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="chart-bar" style="height: 0%;" data-value="0" id="bar-branding"></div>
+                  <span class="chart-label">Branding</span>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="chart-bar" style="height: 0%;" data-value="0" id="bar-video-editing"></div>
+                  <span class="chart-label">Video Ed.</span>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="chart-bar" style="height: 0%;" data-value="0" id="bar-post-design"></div>
+                  <span class="chart-label">Posts</span>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="chart-bar" style="height: 0%;" data-value="0" id="bar-video-presenting"></div>
+                  <span class="chart-label">Reels</span>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="chart-bar" style="height: 0%;" data-value="0" id="bar-seo"></div>
+                  <span class="chart-label">SEO</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="chart-card">
+              <h3>Recent Submissions Trend</h3>
+              <div class="chart-container-visual" style="align-items: center; justify-content: center; border: 1px dashed var(--border-admin); border-radius: 12px;">
+                <div style="text-align: center; color: var(--text-secondary);">
+                  <i data-lucide="bar-chart-3" style="width: 48px; height: 48px; margin-bottom: 1rem; opacity: 0.5;"></i>
+                  <p style="font-size: 0.9rem;">Auto-updates dynamically based on local data</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Table Controls Area -->
+          <div class="control-panel-card">
+            <div class="search-wrapper">
+              <i data-lucide="search"></i>
+              <input type="text" id="search-input" placeholder="Search by name, email, phone or requirements..." />
+            </div>
+            <div class="filters-wrapper">
+              <select id="filter-service">
+                <option value="all">All Services</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+                <option value="Web Development">Web Development</option>
+                <option value="E-commerce">E-commerce</option>
+                <option value="Mobile Apps">Mobile Apps</option>
+                <option value="Systems Development">Systems Development</option>
+                <option value="Social Media">Social Media</option>
+                <option value="Branding & Graphic Design">Branding & Graphic Design</option>
+                <option value="Video Editing">Video Editing</option>
+                <option value="Social Media Post Design">Social Media Post Design</option>
+                <option value="Video Presenting & Reels">Video Presenting & Reels</option>
+                <option value="SEO & Backlink Strategy">SEO & Backlink Strategy</option>
+              </select>
+              <select id="filter-status">
+                <option value="all">All Statuses</option>
+                <option value="Pending">Pending</option>
+                <option value="Contacted">Contacted</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Submissions Table -->
+          <div class="table-dashboard-card">
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Client</th>
+                    <th>Contact Info</th>
+                    <th>Service</th>
+                    <th>Package</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="submissions-table-body">
+                  <!-- Dynamically generated rows -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Media Manager Tab Content -->
+        <div id="tab-content-media" class="tab-content" style="display: none;">
+          <div class="dashboard-intro">
+            <h1>Website Media Manager</h1>
+            <p>Paste image URLs or upload local images to customize any media file on the website instantly. Max size: 1.5MB.</p>
+          </div>
+          
+          <div class="media-grid" id="media-grid-container">
+            <!-- Dynamically generated cards -->
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Detailed Submission Modal -->
+    <div class="modal-admin-overlay" id="detail-modal">
+      <div class="modal-admin-content">
+        <div class="modal-admin-header">
+          <h2 id="modal-title">Quote Request Details</h2>
+          <button class="btn-close-modal" id="modal-close">&times;</button>
+        </div>
+        <div class="modal-admin-body">
+          <div class="modal-detail-grid">
+            <div class="detail-item">
+              <span class="label">Client Name</span>
+              <span class="value" id="detail-name">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="label">Date Submitted</span>
+              <span class="value" id="detail-date">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="label">Email Address</span>
+              <span class="value" id="detail-email">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="label">WhatsApp Number</span>
+              <span class="value" id="detail-phone">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="label">Requested Service</span>
+              <span class="value" id="detail-service">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="label">Chosen Package</span>
+              <span class="value" id="detail-package">-</span>
+            </div>
+            <div class="detail-item full-width">
+              <span class="label">Project Details & Requirements</span>
+              <p class="desc-text" id="detail-desc">-</p>
+            </div>
+          </div>
+
+          <div class="status-change-area">
+            <span class="label">Update Quote Status</span>
+            <div class="status-btn-group">
+              <button class="btn-status-change pending" id="btn-status-pending">Pending</button>
+              <button class="btn-status-change contacted" id="btn-status-contacted">Contacted</button>
+              <button class="btn-status-change completed" id="btn-status-completed">Completed</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="src/dashboard.js"></script>
+  </body>
+</html>

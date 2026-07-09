@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MYLAB.LK | Creative Digital Agency</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="./theme.js"></script>
+  </head>
+  <body>
+    <!-- Custom Cursor -->
+    <div id="custom-cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <nav id="navbar">
+      <a href="#home" class="logo" style="text-decoration: none; color: inherit;">MYLAB.LK<span>.</span></a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <div class="nav-dropdown">
+          <a href="javascript:void(0)" class="dropdown-trigger">Services <i data-lucide="chevron-down" class="dropdown-chevron"></i></a>
+          <div class="dropdown-content">
+            <div class="dropdown-grid">
+              <a href="services/web-dev.html">Website Development</a>
+              <a href="services/mobile-app.html">Mobile Applications</a>
+              <a href="services/uiux-design.html">UI/UX Development</a>
+              <a href="services/social-media.html">Social Media Management</a>
+              <a href="services/branding-design.html">Branding & Graphic Design</a>
+              <a href="services/video-editing.html">Video Editing</a>
+              <a href="services/post-design.html">Social Media Post Design</a>
+              <a href="services/video-presenting.html">Video Presenting & Reels</a>
+              <a href="services/seo-optimization.html">SEO & Backlink Strategy</a>
+            </div>
+          </div>
+        </div>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-socials">
+        <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+        <a href="#" aria-label="Globe"><i data-lucide="globe"></i></a>
+        <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+        <button class="theme-toggle" aria-label="Toggle Theme" style="background: none; border: none; cursor: pointer; color: inherit; padding-left: 1rem;">
+          <i data-lucide="sun"></i>
+        </button>
+      </div>
+    </nav>
+
+    <main id="app">
+      <!-- Hero Section -->
+      <section id="home" class="hero overlay-hero">
+        <div class="hero-bg">
+          <img src="/assets/Untitled design (30).png" alt="MYLAB.LK Hero" id="hero-img" />
+        </div>
+        <div class="hero-content hero-left-content">
+          <span class="hero-subtitle reveal-item">Digital agency</span>
+          <h1 id="hero-title">
+            Award Winning Creative<br/>Agency
+          </h1>
+          <p class="hero-description reveal-item" style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 1.5rem; max-width: 540px;">
+            We build state-of-the-art web products, design premium user experiences, and drive high-converting digital growth campaigns.
+          </p>
+          <div class="hero-btns reveal-item" style="margin-top: 3rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+            <a href="#contact" class="btn btn-primary magnetic">GET QUOTES <i data-lucide="phone-call"></i></a>
+            <a href="#about" class="btn btn-outline magnetic">ABOUT US <i data-lucide="arrow-up-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="scroll-guide">
+          <div class="mouse-icon"></div>
+          <div class="scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- Services Showcase Slider Section -->
+      <section id="awards" class="awards-section" style="padding: 4rem 5% 2rem 5%;">
+        <div style="margin-bottom: 4rem; text-align: center;">
+          <span style="color: var(--accent); letter-spacing: 3px; font-weight: 700; text-transform: uppercase;">WHAT WE OFFER</span>
+          <h2 class="reveal-text" style="font-size: 3rem; margin-top: 0.5rem;">Explore Our Services</h2>
+        </div>
+        <div class="awards-container">
+          <button class="awards-nav prev-btn" id="awards-prev" aria-label="Previous Service"><i data-lucide="chevron-left"></i></button>
+          
+          <div class="awards-wrapper">
+            <div class="awards-track" id="awards-track">
+              <!-- Service 1 -->
+              <a href="services/branding-design.html" class="award-card" style="text-decoration: none; color: inherit;">
+                <div class="award-image-wrapper">
+                  <img src="/a2/branding.png" alt="Branding & Graphic Design" />
+                </div>
+                <div class="award-details">
+                  <h4>BRANDING</h4>
+                  <p class="award-title">Branding & Graphic Design</p>
+                </div>
+              </a>
+              <!-- Service 2 -->
+              <a href="services/web-dev.html" class="award-card" style="text-decoration: none; color: inherit;">
+                <div class="award-image-wrapper">
+                  <img src="/a2/website development.png" alt="Website Development" />
+                </div>
+                <div class="award-details">
+                  <h4>WEB DEV</h4>
+                  <p class="award-title">Website Development</p>
+                </div>
+              </a>
+              <!-- Service 3 -->
+              <a href="services/mobile-app.html" class="award-card" style="text-decoration: none; color: inherit;">
+                <div class="award-image-wrapper">
+                  <img src="/a2/model shooting, vedio presenting.png" alt="Mobile Applications" />
+                </div>
+                <div class="award-details">
+                  <h4>MOBILE APPS</h4>
+                  <p class="award-title">Mobile Application</p>
+                </div>
+              </a>
+              <!-- Service 6 -->
+              <a href="services/uiux-design.html" class="award-card" style="text-decoration: none; color: inherit;">
+                <div class="award-image-wrapper">
+                  <img src="/a2/branding.png" alt="UI/UX Development" />
+                </div>
+                <div class="award-details">
+                  <h4>UI/UX DESIGN</h4>
+                  <p class="award-title">UI/UX Development</p>
+                </div>
+              </a>
+              <!-- Service 7 -->
+              <a href="services/social-media.html" class="award-card" style="text-decoration: none; color: inherit;">
+                <div class="award-image-wrapper">
+                  <img src="/a2/digitalmarkting.png" alt="Social Media Management" />
+                </div>
+                <div class="award-details">
+                  <h4>SOCIAL MEDIA</h4>
+                  <p class="award-title">Social Media Management</p>
+                </div>
+              </a>
+              <!-- Service 8 -->
+              <a href="services/video-editing.html" class="award-card" style="text-decoration: none; color: inherit;">
+                <div class="award-image-wrapper">
+                  <img src="/a2/vedio editing .png" alt="Professional Video Editing" />
+                </div>
+                <div class="award-details">
+                  <h4>VIDEO EDITING</h4>
+                  <p class="award-title">Professional Video Editing</p>
+                </div>
+              </a>
+              <!-- Service 9 -->
+              <a href="services/post-design.html" class="award-card" style="text-decoration: none; color: inherit;">
+                <div class="award-image-wrapper">
+                  <img src="/a2/social media post and real creatig.png" alt="SMM Post Design" />
+                </div>
+                <div class="award-details">
+                  <h4>POST DESIGN</h4>
+                  <p class="award-title">Social Media Post Design</p>
+                </div>
+              </a>
+              <!-- Service 10 -->
+              <a href="services/video-presenting.html" class="award-card" style="text-decoration: none; color: inherit;">
+                <div class="award-image-wrapper">
+                  <img src="/a2/model shooting, vedio presenting.png" alt="Video Presenting & Reels" />
+                </div>
+                <div class="award-details">
+                  <h4>REELS & PRESENTER</h4>
+                  <p class="award-title">Video Presenting & Reels</p>
+                </div>
+              </a>
+              <!-- Service 11 -->
+              <a href="services/seo-optimization.html" class="award-card" style="text-decoration: none; color: inherit;">
+                <div class="award-image-wrapper">
+                  <img src="/a2/digitalmarkting.png" alt="SEO Optimization & Backlinks" />
+                </div>
+                <div class="award-details">
+                  <h4>SEO & BACKLINKS</h4>
+                  <p class="award-title">SEO & Backlink Strategy</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <button class="awards-nav next-btn" id="awards-next" aria-label="Next Service"><i data-lucide="chevron-right"></i></button>
+        </div>
+      </section>
+
+      <!-- Introduction Section -->
+      <section id="about" class="intro-section">
+        <div class="intro-visual reveal-item">
+          <div class="hex-container">
+            <div class="hex-shape">
+              <div class="hex-inner">
+                <img src="/assets/intro_team.png" alt="MYLAB.LK Team" />
+              </div>
+            </div>
+            <div class="since-badge">
+              2016
+              <span>Since</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="intro-content">
+          <span class="hero-subtitle reveal-item">WELCOME TO MYLAB.LK</span>
+          <h2 class="reveal-text">Introducing Quality<br/>Digital Agency.</h2>
+          <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2.5rem;">
+            MYLAB.LK is a world-class creative collective dedicated to building premium digital experiences. We bridge the gap between imagination and execution, delivering top-tier solutions that redefine industry standards.
+          </p>
+          
+          <ul class="benefits-list reveal-item">
+            <li><i data-lucide="check-circle"></i> Result-driven marketing expertise</li>
+            <li><i data-lucide="check-circle"></i> High-performance custom development</li>
+            <li><i data-lucide="check-circle"></i> Pixel-perfect UI/UX design systems</li>
+          </ul>
+
+          <div class="contact-tile reveal-item">
+            <div class="icon">
+              <i data-lucide="phone-call"></i>
+            </div>
+            <div class="info">
+              <h5>GET A FREE QUOTE</h5>
+              <p>+92 (8800) 36780</p>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn btn-primary reveal-item">DISCOVER MORE <i data-lucide="arrow-right"></i></a>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" style="background: var(--bg-secondary); padding: 3rem 0 2rem 0;">
+        <div style="margin-bottom: 5rem; text-align: center;">
+          <span style="color: var(--accent); letter-spacing: 3px; font-weight: 700; text-transform: uppercase;">OUR SERVICES</span>
+          <h2 class="reveal-text" style="font-size: 3.5rem;">What We Do</h2>
+        </div>
+        <div class="services-glass-grid">
+          <!-- Card 1: Mobile App Dev -->
+          <div class="service-glass-card">
+            <div class="service-icon-top">
+              <i data-lucide="smartphone"></i>
+            </div>
+            <h3>Mobile Application</h3>
+            <ul>
+              <li>Native iOS & Android App Development</li>
+              <li>Cross-Platform Flutter & React Native</li>
+              <li>Custom UI/UX & Motion Design</li>
+              <li>App Store & Play Store Growth</li>
+              <li>Secure API & Backend Architecture</li>
+            </ul>
+            <a href="services/mobile-app.html" class="service-link">View Details <i data-lucide="arrow-right"></i></a>
+          </div>
+
+          <!-- Card 2: Web Dev -->
+          <div class="service-glass-card">
+            <div class="service-icon-top">
+              <i data-lucide="globe"></i>
+            </div>
+            <h3>Website Development</h3>
+            <ul>
+              <li>High-Converting Custom Landing Pages</li>
+              <li>Advanced CMS Integrations & Setup</li>
+              <li>Interactive Modern Web Animations</li>
+              <li>Advanced SEO & Page Speed Optimization</li>
+              <li>Reliable Domain & Hosting Solutions</li>
+            </ul>
+            <a href="services/web-dev.html" class="service-link">View Details <i data-lucide="arrow-right"></i></a>
+          </div>
+
+          <!-- Card 3: E-Commerce -->
+          <div class="service-glass-card">
+            <div class="service-icon-top">
+              <i data-lucide="shopping-cart"></i>
+            </div>
+            <h3>E-Commerce Store</h3>
+            <ul>
+              <li>Custom Shopify & WooCommerce Setup</li>
+              <li>Secure Global Payment Systems</li>
+              <li>Real-Time Inventory Alerts & Tracking</li>
+              <li>Conversion-Optimized Shopping Cart</li>
+              <li>Dynamic Product Catalog Management</li>
+            </ul>
+            <a href="services/web-dev.html" class="service-link">View Details <i data-lucide="arrow-right"></i></a>
+          </div>
+
+          <!-- Card 5: UI/UX -->
+          <div class="service-glass-card">
+            <div class="service-icon-top">
+              <i data-lucide="palette"></i>
+            </div>
+            <h3>UI/UX Development</h3>
+            <ul>
+              <li>Pixel-Perfect User Interface Designs</li>
+              <li>Interactive High-Fidelity Prototypes</li>
+              <li>Comprehensive User Experience Testing</li>
+              <li>Brand-Aligned UI Style Guides</li>
+              <li>Custom Vector Icon Systems</li>
+            </ul>
+            <a href="services/uiux-design.html" class="service-link">View Details <i data-lucide="arrow-right"></i></a>
+          </div>
+
+          <!-- Card 6: Social Media -->
+          <div class="service-glass-card">
+            <div class="service-icon-top">
+              <i data-lucide="megaphone"></i>
+            </div>
+            <h3>Social Media Management</h3>
+            <ul>
+              <li>Engaging Social Media Content Creation</li>
+              <li>Custom Branded Post Templates</li>
+              <li>Targeted Lead Generation Campaigns</li>
+              <li>Comprehensive Monthly Performance Reports</li>
+              <li>Creative & Persuasive Copywriting</li>
+            </ul>
+            <a href="services/social-media.html" class="service-link">View Details <i data-lucide="arrow-right"></i></a>
+          </div>
+
+          <!-- Card 7: Branding -->
+          <div class="service-glass-card">
+            <div class="service-icon-top">
+              <i data-lucide="award"></i>
+            </div>
+            <h3>Branding & Graphic Design</h3>
+            <ul>
+              <li>Unique & Memorable Custom Logos</li>
+              <li>Professional Brand Identity Collaterals</li>
+              <li>High-Quality Scalable Vector Formats</li>
+              <li>Complete Corporate Brand Guidelines</li>
+              <li>Professional Print Layout Designs</li>
+            </ul>
+            <a href="services/branding-design.html" class="service-link">View Details <i data-lucide="arrow-right"></i></a>
+          </div>
+
+          <!-- Card 8: Video Editing -->
+          <div class="service-glass-card">
+            <div class="service-icon-top">
+              <i data-lucide="film"></i>
+            </div>
+            <h3>Video Editing</h3>
+            <ul>
+              <li>High-Impact Promotional Video Edits</li>
+              <li>Cinematic Professional Color Grading</li>
+              <li>Immersive Audio & Sound Design</li>
+              <li>Dynamic Text & Title Overlays</li>
+              <li>Engaging Social Media Highlight Reels</li>
+            </ul>
+            <a href="services/video-editing.html" class="service-link">View Details <i data-lucide="arrow-right"></i></a>
+          </div>
+
+          <!-- Card 9: Social Media Post Design -->
+          <div class="service-glass-card">
+            <div class="service-icon-top">
+              <i data-lucide="layout-grid"></i>
+            </div>
+            <h3>Social Media Post Design</h3>
+            <ul>
+              <li>Visually Stunning Social Feed Layouts</li>
+              <li>Engaging Multi-Slide Carousel Posts</li>
+              <li>Creative Seamless Grid Puzzles</li>
+              <li>Fully Editable Canva Source Files</li>
+              <li>High-Converting Paid Ad Creatives</li>
+            </ul>
+            <a href="services/post-design.html" class="service-link">View Details <i data-lucide="arrow-right"></i></a>
+          </div>
+
+          <!-- Card 10: Video Presenting & Reels -->
+          <div class="service-glass-card">
+            <div class="service-icon-top">
+              <i data-lucide="video"></i>
+            </div>
+            <h3>Video Presenting & Reels</h3>
+            <ul>
+              <li>Professional Actors & Agency Models</li>
+              <li>Engaging Reels & TikTok Videos</li>
+              <li>High-Retention Video Hook Scripts</li>
+              <li>Precise Professional Audio Syncing</li>
+              <li>High-Quality Studio Lighting Setup</li>
+            </ul>
+            <a href="services/video-presenting.html" class="service-link">View Details <i data-lucide="arrow-right"></i></a>
+          </div>
+
+          <!-- Card 11: SEO & Backlink Strategy -->
+          <div class="service-glass-card">
+            <div class="service-icon-top">
+              <i data-lucide="search"></i>
+            </div>
+            <h3>SEO & Backlink Strategy</h3>
+            <ul>
+              <li>Strategic Target Keyword Mapping</li>
+              <li>Comprehensive Technical Site Audits</li>
+              <li>Accurate Keyword Rank Tracking</li>
+              <li>High-Authority Guest Posting Strategy</li>
+              <li>Advanced SEO Schema Markup</li>
+            </ul>
+            <a href="services/seo-optimization.html" class="service-link">View Details <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio 3D Cover Flow Showcase -->
+      <section id="work" class="showcase-section">
+        <div class="showcase-container">
+          <div class="showcase-header">
+            <span class="hero-subtitle reveal-item">CASE STUDIES</span>
+            <h2 class="reveal-text">Explore Our Selected Projects</h2>
+          </div>
+          
+          <div class="coverflow-container">
+            <div class="coverflow-track">
+              <!-- Slide 1 -->
+              <div class="coverflow-slide" data-index="0">
+                <div class="slide-image-wrapper">
+                  <img src="/sample/1.png" alt="Mobile Experience App" />
+                </div>
+                <div class="modern-slide-label">
+                  <span class="sample-num">SAMPLE 01</span>
+                  <span class="sample-year">2026</span>
+                </div>
+              </div>
+              <!-- Slide 2 -->
+              <div class="coverflow-slide" data-index="1">
+                <div class="slide-image-wrapper">
+                  <img src="/sample/2.png" alt="Data Analytics Platform" />
+                </div>
+                <div class="modern-slide-label">
+                  <span class="sample-num">SAMPLE 02</span>
+                  <span class="sample-year">2026</span>
+                </div>
+              </div>
+              <!-- Slide 3 -->
+              <div class="coverflow-slide" data-index="2">
+                <div class="slide-image-wrapper">
+                  <img src="/sample/3.png" alt="Digital Growth Solution" />
+                </div>
+                <div class="modern-slide-label">
+                  <span class="sample-num">SAMPLE 03</span>
+                  <span class="sample-year">2026</span>
+                </div>
+              </div>
+              <!-- Slide 4 -->
+              <div class="coverflow-slide" data-index="3">
+                <div class="slide-image-wrapper">
+                  <img src="/sample/4.png" alt="Security & DevOps Architecture" />
+                </div>
+                <div class="modern-slide-label">
+                  <span class="sample-num">SAMPLE 04</span>
+                  <span class="sample-year">2026</span>
+                </div>
+              </div>
+              <!-- Slide 5 -->
+              <div class="coverflow-slide" data-index="4">
+                <div class="slide-image-wrapper">
+                  <img src="/sample/5.png" alt="Branding & Design System" />
+                </div>
+                <div class="modern-slide-label">
+                  <span class="sample-num">SAMPLE 05</span>
+                  <span class="sample-year">2026</span>
+                </div>
+              </div>
+              <!-- Slide 6 -->
+              <div class="coverflow-slide" data-index="5">
+                <div class="slide-image-wrapper">
+                  <img src="/sample/6.png" alt="Next-Gen Web Platform" />
+                </div>
+                <div class="modern-slide-label">
+                  <span class="sample-num">SAMPLE 06</span>
+                  <span class="sample-year">2026</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="coverflow-controls">
+            <button class="coverflow-prev-btn" aria-label="Previous Project"><i data-lucide="arrow-left"></i></button>
+            <div class="coverflow-dots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+              <span class="dot" data-index="3"></span>
+              <span class="dot" data-index="4"></span>
+              <span class="dot" data-index="5"></span>
+            </div>
+            <button class="coverflow-next-btn" aria-label="Next Project"><i data-lucide="arrow-right"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section id="stats" class="stats-section">
+        <div class="stat-item reveal-item">
+          <div class="stat-icon-hex"><i data-lucide="layers"></i></div>
+          <div class="stat-number" data-target="90">0</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item reveal-item">
+          <div class="stat-icon-hex"><i data-lucide="users"></i></div>
+          <div class="stat-number" data-target="25">0</div>
+          <div class="stat-label">Active Clients</div>
+        </div>
+        <div class="stat-item reveal-item">
+          <div class="stat-icon-hex"><i data-lucide="shield-check"></i></div>
+          <div class="stat-number" data-target="10">0</div>
+          <div class="stat-label">Expert People</div>
+        </div>
+        <div class="stat-item reveal-item">
+          <div class="stat-icon-hex"><i data-lucide="smile"></i></div>
+          <div class="stat-number" data-target="60" data-suffix="+">0</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+      </section>
+
+      <!-- Split Scroll Section -->
+      <section id="industries" class="split-scroll-section">
+        <div class="split-scroll-left">
+          <span class="hero-subtitle reveal-item">Our Core Industries</span>
+          <h2 class="reveal-text">Tailored Digital Solutions for Every Industry.</h2>
+          <p class="reveal-item">
+            As a trusted creative agency in Sri Lanka, MYLAB.LK delivers professional website design 
+and custom development solutions tailored to a wide range of sectors. From fast-growing startups to established 
+enterprises, we understand the unique challenges each sector faces in today's digital landscape.
+          </p>
+          <p class="reveal-item" style="margin-top: 1rem;">
+            Our industry-specific experience allows us to create strategic, conversion-focused 
+platforms that help businesses grow faster, operate efficiently, and compete successfully online.
+          </p>
+        </div>
+        
+        <div class="split-scroll-right">
+          <!-- Item 1 -->
+          <div class="industry-scroll-card reveal-item">
+            <img src="/a4/s (1).png" alt="Photography & Fashion" />
+            <div class="industry-overlay">
+              <h3>Photography & Fashion</h3>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="industry-scroll-card reveal-item">
+            <img src="/a4/s (2).png" alt="Education & Publishing" />
+            <div class="industry-overlay">
+              <h3>Education & Publishing</h3>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="industry-scroll-card reveal-item">
+            <img src="/a4/s (3).png" alt="Social Media Marketing" />
+            <div class="industry-overlay">
+              <h3>Social Media Marketing</h3>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="industry-scroll-card reveal-item">
+            <img src="/a4/s (6).png" alt="Social Media Post Design" />
+            <div class="industry-overlay">
+              <h3>Social Media Post Design</h3>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div class="industry-scroll-card reveal-item">
+            <img src="/a4/s (5).png" alt="Brand Identity" />
+            <div class="industry-overlay">
+              <h3>Brand Identity</h3>
+            </div>
+          </div>
+          <!-- Item 6 -->
+          <div class="industry-scroll-card reveal-item">
+            <img src="/a4/s (4).png" alt="Food & Beverage" />
+            <div class="industry-overlay">
+              <h3>Food & Beverage</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section id="team" style="padding: 10rem 10%; background: var(--bg-secondary);">
+        <div style="margin-bottom: 5rem; text-align: center;">
+          <span style="color: var(--accent); letter-spacing: 3px; text-transform: uppercase;">Our Talent</span>
+          <h2 class="reveal-text" style="font-size: 3.5rem;">The Creative Minds</h2>
+        </div>
+        <div class="team-grid">
+          <div class="team-card magnetic">
+            <div class="role-badge">Manager</div>
+            <div class="member-avatar">
+              <img src="/a5/1.jpeg" alt="Project Manager" />
+            </div>
+            <div class="member-info">
+              <h3>Sandun Lakshitha</h3>
+              <p class="role-title">Project Manager</p>
+              <p class="member-desc">Oversees project planning, resource allocation, and team coordination. Leads milestones delivery and client communication to ensure seamless execution.</p>
+              <div class="member-socials">
+                <a href="#" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+                <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+                <a href="#" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="team-card magnetic">
+            <div class="role-badge">UI/UX</div>
+            <div class="member-avatar">
+              <img src="/a5/2.jpeg" alt="UI/UX Designer" />
+            </div>
+            <div class="member-info">
+              <h3>Mulitha Sanjaya</h3>
+              <p class="role-title">UI/UX Designer</p>
+              <p class="member-desc">Crafts intuitive, user-centric wireframes and high-fidelity mockups. Focuses on comprehensive user research, interactive design aesthetics, and seamless modern web interfaces to maximize user engagement.</p>
+              <div class="member-socials">
+                <a href="#" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+                <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+                <a href="#" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card magnetic">
+            <div class="role-badge">Backend</div>
+            <div class="member-avatar">
+              <img src="/a5/3.jpeg" alt="Database & Backend Developer" />
+            </div>
+            <div class="member-info">
+              <h3>Madhura Bashitha</h3>
+              <p class="role-title">Database & Backend Developer</p>
+              <p class="member-desc">Architects robust, scalable databases and secure server-side logic. Optimizes server performance, API endpoints, and system architecture.</p>
+              <div class="member-socials">
+                <a href="#" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+                <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+                <a href="#" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card magnetic">
+            <div class="role-badge">Social</div>
+            <div class="member-avatar">
+              <img src="/a5/4.jpeg" alt="Social Media Manager" />
+            </div>
+            <div class="member-info">
+              <h3>Sasini Madhara</h3>
+              <p class="role-title">Social Media Manager</p>
+              <p class="member-desc">Strategizes and executes engaging social media campaigns. Enhances online brand presence through creative content, graphic assets, and detailed audience analytics tracking to scale digital reach.</p>
+              <div class="member-socials">
+                <a href="#" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+                <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+                <a href="#" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section id="contact" style="padding: 8rem 10% 8rem; text-align: center;">
+        <div class="cta-container">
+          <div class="cta-left reveal-item">
+            <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin: 0; text-transform: uppercase;" class="magnetic">LET'S TALK<br/><span style="color: var(--accent);">TOGETHER</span></h2>
+            <p>Have a project in mind, need a quick consultation, or ready to get started? Fill out the quote form, and our team will get back to you with a personalized proposal.</p>
+          </div>
+          
+          <div class="cta-right reveal-item">
+            <form class="modern-form-card">
+              <div class="form-group">
+                <label for="quote-name">Your Name</label>
+                <input type="text" id="quote-name" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label for="quote-email">Email Address</label>
+                <input type="email" id="quote-email" placeholder="john@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="quote-service">Service Needed</label>
+                <select id="quote-service">
+                  <option>Mobile App Development</option>
+                  <option>Web Development</option>
+                  <option>E-commerce Store</option>
+                  <option>UI/UX Design</option>
+                  <option>Social Media Management</option>
+                  <option>Branding & Identity</option>
+                  <option>Video Editing</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="quote-message">Project Description</label>
+                <textarea id="quote-message" rows="3" placeholder="Tell us about your project..." required></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-primary magnetic" style="width: 100%; justify-content: center; padding: 1.2rem; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 10px; margin-top: 0.5rem; border: none; cursor: pointer;">
+                GET A FREE QUOTE <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="custom-footer">
+      <div class="footer-bg-overlay"></div>
+      <div class="custom-footer-content">
+        <div class="footer-logo-area">
+          <img src="/assets/footer_logo.png" alt="MYLAB.LK Logo" class="footer-logo-img" />
+          <h2>MYLAB.LK</h2>
+        </div>
+        
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contacts</a></li>
+        </ul>
+
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+          <a href="#" aria-label="Dribbble"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"/><path d="M21.75 12.84c-6.6.14-11.21-.14-14.71-3.28"/><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"/><path d="M20.3 18.29c-5-2-4.14-8.15-4-9.35"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+        </div>
+
+        <div class="footer-bottom-line"></div>
+        
+        <div class="footer-copyright" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; width: 100%;">
+          <p>MYLAB.LK Digital &copy; 2026. All Rights Reserved.</p>
+          <a href="./dashboard.html" style="font-size: 0.8rem; color: var(--text-secondary); text-decoration: none; opacity: 0.3; transition: opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.3">Admin Panel</a>
+        </div>
+        
+        <a href="#home" class="back-to-top" aria-label="Back to Top">
+          <i data-lucide="arrow-up"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
+
