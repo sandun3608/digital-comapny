@@ -91,30 +91,43 @@ function initPreloader() {
 
   const chars = document.querySelectorAll('.preloader-char');
   const progress = document.querySelector('.preloader-progress');
+  const percentageVal = document.querySelector('.preloader-percentage');
+  const preloaderContent = document.querySelector('.preloader-content');
 
   const preloaderTl = gsap.timeline();
 
-  // Stagger reveal letters
+  // 1. Stagger reveal letters (from bottom up)
   preloaderTl.to(chars, {
     opacity: 1,
     y: 0,
-    stagger: 0.08,
-    duration: 0.8,
+    stagger: 0.07,
+    duration: 0.7,
     ease: 'power3.out'
   });
 
-  // Fill loader bar over 3.2s
+  // 2. Fill loader bar over 3.2s
   preloaderTl.to(progress, {
     width: '100%',
     duration: 3.2,
     ease: 'power1.inOut'
   }, '-=0.4');
 
+  // 3. Increment percentage digital counter in sync with progress bar
+  let counter = { val: 0 };
+  preloaderTl.to(counter, {
+    val: 100,
+    duration: 3.2,
+    ease: 'power1.inOut',
+    onUpdate: () => {
+      if (percentageVal) {
+        percentageVal.textContent = `${Math.floor(counter.val).toString().padStart(2, '0')}%`;
+      }
+    }
+  }, '-=3.2'); // plays concurrently with progress bar progress
+
+  // Horizon Curtain Split exit animation
   const exitLoader = () => {
-    gsap.to(preloader, {
-      y: '-100vh',
-      duration: 1.2,
-      ease: 'power4.inOut',
+    const exitTl = gsap.timeline({
       onComplete: () => {
         preloader.remove();
         document.body.style.overflow = '';
@@ -122,16 +135,36 @@ function initPreloader() {
         heroTl.play();
       }
     });
+
+    // Fade out text elements first
+    exitTl.to(preloaderContent, {
+      opacity: 0,
+      scale: 0.95,
+      y: -20,
+      duration: 0.6,
+      ease: 'power2.inOut'
+    })
+    // Split screen halves (top goes up, bottom goes down)
+    .to('.preloader-bg-half.top-half', {
+      y: '-50vh',
+      duration: 1.2,
+      ease: 'power4.inOut'
+    }, '-=0.3')
+    .to('.preloader-bg-half.bottom-half', {
+      y: '50vh',
+      duration: 1.2,
+      ease: 'power4.inOut'
+    }, '-=1.2');
   };
 
-  // Lock animation for exactly 4 seconds (4000ms) to ensure background assets load
+  // Lock animation for exactly 4.2 seconds to ensure background assets load fully
   setTimeout(() => {
     if (document.readyState === 'complete') {
       exitLoader();
     } else {
       window.addEventListener('load', exitLoader);
     }
-  }, 4000);
+  }, 4200);
 }
 initPreloader();
 

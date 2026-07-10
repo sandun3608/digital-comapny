@@ -12,8 +12,10 @@
     <script src="./theme.js"></script>
   </head>
   <body style="overflow: hidden;">
-    <!-- Premium Preloader / Splash Screen -->
+    <!-- Premium Preloader / Split Curtain Splash Screen -->
     <div id="preloader" class="preloader">
+      <div class="preloader-bg-half top-half"></div>
+      <div class="preloader-bg-half bottom-half"></div>
       <div class="preloader-content">
         <h1 class="preloader-title">
           <span class="preloader-char">M</span>
@@ -25,9 +27,13 @@
           <span class="preloader-char">L</span>
           <span class="preloader-char">K</span>
         </h1>
-        <div class="preloader-bar">
-          <div class="preloader-progress"></div>
+        <div class="preloader-bar-wrapper">
+          <div class="preloader-bar">
+            <div class="preloader-progress"></div>
+          </div>
+          <span class="preloader-percentage">00%</span>
         </div>
+        <p class="preloader-subtext">DIGITAL EXPERIENCE LAB // CREATIVE SOLUTIONS</p>
       </div>
     </div>
 
