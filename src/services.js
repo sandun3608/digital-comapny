@@ -258,3 +258,69 @@ if (dropdownTrigger) {
     }
   });
 }
+
+// Dynamic Mobile Menu Injection
+function initMobileMenu() {
+  const navbar = document.getElementById('navbar');
+  if (navbar && !document.getElementById('mobile-menu-toggle')) {
+    const toggle = document.createElement('button');
+    toggle.id = 'mobile-menu-toggle';
+    toggle.setAttribute('aria-label', 'Toggle Menu');
+    toggle.innerHTML = `
+      <svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+      <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+    `;
+    navbar.appendChild(toggle);
+
+    const navLinks = document.querySelector('.nav-links');
+    const navSocials = document.querySelector('.nav-socials');
+
+    // Create and append mobile socials inside nav-links menu
+    if (navLinks && !navLinks.querySelector('.mobile-socials')) {
+      const mobileSocials = document.createElement('div');
+      mobileSocials.className = 'mobile-socials';
+      mobileSocials.innerHTML = `
+        <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+      `;
+      navLinks.appendChild(mobileSocials);
+    }
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navbar.classList.toggle('mobile-nav-open');
+      if (isOpen) {
+        toggle.querySelector('.hamburger-icon').style.display = 'none';
+        toggle.querySelector('.close-icon').style.display = 'block';
+        if (navLinks) navLinks.classList.add('active');
+        if (navSocials) navSocials.classList.add('active');
+      } else {
+        toggle.querySelector('.hamburger-icon').style.display = 'block';
+        toggle.querySelector('.close-icon').style.display = 'none';
+        if (navLinks) navLinks.classList.remove('active');
+        if (navSocials) navSocials.classList.remove('active');
+      }
+    });
+
+    // Close menu when clicking links (except dropdown triggers)
+    if (navLinks) {
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (link.classList.contains('dropdown-trigger')) return;
+          navbar.classList.remove('mobile-nav-open');
+          toggle.querySelector('.hamburger-icon').style.display = 'block';
+          toggle.querySelector('.close-icon').style.display = 'none';
+          navLinks.classList.remove('active');
+          if (navSocials) navSocials.classList.remove('active');
+        });
+      });
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', initMobileMenu);
+if (document.readyState === 'interactive' || document.readyState === 'complete') {
+  initMobileMenu();
+}
+

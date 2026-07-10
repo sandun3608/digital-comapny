@@ -801,3 +801,175 @@
   text-transform: uppercase;
   margin-bottom: 0.8rem;
 }
+
+/* -------------------------------------------------------------
+   MOBILE OPTIMIZATIONS (Only active on screens <= 768px)
+------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Back Button styling */
+  .back-btn {
+    top: 1.2rem !important;
+    left: 4% !important;
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.75rem !important;
+    z-index: 1003 !important; /* Stand out over mobile menu */
+  }
+
+  /* Service Premium Hero */
+  .service-hero-premium {
+    padding: 100px 6% 40px 6% !important;
+  }
+
+  .service-hero-container {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center;
+  }
+
+  .service-hero-left {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .service-hero-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .service-hero-title span {
+    display: inline !important;
+    white-space: normal !important;
+  }
+
+  .service-hero-desc {
+    font-size: 0.95rem !important;
+    margin-bottom: 1.5rem !important;
+    max-width: 100% !important;
+  }
+
+  .tech-icons-group {
+    justify-content: center !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .tech-icon-badge {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .tech-icon-badge img {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  .service-mockup-wrapper {
+    max-width: 280px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Why Choose Us & Info sections */
+  .why-choose-section {
+    padding: 4rem 6% !important;
+  }
+
+  /* Pricing Section */
+  .pricing-section {
+    padding: 4rem 6% !important;
+  }
+
+  .pricing-grid {
+    margin-top: 3rem !important;
+    gap: 1.5rem !important;
+  }
+
+  .price-card {
+    padding: 2.5rem 1.5rem !important;
+    border-radius: 20px !important;
+  }
+
+  .price-card h4 {
+    font-size: 1.25rem !important;
+  }
+
+  .price-card .price {
+    font-size: 2.2rem !important;
+    margin: 1rem 0 !important;
+  }
+
+  .price-card ul {
+    margin: 1.5rem 0 !important;
+  }
+
+  .price-card ul li {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  /* Process Steps */
+  .process-section {
+    padding: 4rem 6% !important;
+  }
+
+  .process-steps {
+    margin-top: 3rem !important;
+    gap: 2rem !important;
+  }
+
+  .step {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 0.8rem !important;
+  }
+
+  .step-num {
+    font-size: 2.8rem !important;
+  }
+
+  .step-content h5 {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .step-content p {
+    font-size: 0.9rem !important;
+  }
+
+  /* Details Grid */
+  .service-detail-section {
+    padding: 4rem 6% !important;
+  }
+
+  .service-detail-header h2 {
+    font-size: 1.8rem !important;
+  }
+
+  .service-detail-lead {
+    font-size: 0.98rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .service-detail-card {
+    padding: 2rem 1.5rem !important;
+    border-radius: 16px !important;
+  }
+
+  .service-detail-card h3 {
+    font-size: 1.2rem !important;
+  }
+
+  .service-detail-card p {
+    font-size: 0.88rem !important;
+  }
+
+  .service-tech-stack {
+    padding-top: 3rem !important;
+  }
+
+  .tech-badge {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.78rem !important;
+  }
+}
+
