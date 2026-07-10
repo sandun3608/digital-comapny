@@ -2747,47 +2747,22 @@ footer.custom-footer::before {
   transform: translateY(-50%) translateX(-100%);
 }
 
-/* Premium Preloader / Triple-Layer Curtain Wipe Splash Screen Styles */
+/* Premium Preloader / Splash Screen Styles */
 .preloader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  background-color: #030303;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100000;
   overflow: hidden;
-  background: transparent;
-}
-
-/* Staggered transition panels */
-.preloader-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  will-change: transform;
-}
-
-.preloader-layer.layer-1 {
-  background-color: var(--accent, #8b5cf6); /* brand violet */
-}
-
-.preloader-layer.layer-2 {
-  background-color: #d946ef; /* brand magenta */
-}
-
-.preloader-layer.layer-3 {
-  background-color: #030303; /* main dark cover */
 }
 
 .preloader-content {
-  position: relative;
-  z-index: 2;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -2797,29 +2772,29 @@ footer.custom-footer::before {
 
 .preloader-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   font-weight: 800;
   color: #ffffff;
-  letter-spacing: 0.8rem;
+  letter-spacing: 1.2rem; /* wide letters for premium feel */
   text-transform: uppercase;
   margin: 0;
   display: flex;
   gap: 0.2rem;
   user-select: none;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.12);
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.12);
 }
 
 @media (max-width: 768px) {
   .preloader-title {
     font-size: 2.2rem;
-    letter-spacing: 0.4rem;
+    letter-spacing: 0.5rem;
   }
 }
 
 .preloader-char {
   display: inline-block;
   opacity: 0;
-  transform: translateY(25px);
+  transform: translateY(20px);
 }
 
 .preloader-char.dot {
@@ -2827,36 +2802,19 @@ footer.custom-footer::before {
   text-shadow: 0 0 15px rgba(139, 92, 246, 0.7);
 }
 
-.preloader-bar-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-}
-
 .preloader-bar {
-  width: 180px;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 4px;
+  width: 220px;
+  height: 1px; /* Ultra-thin progress line for futuristic aesthetic */
+  background: rgba(255, 255, 255, 0.05); /* very faint track */
+  border-radius: 2px;
   overflow: hidden;
 }
 
 .preloader-progress {
   width: 0%;
   height: 100%;
-  background: linear-gradient(90deg, #8b5cf6, #d946ef);
-  box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
-  border-radius: 4px;
-}
-
-.preloader-percentage {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 1px;
-  min-width: 38px;
-  text-align: right;
+  background: linear-gradient(90deg, #8b5cf6 0%, #d946ef 50%, #00f2fe 100%);
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.8);
 }
 
 .preloader-subtext {
