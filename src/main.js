@@ -646,12 +646,12 @@ function initMobileMenu() {
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initFloatingSocialNotch();
-  initPhoneScrollAnimation();
+  initCardScrollAnimations();
 });
 if (document.readyState === 'interactive' || document.readyState === 'complete') {
   initMobileMenu();
   initFloatingSocialNotch();
-  initPhoneScrollAnimation();
+  initCardScrollAnimations();
 }
 
 // Dynamic Floating Social Media Side Notch Injection
@@ -674,47 +674,46 @@ function initFloatingSocialNotch() {
   }
 }
 
-// 3D Scroll Floating Phone Animation Trigger
-function initPhoneScrollAnimation() {
-  const phone = document.querySelector('.phone-mockup-wrapper');
-  if (!phone) return;
-
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#awards", // triggered when the awards section comes up
-      start: "top bottom", // when the top of #awards is at the bottom of viewport
-      end: "bottom top",   // when #awards has scrolled completely past
-      scrub: 1.5,          // smooth link to scrolling position
-      onEnter: () => gsap.set(phone, { visibility: 'visible' }),
-    }
+// 3D Glide Scroll Animations for Showcase and Grid Cards
+function initCardScrollAnimations() {
+  // 1. Showcase Carousel Cards (glide up and scale in)
+  gsap.utils.toArray('.award-card').forEach((card) => {
+    gsap.fromTo(card, 
+      { opacity: 0.3, y: 60, scale: 0.95 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 95%",
+          end: "top 75%",
+          scrub: 1.2,
+        }
+      }
+    );
   });
 
-  tl.fromTo(phone, 
-    { 
-      opacity: 0, 
-      scale: 0.1, 
-      rotationY: -180, 
-      rotationZ: -45,
-      y: "100vh" 
-    },
-    { 
-      opacity: 1, 
-      scale: 1, 
-      rotationY: 360, 
-      rotationZ: 0,
-      y: "0vh", 
-      duration: 1.5,
-      ease: "power2.out"
-    }
-  )
-  .to(phone, {
-    opacity: 0,
-    scale: 1.4,
-    rotationY: 720,
-    rotationZ: 45,
-    y: "-100vh",
-    duration: 1.5,
-    ease: "power2.in"
+  // 2. Services Grid Glass Cards (smooth float up and reveal)
+  gsap.utils.toArray('.service-glass-card').forEach((card) => {
+    gsap.fromTo(card, 
+      { opacity: 0, y: 90, scale: 0.95 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 95%",
+          end: "top 78%",
+          scrub: 1.2,
+        }
+      }
+    );
   });
 }
 
