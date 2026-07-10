@@ -2038,10 +2038,19 @@ footer.custom-footer::before {
   padding-left: 1.1rem;
 }
 
+#mobile-menu-toggle {
+  display: none;
+}
+
 /* -------------------------------------------------------------
    MOBILE OPTIMIZATIONS (Only active on screens <= 768px)
 ------------------------------------------------------------- */
 @media (max-width: 768px) {
+  /* Hide desktop CTA button on mobile */
+  .nav-cta-btn {
+    display: none !important;
+  }
+
   /* Toggle responsive hero backgrounds */
   .hero-video-desktop {
     display: none !important;
