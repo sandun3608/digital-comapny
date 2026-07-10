@@ -396,15 +396,12 @@
 .service-mockup-wrapper {
   position: relative;
   width: 100%;
-  max-width: 900px;
-  transform-style: preserve-3d;
-  transform: rotateY(-15deg) rotateX(10deg);
-  transition: transform 0.5s ease;
-  animation: floatMockup 6s ease-in-out infinite;
+  max-width: 520px;
+  transition: transform 0.4s ease;
 }
 
 .service-mockup-wrapper:hover {
-  transform: rotateY(-5deg) rotateX(5deg) scale(1.02);
+  transform: translateY(-5px);
 }
 
 .service-mockup-img {
