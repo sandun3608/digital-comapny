@@ -2866,7 +2866,42 @@ footer.custom-footer::before {
   50% { opacity: 0.85; }
 }
 
+/* Premium Shimmer CTA Button in Navbar */
+.nav-cta-btn {
+  background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 0.55rem 1.35rem !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  border-radius: 30px !important; /* Pill shaped for premium aesthetic */
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25) !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+}
 
+.nav-cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: 0.6s ease-in-out;
+}
 
+.nav-cta-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.45), 0 0 8px rgba(0, 242, 254, 0.3) !important;
+  letter-spacing: 1.5px !important;
+}
 
-
+.nav-cta-btn:hover::before {
+  left: 100%;
+}
