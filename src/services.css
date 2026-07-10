@@ -397,11 +397,12 @@
   position: relative;
   width: 100%;
   max-width: 520px;
-  transition: transform 0.4s ease;
+  will-change: transform, opacity;
+  z-index: 1;
 }
 
-.service-mockup-wrapper:hover {
-  transform: translateY(-5px);
+.service-hero-right {
+  overflow: visible;
 }
 
 .service-mockup-img {

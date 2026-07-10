@@ -82,6 +82,34 @@ if (processSteps) {
   })
 }
 
+// 3b. Scroll-triggered Mockup Pop-up Animation
+// When scrolling, the phone mockup scales up and moves over the text, then reverses on scroll back
+const mockupWrapper = document.querySelector('.service-mockup-wrapper')
+if (mockupWrapper) {
+  // Set initial state
+  gsap.set(mockupWrapper, {
+    scale: 0.85,
+    opacity: 0.6,
+    y: 40
+  })
+
+  gsap.to(mockupWrapper, {
+    scrollTrigger: {
+      trigger: '.service-hero-premium',
+      start: 'top top',
+      end: 'bottom 60%',
+      scrub: 1.2,
+      toggleActions: 'play reverse play reverse'
+    },
+    scale: 1.25,
+    x: '-35%',
+    y: -20,
+    opacity: 1,
+    zIndex: 10,
+    ease: 'power2.out'
+  })
+}
+
 // 4. Initialize Lucide Icons
 createIcons({ icons })
 
