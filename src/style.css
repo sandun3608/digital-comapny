@@ -2747,6 +2747,53 @@ footer.custom-footer::before {
   transform: translateY(-50%) translateX(-100%);
 }
 
+/* 3D Scroll Floating Phone Animation Styles */
+.phone-animation-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* Let clicks pass through to sections underneath */
+  z-index: 999; /* Below active drawer menu but above page content */
+  overflow: hidden;
+}
+
+.phone-mockup-wrapper {
+  position: relative;
+  width: 320px;
+  max-width: 75vw;
+  height: auto;
+  opacity: 0;
+  filter: drop-shadow(0 30px 60px rgba(139, 92, 246, 0.45));
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.floating-phone-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Neon glow aura rotating behind the phone */
+.phone-glow-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.45) 0%, rgba(139, 92, 246, 0.1) 40%, transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
 
 
 

@@ -646,10 +646,12 @@ function initMobileMenu() {
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initFloatingSocialNotch();
+  initPhoneScrollAnimation();
 });
 if (document.readyState === 'interactive' || document.readyState === 'complete') {
   initMobileMenu();
   initFloatingSocialNotch();
+  initPhoneScrollAnimation();
 }
 
 // Dynamic Floating Social Media Side Notch Injection
@@ -670,5 +672,49 @@ function initFloatingSocialNotch() {
     `;
     document.body.appendChild(notch);
   }
+}
+
+// 3D Scroll Floating Phone Animation Trigger
+function initPhoneScrollAnimation() {
+  const phone = document.querySelector('.phone-mockup-wrapper');
+  if (!phone) return;
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#awards", // triggered when the awards section comes up
+      start: "top bottom", // when the top of #awards is at the bottom of viewport
+      end: "bottom top",   // when #awards has scrolled completely past
+      scrub: 1.5,          // smooth link to scrolling position
+      onEnter: () => gsap.set(phone, { visibility: 'visible' }),
+    }
+  });
+
+  tl.fromTo(phone, 
+    { 
+      opacity: 0, 
+      scale: 0.1, 
+      rotationY: -180, 
+      rotationZ: -45,
+      y: "100vh" 
+    },
+    { 
+      opacity: 1, 
+      scale: 1, 
+      rotationY: 360, 
+      rotationZ: 0,
+      y: "0vh", 
+      duration: 1.5,
+      ease: "power2.out"
+    }
+  )
+  .to(phone, {
+    opacity: 0,
+    scale: 1.4,
+    rotationY: 720,
+    rotationZ: 45,
+    y: "-100vh",
+    duration: 1.5,
+    ease: "power2.in"
+  });
 }
 
