@@ -2747,7 +2747,7 @@ footer.custom-footer::before {
   transform: translateY(-50%) translateX(-100%);
 }
 
-/* Premium Preloader / Split Curtain Splash Screen Styles */
+/* Premium Preloader / Triple-Layer Curtain Wipe Splash Screen Styles */
 .preloader {
   position: fixed;
   top: 0;
@@ -2762,24 +2762,27 @@ footer.custom-footer::before {
   background: transparent;
 }
 
-/* Split Curtain panels */
-.preloader-bg-half {
+/* Staggered transition panels */
+.preloader-layer {
   position: absolute;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 50%;
-  background-color: #030303;
+  height: 100%;
   z-index: 1;
+  will-change: transform;
 }
 
-.preloader-bg-half.top-half {
-  top: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+.preloader-layer.layer-1 {
+  background-color: var(--accent, #8b5cf6); /* brand violet */
 }
 
-.preloader-bg-half.bottom-half {
-  bottom: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
+.preloader-layer.layer-2 {
+  background-color: #d946ef; /* brand magenta */
+}
+
+.preloader-layer.layer-3 {
+  background-color: #030303; /* main dark cover */
 }
 
 .preloader-content {

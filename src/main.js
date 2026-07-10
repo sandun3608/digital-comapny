@@ -125,7 +125,7 @@ function initPreloader() {
     }
   }, '-=3.2'); // plays concurrently with progress bar progress
 
-  // Horizon Curtain Split exit animation
+  // Staggered Triple-Layer Curtain Wipe exit animation (WOW factor)
   const exitLoader = () => {
     const exitTl = gsap.timeline({
       onComplete: () => {
@@ -136,25 +136,33 @@ function initPreloader() {
       }
     });
 
-    // Fade out text elements first
+    // 1. Zoom, blur and fade out the digital content layer
     exitTl.to(preloaderContent, {
       opacity: 0,
-      scale: 0.95,
-      y: -20,
-      duration: 0.6,
-      ease: 'power2.inOut'
+      scale: 1.12,
+      filter: 'blur(8px)',
+      y: -30,
+      duration: 0.8,
+      ease: 'power3.inOut'
     })
-    // Split screen halves (top goes up, bottom goes down)
-    .to('.preloader-bg-half.top-half', {
-      y: '-50vh',
+    // 2. Slide up the dark main cover (Layer 3)
+    .to('.preloader-layer.layer-3', {
+      y: '-100%',
       duration: 1.2,
       ease: 'power4.inOut'
-    }, '-=0.3')
-    .to('.preloader-bg-half.bottom-half', {
-      y: '50vh',
+    }, '-=0.45')
+    // 3. Slide up the magenta cover (Layer 2)
+    .to('.preloader-layer.layer-2', {
+      y: '-100%',
       duration: 1.2,
       ease: 'power4.inOut'
-    }, '-=1.2');
+    }, '-=1.05')
+    // 4. Slide up the violet cover (Layer 1)
+    .to('.preloader-layer.layer-1', {
+      y: '-100%',
+      duration: 1.2,
+      ease: 'power4.inOut'
+    }, '-=1.05');
   };
 
   // Lock animation for exactly 4.2 seconds to ensure background assets load fully
