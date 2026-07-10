@@ -234,18 +234,30 @@ nav.scrolled {
   z-index: 1;
 }
 
+/* Semi-transparent dark overlay on top of background media for maximum text contrast */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35); /* 35% dark overlay (equivalent to brightness 0.65) */
+  z-index: 2;
+  pointer-events: none;
+}
+
+[data-theme="light"] .hero-bg::after {
+  background: rgba(0, 0, 0, 0.15); /* lighter overlay for light mode (equivalent to brightness 0.85) */
+}
+
 .hero-bg img,
 .hero-bg video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.85); /* Slightly darker overlay for maximum text readability */
-}
-
-[data-theme="light"] .hero-bg img,
-[data-theme="light"] .hero-bg video {
-  filter: brightness(0.9);
+  z-index: 1;
 }
 
 .hero-left-content {
