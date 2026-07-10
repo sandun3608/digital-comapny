@@ -79,7 +79,8 @@ initSplitText()
 
 // Hero Timeline
 const heroTl = gsap.timeline()
-heroTl.from('.hero-bg img, .hero-bg video', { scale: 1.3, duration: 2.5, ease: 'power2.out' })
+heroTl.from('.hero-bg img', { scale: 1.15, duration: 2.5, ease: 'power2.out' }, 0)
+      .from('.hero-bg video', { opacity: 0, scale: 1.02, duration: 2.5, ease: 'power2.out' }, 0)
       .to('#hero-title .char', { y: 0, stagger: 0.02, duration: 1, ease: 'power4.out' }, '-=1.8')
       .from('.reveal-item', { y: 30, opacity: 0, stagger: 0.15, duration: 0.8 }, '-=0.8')
 
