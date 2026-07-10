@@ -77,12 +77,63 @@ function initSplitText() {
 }
 initSplitText()
 
-// Hero Timeline
-const heroTl = gsap.timeline()
+// Hero Timeline (initially paused, will be played by preloader exit)
+const heroTl = gsap.timeline({ paused: true })
 heroTl.from('.hero-bg img', { scale: 1.15, duration: 2.5, ease: 'power2.out' }, 0)
       .from('.hero-bg video', { opacity: 0, scale: 1.02, duration: 2.5, ease: 'power2.out' }, 0)
       .to('#hero-title .char', { y: 0, stagger: 0.02, duration: 1, ease: 'power4.out' }, '-=1.8')
       .from('.reveal-item', { y: 30, opacity: 0, stagger: 0.15, duration: 0.8 }, '-=0.8')
+
+// Premium Preloader Animation Controller
+function initPreloader() {
+  const preloader = document.getElementById('preloader');
+  if (!preloader) return;
+
+  const chars = document.querySelectorAll('.preloader-char');
+  const progress = document.querySelector('.preloader-progress');
+
+  const preloaderTl = gsap.timeline();
+
+  // Stagger reveal letters
+  preloaderTl.to(chars, {
+    opacity: 1,
+    y: 0,
+    stagger: 0.08,
+    duration: 0.8,
+    ease: 'power3.out'
+  });
+
+  // Fill loader bar over 3.2s
+  preloaderTl.to(progress, {
+    width: '100%',
+    duration: 3.2,
+    ease: 'power1.inOut'
+  }, '-=0.4');
+
+  const exitLoader = () => {
+    gsap.to(preloader, {
+      y: '-100vh',
+      duration: 1.2,
+      ease: 'power4.inOut',
+      onComplete: () => {
+        preloader.remove();
+        document.body.style.overflow = '';
+        // Start Hero section animations
+        heroTl.play();
+      }
+    });
+  };
+
+  // Lock animation for exactly 4 seconds (4000ms) to ensure background assets load
+  setTimeout(() => {
+    if (document.readyState === 'complete') {
+      exitLoader();
+    } else {
+      window.addEventListener('load', exitLoader);
+    }
+  }, 4000);
+}
+initPreloader();
 
 // 5. Mask Reveal Animation
 const revealers = document.querySelectorAll('.mask-revealer')
