@@ -89,186 +89,10 @@
         </div>
       </section>
 
-      <!-- Why Choose Us Section (Alphabet Brand Value Theme) -->
-      <style>
-        .why-choose-section {
-          padding: 7rem 8% 8rem 8%;
-          background: var(--bg-secondary);
-          position: relative;
-          overflow: hidden;
-        }
-        .why-choose-header {
-          text-align: center;
-          margin-bottom: 3rem;
-          position: relative;
-          z-index: 1;
-        }
-        .why-choose-header .subtitle {
-          font-size: 0.68rem;
-          font-weight: 700;
-          letter-spacing: 5px;
-          text-transform: uppercase;
-          color: #8B5CF6;
-          margin-bottom: 1rem;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.7rem;
-        }
-        .why-choose-header .subtitle::before,
-        .why-choose-header .subtitle::after {
-          content: '';
-          width: 28px;
-          height: 1px;
-          background: rgba(139,92,246,0.5);
-        }
-        .why-choose-header h2 {
-          font-size: clamp(2.2rem, 5vw, 3.4rem);
-          font-weight: 800;
-          letter-spacing: -1.5px;
-          margin: 0 0 1rem 0;
-          color: #fff;
-          line-height: 1.1;
-        }
-        .why-choose-header p {
-          font-size: 0.95rem;
-          color: rgba(255,255,255,0.45);
-          max-width: 520px;
-          margin: 0 auto;
-          line-height: 1.75;
-        }
-
-        .why-choose-grid {
-          display: grid;
-          grid-template-columns: repeat(5, 1fr);
-          gap: 1.2rem;
-          position: relative;
-          z-index: 1;
-        }
-        @media (max-width: 1200px) { .why-choose-grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (max-width: 768px)  { .why-choose-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 500px)  { .why-choose-grid { grid-template-columns: 1fr; } }
-
-        .why-choose-card {
-          position: relative;
-          padding: 2.5rem 1.5rem 2rem 1.5rem;
-          border-radius: 16px;
-          background: rgba(255,255,255,0.025);
-          border: 1px solid rgba(255,255,255,0.07);
-          overflow: hidden;
-          transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
-          display: flex;
-          flex-direction: column;
-          gap: 0.8rem;
-          cursor: default;
-        }
-        .why-choose-card:hover {
-          transform: translateY(-6px);
-          background: rgba(139,92,246,0.05);
-          border-color: rgba(139,92,246,0.3);
-          box-shadow: 0 16px 40px rgba(139,92,246,0.12), 0 4px 12px rgba(0,0,0,0.4);
-        }
-
-        /* Faint purple left border line on hover */
-        .why-choose-card::before {
-          content: '';
-          position: absolute;
-          top: 0; left: 0;
-          width: 3px; height: 100%;
-          background: #8B5CF6;
-          border-radius: 16px 0 0 16px;
-          opacity: 0;
-          transition: opacity 0.35s ease;
-        }
-        .why-choose-card:hover::before { opacity: 1; }
-
-        /* Large faded letter */
-        .backdrop-letter {
-          position: absolute;
-          bottom: -18px;
-          right: -6px;
-          font-size: 8rem;
-          font-weight: 900;
-          color: rgba(255,255,255,0.04);
-          pointer-events: none;
-          line-height: 1;
-          user-select: none;
-          transition: color 0.35s ease, transform 0.35s ease;
-          z-index: 0;
-        }
-        .why-choose-card:hover .backdrop-letter {
-          color: rgba(139,92,246,0.12);
-          transform: scale(1.06) rotate(-3deg);
-        }
-
-        .why-choose-card h3 {
-          font-size: 1.05rem;
-          font-weight: 700;
-          letter-spacing: 0.5px;
-          color: #fff;
-          margin: 0;
-          position: relative;
-          z-index: 1;
-        }
-        .why-choose-card p {
-          font-size: 0.85rem;
-          color: rgba(255,255,255,0.42);
-          line-height: 1.75;
-          margin: 0;
-          position: relative;
-          z-index: 1;
-        }
-        .why-choose-card p strong {
-          color: rgba(255,255,255,0.75);
-          font-weight: 600;
-        }
-      </style>
-
-      <section class="why-choose-section">
-        <div class="why-choose-header">
-          <span class="subtitle">Why Choose Us</span>
-          <h2>Why Businesses Trust <span style="background: linear-gradient(135deg, #8B5CF6, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">MYLAB.LK</span></h2>
-          <p>MYLAB.LK is committed to serving its clients to reach their goals through high-performance digital products.</p>
-        </div>
-        <div class="why-choose-grid">
-
-          <div class="why-choose-card">
-            <span class="backdrop-letter">M</span>
-            <h3>Modern Aesthetics</h3>
-            <p>We design with a <strong>modern, timeless approach</strong>. Our graphics are not just visually appealing; they are strategically crafted to remain relevant and memorable for years.</p>
-          </div>
-
-          <div class="why-choose-card">
-            <span class="backdrop-letter">Y</span>
-            <h3>Your Unique Voice</h3>
-            <p>Every brand has a story. We focus on <strong>visual storytelling</strong> to ensure your brand identity authentically reflects your unique voice and resonates with your audience.</p>
-          </div>
-
-          <div class="why-choose-card">
-            <span class="backdrop-letter">L</span>
-            <h3>Limitless Creativity</h3>
-            <p>From custom illustrations to <strong>pixel-perfect layouts</strong>, our creative process has no boundaries. We deliver original concepts tailored exclusively for your business.</p>
-          </div>
-
-          <div class="why-choose-card">
-            <span class="backdrop-letter">A</span>
-            <h3>Attention to Detail</h3>
-            <p>Great design is in the details. We meticulously refine typography, color palettes, and spacing to create a <strong>cohesive and professional brand image</strong>.</p>
-          </div>
-
-          <div class="why-choose-card">
-            <span class="backdrop-letter">B</span>
-            <h3>Brave & Bold</h3>
-            <p>Stand out from the crowd. We make <strong>confident design choices</strong> that help your brand command attention and leave a lasting impression in any market.</p>
-          </div>
-        </div>
-      </section>
-      </section>
-
-
       <!-- Modern Branding Methodology Section -->
       <style>
         .branding-methodology-section {
-          padding: 7rem 8%;
+          padding: 6rem 8%;
           background: var(--bg);
           border-top: 1px solid var(--border);
           border-bottom: 1px solid var(--border);
@@ -279,7 +103,7 @@
           max-width: 1300px;
           margin: 0 auto;
           display: grid;
-          grid-template-columns: 1.255fr 0.745fr; /* ~63% left, 37% right */
+          grid-template-columns: 1.05fr 0.95fr; /* Perfectly balanced side by side */
           gap: 4.5rem;
           align-items: center;
         }
@@ -292,7 +116,7 @@
         .methodology-left {
           display: flex;
           flex-direction: column;
-          gap: 2.5rem;
+          gap: 2.2rem;
         }
         .methodology-header .sub {
           color: var(--accent);
@@ -300,11 +124,11 @@
           letter-spacing: 3px;
           text-transform: uppercase;
           font-size: 0.75rem;
-          margin-bottom: 1rem;
+          margin-bottom: 0.8rem;
           display: inline-block;
         }
         .methodology-header h2 {
-          font-size: clamp(2rem, 4vw, 2.8rem);
+          font-size: clamp(2rem, 3.5vw, 2.5rem);
           font-weight: 800;
           color: #fff;
           margin: 0;
@@ -314,73 +138,56 @@
         .methodology-steps {
           display: flex;
           flex-direction: column;
-          gap: 2rem;
-          position: relative;
-          padding-left: 1rem;
+          gap: 1.2rem;
         }
-        
-        /* Connected timeline line */
-        .methodology-steps::before {
-          content: '';
-          position: absolute;
-          top: 2rem;
-          left: calc(1rem + 24px);
-          width: 2px;
-          height: calc(100% - 4.5rem);
-          background: linear-gradient(to bottom, var(--accent) 30%, rgba(255,255,255,0.06) 80%);
-          z-index: 1;
-        }
-        
         .methodology-step-item {
           display: flex;
-          gap: 2rem;
-          background: rgba(255, 255, 255, 0.012);
-          border: 1px solid rgba(255, 255, 255, 0.04);
-          padding: 2rem;
-          border-radius: 24px;
+          gap: 1.5rem;
+          background: rgba(255, 255, 255, 0.015);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          padding: 1.4rem 1.6rem;
+          border-radius: 20px;
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-          position: relative;
-          z-index: 2;
         }
         .methodology-step-item:hover {
           background: rgba(139, 92, 246, 0.04);
           border-color: rgba(139, 92, 246, 0.25);
-          transform: translateX(8px);
-          box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+          transform: translateY(-2px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
         .step-icon-box {
-          width: 50px;
-          height: 50px;
-          border-radius: 14px;
-          background: rgba(139, 92, 246, 0.1);
+          width: 48px;
+          height: 48px;
+          border-radius: 12px;
+          background: rgba(139, 92, 246, 0.08);
           color: var(--accent);
           display: flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
-          border: 1px solid rgba(139, 92, 246, 0.2);
+          border: 1px solid rgba(139, 92, 246, 0.15);
           transition: all 0.3s;
         }
         .methodology-step-item:hover .step-icon-box {
           background: var(--accent);
           color: #000;
           border-color: var(--accent);
-          box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+          box-shadow: 0 0 15px rgba(139, 92, 246, 0.35);
         }
         .step-icon-box i {
-          width: 22px;
-          height: 22px;
+          width: 20px;
+          height: 20px;
         }
         .step-text h4 {
-          font-size: 1.1rem;
+          font-size: 1.05rem;
           font-weight: 700;
           color: #fff;
-          margin: 0 0 0.6rem 0;
+          margin: 0 0 0.4rem 0;
         }
         .step-text p {
-          font-size: 0.88rem;
-          color: rgba(255,255,255,0.48);
-          line-height: 1.65;
+          font-size: 0.85rem;
+          color: rgba(255, 255, 255, 0.5);
+          line-height: 1.55;
           margin: 0;
         }
 
@@ -393,8 +200,8 @@
         }
         .branding-slider-wrapper {
           width: 100%;
-          max-width: 380px; /* Constrained narrow images */
-          aspect-ratio: 3 / 4;
+          max-width: 460px; /* Balanced size */
+          aspect-ratio: 3.8 / 4; /* Wider ratio to align height with the left column */
           position: relative;
           border-radius: 28px;
           overflow: hidden;
