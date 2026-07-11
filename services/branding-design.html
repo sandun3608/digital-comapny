@@ -319,171 +319,306 @@
         .slider-btn.next { right: 1rem; }
       </style>
 
-      <section class="branding-methodology-section">
+      <style>
+        .branding-diagram-section {
+          padding: 7rem 6%;
+          background: var(--bg);
+          position: relative;
+          overflow: hidden;
+        }
+        .diagram-container {
+          max-width: 1400px;
+          margin: 0 auto;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 2rem;
+          min-height: 550px;
+        }
+        @media (max-width: 991px) {
+          .diagram-container {
+            flex-direction: column;
+            gap: 3rem;
+          }
+        }
+        .diagram-column {
+          display: flex;
+          flex-direction: column;
+          gap: 2.5rem;
+          width: 30%;
+          z-index: 10;
+        }
+        @media (max-width: 991px) {
+          .diagram-column {
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+          }
+        }
+        
+        /* Central Video Wrapper */
+        .diagram-center {
+          width: 35%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          z-index: 5;
+        }
+        @media (max-width: 991px) {
+          .diagram-center {
+            width: 100%;
+            max-width: 420px;
+            margin: 1.5rem 0;
+          }
+        }
+        .center-video-mockup {
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          background: #000;
+          border-radius: 20px;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          overflow: hidden;
+          box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 40px rgba(139, 92, 246, 0.15);
+          position: relative;
+          transition: all 0.5s ease;
+        }
+        .center-video-mockup:hover {
+          border-color: rgba(139, 92, 246, 0.4);
+          box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 50px rgba(139, 92, 246, 0.3);
+        }
+        .center-video-mockup video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        
+        /* Interactive Glowing Nodes */
+        .diagram-node {
+          background: rgba(255, 255, 255, 0.015);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          padding: 1.5rem 1.8rem;
+          border-radius: 20px;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          cursor: pointer;
+          position: relative;
+        }
+        .diagram-node:hover {
+          background: rgba(139, 92, 246, 0.04);
+          border-color: rgba(139, 92, 246, 0.3);
+          transform: translateY(-4px);
+          box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        .diagram-node-icon {
+          width: 44px;
+          height: 44px;
+          border-radius: 12px;
+          background: rgba(139, 92, 246, 0.08);
+          border: 1px solid rgba(139, 92, 246, 0.15);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--accent);
+          margin-bottom: 1rem;
+          transition: all 0.3s;
+        }
+        .diagram-node:hover .diagram-node-icon {
+          background: var(--accent);
+          color: #000;
+          box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+        }
+        .diagram-node h4 {
+          font-size: 1.05rem;
+          font-weight: 700;
+          color: #fff;
+          margin: 0 0 0.5rem 0;
+        }
+        .diagram-node p {
+          font-size: 0.85rem;
+          color: rgba(255, 255, 255, 0.45);
+          line-height: 1.5;
+          margin: 0;
+        }
+
+        /* SVG Connecting Lines (Visible only on desktop screens) */
+        .diagram-svg-container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          z-index: 1;
+        }
+        @media (max-width: 991px) {
+          .diagram-svg-container {
+            display: none;
+          }
+        }
+        .connection-line {
+          fill: none;
+          stroke: rgba(255, 255, 255, 0.08);
+          stroke-width: 2;
+          stroke-dasharray: 6, 6;
+          transition: all 0.5s ease;
+        }
+        .diagram-node:hover .connection-line-ref {
+          stroke: var(--accent);
+          stroke-width: 3;
+          stroke-dasharray: none;
+          filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.6));
+        }
+      </style>
+
+      <section class="branding-diagram-section">
         <div class="methodology-header">
-          <span class="sub">Our Process</span>
-          <h2>How We Do Branding &amp; Visual Identity</h2>
+          <span class="sub">Exclusive Deliverables</span>
+          <h2>Visual Identity Core Elements</h2>
         </div>
-        <div class="methodology-container">
-          <!-- Left Content Info (60% width) -->
-          <div class="methodology-left">
-            <div class="methodology-steps">
-              <!-- Phase 1 -->
-              <div class="methodology-step-item">
-                <div class="step-icon-box"><i data-lucide="compass"></i></div>
-                <div class="step-text">
-                  <h4>Phase 01: Deep Strategy &amp; Positioning Blueprint</h4>
-                  <p>We begin by researching your target audience, analyzing competitor strategies, and structuring a clear blueprint to position your brand uniquely in the market.</p>
-                </div>
-              </div>
-              
-              <!-- Phase 2 -->
-              <div class="methodology-step-item">
-                <div class="step-icon-box"><i data-lucide="palette"></i></div>
-                <div class="step-text">
-                  <h4>Phase 02: Visual Identity &amp; Aesthetic System</h4>
-                  <p>Our team develops unique logo concepts, selects cohesive color palettes, and defines typography guidelines that capture your brand's voice and engage customers.</p>
-                </div>
-              </div>
-              
-              <!-- Phase 3 -->
-              <div class="methodology-step-item">
-                <div class="step-icon-box"><i data-lucide="layers"></i></div>
-                <div class="step-text">
-                  <h4>Phase 03: Brand Assets &amp; Packaging Mockups</h4>
-                  <p>We design custom product catalogs, premium box/label packaging, business cards, and QR codes, providing realistic 3D mockups alongside print-ready deliverables.</p>
-                </div>
-              </div>
+        
+        <div class="diagram-container">
+          <!-- Left Column (3 Nodes) -->
+          <div class="diagram-column left-col">
+            <!-- Node 1 -->
+            <div class="diagram-node" id="node-1" onmouseover="highlightLine('line-1', true)" onmouseout="highlightLine('line-1', false)">
+              <div class="diagram-node-icon"><i data-lucide="compass"></i></div>
+              <h4>Brand Strategy</h4>
+              <p>Positioning plans, target audience profiles, guidelines and identity blue prints.</p>
+            </div>
+            <!-- Node 2 -->
+            <div class="diagram-node" id="node-2" onmouseover="highlightLine('line-2', true)" onmouseout="highlightLine('line-2', false)">
+              <div class="diagram-node-icon"><i data-lucide="palette"></i></div>
+              <h4>Logo Concepts</h4>
+              <p>Unique master logo options with standard vector, SVG and source export packages.</p>
+            </div>
+            <!-- Node 3 -->
+            <div class="diagram-node" id="node-3" onmouseover="highlightLine('line-3', true)" onmouseout="highlightLine('line-3', false)">
+              <div class="diagram-node-icon"><i data-lucide="package"></i></div>
+              <h4>Product Packaging</h4>
+              <p>Custom structural boxes, label variations, and realistic 3D mockup renders.</p>
             </div>
           </div>
 
-          <!-- Right Slideshow Column (40% width) -->
-          <div class="methodology-right">
-            <div class="branding-slider-wrapper">
-              <div class="branding-slider-track" id="brandingSliderTrack">
-                <div class="branding-slide active">
-                  <img src="../branding/4fe25b94ebad2d079d2419ddc27be738.jpg" alt="Branding Showcase 1" />
-                </div>
-                <div class="branding-slide next-stack">
-                  <img src="../branding/dd7ed3bfe0711a3f2231866355491b67.jpg" alt="Branding Showcase 2" />
-                </div>
-                <div class="branding-slide prev-stack">
-                  <img src="../branding/ee382fad6c3dcb3265ab87e45f2f38a2.jpg" alt="Branding Showcase 3" />
-                </div>
-              </div>
-              
-              <div class="slider-overlay"></div>
-              
-              <button class="slider-btn prev" id="sliderPrevBtn" aria-label="Previous image">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-              </button>
-              <button class="slider-btn next" id="sliderNextBtn" aria-label="Next image">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-              </button>
-
-              <div class="slider-controls" id="sliderDotsContainer">
-                <div class="slider-dot active" data-index="0"></div>
-                <div class="slider-dot" data-index="1"></div>
-                <div class="slider-dot" data-index="2"></div>
-              </div>
+          <!-- Central Video Hub -->
+          <div class="diagram-center">
+            <div class="center-video-mockup" id="centralMockup">
+              <video autoplay loop muted playsinline>
+                <source src="../assets/fa3150714c48e5a2a604bcf6d5fc3d74_720w.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
+
+          <!-- Right Column (3 Nodes) -->
+          <div class="diagram-column right-col">
+            <!-- Node 4 -->
+            <div class="diagram-node" id="node-4" onmouseover="highlightLine('line-4', true)" onmouseout="highlightLine('line-4', false)">
+              <div class="diagram-node-icon"><i data-lucide="book-open"></i></div>
+              <h4>Catalog Layouts</h4>
+              <p>Clean digital catalogues, interactive links, product sheets and print PDFs.</p>
+            </div>
+            <!-- Node 5 -->
+            <div class="diagram-node" id="node-5" onmouseover="highlightLine('line-5', true)" onmouseout="highlightLine('line-5', false)">
+              <div class="diagram-node-icon"><i data-lucide="shopping-cart"></i></div>
+              <h4>Store Visuals</h4>
+              <p>Optimized Shopify graphics, listing listings and converting store graphics.</p>
+            </div>
+            <!-- Node 6 -->
+            <div class="diagram-node" id="node-6" onmouseover="highlightLine('line-6', true)" onmouseout="highlightLine('line-6', false)">
+              <div class="diagram-node-icon"><i data-lucide="qr-code"></i></div>
+              <h4>Custom Collaterals</h4>
+              <p>Branded dynamic QR codes, premium cards and customized thank you cards.</p>
+            </div>
+          </div>
+
+          <!-- SVG Lines Overlay Container -->
+          <svg class="diagram-svg-container" id="diagramSvg">
+            <path id="line-1" class="connection-line" d="M 0 0" />
+            <path id="line-2" class="connection-line" d="M 0 0" />
+            <path id="line-3" class="connection-line" d="M 0 0" />
+            <path id="line-4" class="connection-line" d="M 0 0" />
+            <path id="line-5" class="connection-line" d="M 0 0" />
+            <path id="line-6" class="connection-line" d="M 0 0" />
+          </svg>
         </div>
       </section>
 
       <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          const slides = document.querySelectorAll('.branding-slide');
-          const dots = document.querySelectorAll('.slider-dot');
-          const prevBtn = document.getElementById('sliderPrevBtn');
-          const nextBtn = document.getElementById('sliderNextBtn');
-          
-          if (!slides.length || !dots.length) return;
-          
-          let currentIndex = 0;
-          const slideCount = slides.length;
-          let autoSlideInterval;
+        function highlightLine(lineId, active) {
+          const path = document.getElementById(lineId);
+          if (!path) return;
+          if (active) {
+            path.style.stroke = "var(--accent)";
+            path.style.strokeWidth = "3px";
+            path.style.strokeDasharray = "none";
+            path.style.filter = "drop-shadow(0 0 8px rgba(139, 92, 246, 0.7))";
+          } else {
+            path.style.stroke = "rgba(255, 255, 255, 0.08)";
+            path.style.strokeWidth = "2px";
+            path.style.strokeDasharray = "6, 6";
+            path.style.filter = "none";
+          }
+        }
 
-          const updateSlider = (index) => {
-            currentIndex = index;
-            
-            // Loop through all slides and apply 3D stack classes
-            slides.forEach((slide, idx) => {
-              slide.classList.remove('active', 'next-stack', 'prev-stack');
+        // Draw connections dynamically on load & resize
+        function drawConnectionLines() {
+          const svg = document.getElementById('diagramSvg');
+          const mockup = document.getElementById('centralMockup');
+          if (!svg || !mockup) return;
+
+          const svgRect = svg.getBoundingClientRect();
+          const mockupRect = mockup.getBoundingClientRect();
+          
+          // Calculate center video connectors coordinates
+          const mockupCenterLeft = {
+            x: mockupRect.left - svgRect.left,
+            y: mockupRect.top - svgRect.top + (mockupRect.height / 2)
+          };
+          const mockupCenterRight = {
+            x: mockupRect.right - svgRect.left,
+            y: mockupRect.top - svgRect.top + (mockupRect.height / 2)
+          };
+
+          const nodes = [1, 2, 3, 4, 5, 6];
+          
+          nodes.forEach(num => {
+            const node = document.getElementById(`node-${num}`);
+            const path = document.getElementById(`line-${num}`);
+            if (!node || !path) return;
+
+            const nodeRect = node.getBoundingClientRect();
+            let startX, startY, endX, endY;
+
+            if (num <= 3) {
+              // Left Column Nodes connect to Left center video coordinate
+              startX = nodeRect.right - svgRect.left;
+              startY = nodeRect.top - svgRect.top + (nodeRect.height / 2);
+              endX = mockupCenterLeft.x;
+              endY = mockupCenterLeft.y;
               
-              if (idx === currentIndex) {
-                slide.classList.add('active');
-              } else if (idx === (currentIndex + 1) % slideCount) {
-                slide.classList.add('next-stack');
-              } else if (idx === (currentIndex - 1 + slideCount) % slideCount) {
-                slide.classList.add('prev-stack');
-              }
-            });
-            
-            dots.forEach((dot, idx) => {
-              if (idx === currentIndex) {
-                dot.classList.add('active');
-              } else {
-                dot.classList.remove('active');
-              }
-            });
-          };
-
-          const nextSlide = () => {
-            let nextIdx = (currentIndex + 1) % slideCount;
-            updateSlider(nextIdx);
-          };
-
-          const prevSlide = () => {
-            let prevIdx = (currentIndex - 1 + slideCount) % slideCount;
-            updateSlider(prevIdx);
-          };
-
-          const startAutoSlide = () => {
-            autoSlideInterval = setInterval(nextSlide, 4500);
-          };
-
-          const stopAutoSlide = () => {
-            clearInterval(autoSlideInterval);
-          };
-
-          nextBtn.addEventListener('click', () => {
-            stopAutoSlide();
-            nextSlide();
-            startAutoSlide();
+              // Draw a clean curved path
+              const midX = startX + (endX - startX) * 0.5;
+              path.setAttribute('d', `M ${startX} ${startY} C ${midX} ${startY}, ${midX} ${endY}, ${endX} ${endY}`);
+            } else {
+              // Right Column Nodes connect to Right center video coordinate
+              startX = nodeRect.left - svgRect.left;
+              startY = nodeRect.top - svgRect.top + (nodeRect.height / 2);
+              endX = mockupCenterRight.x;
+              endY = mockupCenterRight.y;
+              
+              // Draw a clean curved path
+              const midX = startX - (startX - endX) * 0.5;
+              path.setAttribute('d', `M ${startX} ${startY} C ${midX} ${startY}, ${midX} ${endY}, ${endX} ${endY}`);
+            }
           });
+        }
 
-          prevBtn.addEventListener('click', () => {
-            stopAutoSlide();
-            prevSlide();
-            startAutoSlide();
-          });
-
-          dots.forEach((dot, idx) => {
-            dot.addEventListener('click', () => {
-              stopAutoSlide();
-              updateSlider(idx);
-              startAutoSlide();
-            });
-          });
-
-          // Add click event to stacked cards directly for modern quick browsing
-          slides.forEach((slide, idx) => {
-            slide.addEventListener('click', () => {
-              if (slide.classList.contains('next-stack')) {
-                stopAutoSlide();
-                nextSlide();
-                startAutoSlide();
-              } else if (slide.classList.contains('prev-stack')) {
-                stopAutoSlide();
-                prevSlide();
-                startAutoSlide();
-              }
-            });
-          });
-
-          startAutoSlide();
-        });
+        window.addEventListener('load', drawConnectionLines);
+        window.addEventListener('resize', drawConnectionLines);
+        // Recalculate slightly after load for safe rendering
+        setTimeout(drawConnectionLines, 800);
       </script>
 
 
