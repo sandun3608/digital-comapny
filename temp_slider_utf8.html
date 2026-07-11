@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Branding & Graphic Design | MYLAB.LK</title>
-    <meta name="description" content="Professional branding and graphic design services by MYLAB.LK — logos, packaging, product catalogs, brand identity, and social media templates." />
+    <meta name="description" content="Professional branding and graphic design services by MYLAB.LK ΓÇö logos, packaging, product catalogs, brand identity, and social media templates." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -486,310 +486,6 @@
         });
       </script>
 
-      <style>
-        .branding-diagram-section {
-          padding: 7rem 6%;
-          background: var(--bg);
-          position: relative;
-          overflow: hidden;
-        }
-        .diagram-container {
-          max-width: 1400px;
-          margin: 0 auto;
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 2rem;
-          min-height: 550px;
-        }
-        @media (max-width: 991px) {
-          .diagram-container {
-            flex-direction: column;
-            gap: 3rem;
-          }
-        }
-        .diagram-column {
-          display: flex;
-          flex-direction: column;
-          gap: 2.5rem;
-          width: 30%;
-          z-index: 10;
-        }
-        @media (max-width: 991px) {
-          .diagram-column {
-            width: 100%;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-          }
-        }
-        
-        /* Central Video Wrapper */
-        .diagram-center {
-          width: 35%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: relative;
-          z-index: 5;
-        }
-        @media (max-width: 991px) {
-          .diagram-center {
-            width: 100%;
-            max-width: 420px;
-            margin: 1.5rem 0;
-          }
-        }
-        .center-video-mockup {
-          width: 100%;
-          max-width: 280px;
-          margin: 0 auto;
-          aspect-ratio: 9 / 16;
-          background: #000;
-          border-radius: 32px;
-          border: 6px solid #1a1a1a;
-          overflow: hidden;
-          box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 40px rgba(139, 92, 246, 0.15), inset 0 0 0 2px rgba(255,255,255,0.05);
-          position: relative;
-          transition: all 0.5s ease;
-        }
-        .center-video-mockup:hover {
-          border-color: rgba(139, 92, 246, 0.4);
-          box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 50px rgba(139, 92, 246, 0.3);
-        }
-        .center-video-mockup video {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-        
-        /* Interactive Glowing Nodes */
-        .diagram-node {
-          background: rgba(255, 255, 255, 0.015);
-          border: 1px solid rgba(255, 255, 255, 0.05);
-          padding: 1.5rem 1.8rem;
-          border-radius: 20px;
-          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-          cursor: pointer;
-          position: relative;
-        }
-        .diagram-node:hover {
-          background: rgba(139, 92, 246, 0.04);
-          border-color: rgba(139, 92, 246, 0.3);
-          transform: translateY(-4px);
-          box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-        }
-        .diagram-node-icon {
-          width: 44px;
-          height: 44px;
-          border-radius: 12px;
-          background: rgba(139, 92, 246, 0.08);
-          border: 1px solid rgba(139, 92, 246, 0.15);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: var(--accent);
-          margin-bottom: 1rem;
-          transition: all 0.3s;
-        }
-        .diagram-node:hover .diagram-node-icon {
-          background: var(--accent);
-          color: #000;
-          box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
-        }
-        .diagram-node h4 {
-          font-size: 1.05rem;
-          font-weight: 700;
-          color: #fff;
-          margin: 0 0 0.5rem 0;
-        }
-        .diagram-node p {
-          font-size: 0.85rem;
-          color: rgba(255, 255, 255, 0.45);
-          line-height: 1.5;
-          margin: 0;
-        }
-
-        /* SVG Connecting Lines (Visible only on desktop screens) */
-        .diagram-svg-container {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          pointer-events: none;
-          z-index: 1;
-        }
-        @media (max-width: 991px) {
-          .diagram-svg-container {
-            display: none;
-          }
-        }
-        .connection-line {
-          fill: none;
-          stroke: rgba(255, 255, 255, 0.08);
-          stroke-width: 2;
-          stroke-dasharray: 6, 6;
-          transition: all 0.5s ease;
-        }
-        .diagram-node:hover .connection-line-ref {
-          stroke: var(--accent);
-          stroke-width: 3;
-          stroke-dasharray: none;
-          filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.6));
-        }
-      </style>
-
-      <section class="branding-diagram-section">
-        <div class="methodology-header">
-          <span class="sub">Exclusive Deliverables</span>
-          <h2>Visual Identity Core Elements</h2>
-        </div>
-        
-        <div class="diagram-container">
-          <!-- Left Column (3 Nodes) -->
-          <div class="diagram-column left-col">
-            <!-- Node 1 -->
-            <div class="diagram-node" id="node-1" onmouseover="highlightLine('line-1', true)" onmouseout="highlightLine('line-1', false)">
-              <div class="diagram-node-icon"><i data-lucide="compass"></i></div>
-              <h4>Brand Strategy</h4>
-              <p>We define your brand values, target audience, and positioning to set you apart.</p>
-            </div>
-            <!-- Node 2 -->
-            <div class="diagram-node" id="node-2" onmouseover="highlightLine('line-2', true)" onmouseout="highlightLine('line-2', false)">
-              <div class="diagram-node-icon"><i data-lucide="palette"></i></div>
-              <h4>Logo Concepts</h4>
-              <p>We design unique, high-quality, and modern logos specifically for your brand.</p>
-            </div>
-            <!-- Node 3 -->
-            <div class="diagram-node" id="node-3" onmouseover="highlightLine('line-3', true)" onmouseout="highlightLine('line-3', false)">
-              <div class="diagram-node-icon"><i data-lucide="package"></i></div>
-              <h4>Premium Packaging</h4>
-              <p>Box layouts and label designs created with realistic 3D mockups.</p>
-            </div>
-          </div>
-
-          <!-- Central Video Hub -->
-          <div class="diagram-center">
-            <div class="center-video-mockup" id="centralMockup">
-              <video autoplay loop muted playsinline>
-                <source src="../assets/fa3150714c48e5a2a604bcf6d5fc3d74_720w.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
-
-          <!-- Right Column (3 Nodes) -->
-          <div class="diagram-column right-col">
-            <!-- Node 4 -->
-            <div class="diagram-node" id="node-4" onmouseover="highlightLine('line-4', true)" onmouseout="highlightLine('line-4', false)">
-              <div class="diagram-node-icon"><i data-lucide="book-open"></i></div>
-              <h4>Digital Catalogs</h4>
-              <p>Elegant catalog designs with interactive links and engaging product pricing sheets.</p>
-            </div>
-            <!-- Node 5 -->
-            <div class="diagram-node" id="node-5" onmouseover="highlightLine('line-5', true)" onmouseout="highlightLine('line-5', false)">
-              <div class="diagram-node-icon"><i data-lucide="shopping-cart"></i></div>
-              <h4>Store Visuals</h4>
-              <p>E-commerce listing images (Shopify/Amazon) optimized to boost your product sales.</p>
-            </div>
-            <!-- Node 6 -->
-            <div class="diagram-node" id="node-6" onmouseover="highlightLine('line-6', true)" onmouseout="highlightLine('line-6', false)">
-              <div class="diagram-node-icon"><i data-lucide="qr-code"></i></div>
-              <h4>Business Collaterals</h4>
-              <p>Custom business cards, branded QR codes, and beautiful thank you cards.</p>
-            </div>
-          </div>
-
-          <!-- SVG Lines Overlay Container -->
-          <svg class="diagram-svg-container" id="diagramSvg">
-            <path id="line-1" class="connection-line" d="M 0 0" />
-            <path id="line-2" class="connection-line" d="M 0 0" />
-            <path id="line-3" class="connection-line" d="M 0 0" />
-            <path id="line-4" class="connection-line" d="M 0 0" />
-            <path id="line-5" class="connection-line" d="M 0 0" />
-            <path id="line-6" class="connection-line" d="M 0 0" />
-          </svg>
-        </div>
-      </section>
-
-      <script>
-        function highlightLine(lineId, active) {
-          const path = document.getElementById(lineId);
-          if (!path) return;
-          if (active) {
-            path.style.stroke = "var(--accent)";
-            path.style.strokeWidth = "3px";
-            path.style.strokeDasharray = "none";
-            path.style.filter = "drop-shadow(0 0 8px rgba(139, 92, 246, 0.7))";
-          } else {
-            path.style.stroke = "rgba(255, 255, 255, 0.08)";
-            path.style.strokeWidth = "2px";
-            path.style.strokeDasharray = "6, 6";
-            path.style.filter = "none";
-          }
-        }
-
-        // Draw connections dynamically on load & resize
-        function drawConnectionLines() {
-          const svg = document.getElementById('diagramSvg');
-          const mockup = document.getElementById('centralMockup');
-          if (!svg || !mockup) return;
-
-          const svgRect = svg.getBoundingClientRect();
-          const mockupRect = mockup.getBoundingClientRect();
-          
-          // Calculate center video connectors coordinates
-          const mockupCenterLeft = {
-            x: mockupRect.left - svgRect.left,
-            y: mockupRect.top - svgRect.top + (mockupRect.height / 2)
-          };
-          const mockupCenterRight = {
-            x: mockupRect.right - svgRect.left,
-            y: mockupRect.top - svgRect.top + (mockupRect.height / 2)
-          };
-
-          const nodes = [1, 2, 3, 4, 5, 6];
-          
-          nodes.forEach(num => {
-            const node = document.getElementById(`node-${num}`);
-            const path = document.getElementById(`line-${num}`);
-            if (!node || !path) return;
-
-            const nodeRect = node.getBoundingClientRect();
-            let startX, startY, endX, endY;
-
-            if (num <= 3) {
-              // Left Column Nodes connect to Left center video coordinate
-              startX = nodeRect.right - svgRect.left;
-              startY = nodeRect.top - svgRect.top + (nodeRect.height / 2);
-              endX = mockupCenterLeft.x;
-              endY = mockupCenterLeft.y;
-              
-              // Draw a clean curved path
-              const midX = startX + (endX - startX) * 0.5;
-              path.setAttribute('d', `M ${startX} ${startY} C ${midX} ${startY}, ${midX} ${endY}, ${endX} ${endY}`);
-            } else {
-              // Right Column Nodes connect to Right center video coordinate
-              startX = nodeRect.left - svgRect.left;
-              startY = nodeRect.top - svgRect.top + (nodeRect.height / 2);
-              endX = mockupCenterRight.x;
-              endY = mockupCenterRight.y;
-              
-              // Draw a clean curved path
-              const midX = startX - (startX - endX) * 0.5;
-              path.setAttribute('d', `M ${startX} ${startY} C ${midX} ${startY}, ${midX} ${endY}, ${endX} ${endY}`);
-            }
-          });
-        }
-
-        window.addEventListener('load', drawConnectionLines);
-        window.addEventListener('resize', drawConnectionLines);
-        // Recalculate slightly after load for safe rendering
-        setTimeout(drawConnectionLines, 800);
-      </script>
-
 
       <!-- Comprehensive Services & Features Section -->
       <style>
@@ -906,7 +602,7 @@
           <!-- 1. Brand Strategy -->
           <div class="brand-service-card">
             <div class="brand-service-icon"><i data-lucide="target"></i></div>
-            <h3>🎯 Brand Strategy</h3>
+            <h3>≡ƒÄ» Brand Strategy</h3>
             <ul class="brand-service-features">
               <li><i data-lucide="check"></i> Brand research</li>
               <li><i data-lucide="check"></i> Competitor analysis</li>
@@ -921,7 +617,7 @@
           <!-- 2. Logo Design -->
           <div class="brand-service-card">
             <div class="brand-service-icon"><i data-lucide="palette"></i></div>
-            <h3>🎨 Logo Design</h3>
+            <h3>≡ƒÄ¿ Logo Design</h3>
             <ul class="brand-service-features">
               <li><i data-lucide="check"></i> Custom logo concepts</li>
               <li><i data-lucide="check"></i> Unique brand identity</li>
@@ -936,7 +632,7 @@
           <!-- 3. Product Catalog Design -->
           <div class="brand-service-card">
             <div class="brand-service-icon"><i data-lucide="book-open"></i></div>
-            <h3>📘 Product Catalog Design</h3>
+            <h3>≡ƒôÿ Product Catalog Design</h3>
             <ul class="brand-service-features">
               <li><i data-lucide="check"></i> Professional catalog layout</li>
               <li><i data-lucide="check"></i> Print-ready PDF</li>
@@ -952,7 +648,7 @@
           <!-- 4. Product Launch Campaign -->
           <div class="brand-service-card">
             <div class="brand-service-icon"><i data-lucide="rocket"></i></div>
-            <h3>🚀 Product Launch Campaign</h3>
+            <h3>≡ƒÜÇ Product Launch Campaign</h3>
             <ul class="brand-service-features">
               <li><i data-lucide="check"></i> Launch strategy planning</li>
               <li><i data-lucide="check"></i> Campaign creatives</li>
@@ -968,7 +664,7 @@
           <!-- 5. Social Media Branding -->
           <div class="brand-service-card">
             <div class="brand-service-icon"><i data-lucide="smartphone"></i></div>
-            <h3>📱 Social Media Branding</h3>
+            <h3>≡ƒô▒ Social Media Branding</h3>
             <ul class="brand-service-features">
               <li><i data-lucide="check"></i> Profile design</li>
               <li><i data-lucide="check"></i> Cover/banner design</li>
@@ -984,7 +680,7 @@
           <!-- 6. Amazon / Etsy / Shopify Listing Design -->
           <div class="brand-service-card">
             <div class="brand-service-icon"><i data-lucide="shopping-cart"></i></div>
-            <h3>🛒 Store Listing Design</h3>
+            <h3>≡ƒ¢Æ Store Listing Design</h3>
             <ul class="brand-service-features">
               <li><i data-lucide="check"></i> SEO product titles</li>
               <li><i data-lucide="check"></i> Product descriptions</li>
@@ -1000,7 +696,7 @@
           <!-- 7. Packaging Design -->
           <div class="brand-service-card">
             <div class="brand-service-icon"><i data-lucide="package"></i></div>
-            <h3>📦 Packaging Design</h3>
+            <h3>≡ƒôª Packaging Design</h3>
             <ul class="brand-service-features">
               <li><i data-lucide="check"></i> Box design</li>
               <li><i data-lucide="check"></i> Label design</li>
@@ -1014,7 +710,7 @@
           <!-- 8. Product Mockups -->
           <div class="brand-service-card">
             <div class="brand-service-icon"><i data-lucide="layers"></i></div>
-            <h3>📦 Product Mockups</h3>
+            <h3>≡ƒôª Product Mockups</h3>
             <ul class="brand-service-features">
               <li><i data-lucide="check"></i> Realistic 3D mockups</li>
               <li><i data-lucide="check"></i> Multiple viewing angles</li>
@@ -1028,7 +724,7 @@
           <!-- 9. Custom Collaterals (QR, Cards, etc.) -->
           <div class="brand-service-card">
             <div class="brand-service-icon"><i data-lucide="qr-code"></i></div>
-            <h3>🔗 Custom Collaterals</h3>
+            <h3>≡ƒöù Custom Collaterals</h3>
             <ul class="brand-service-features">
               <li><i data-lucide="check"></i> Branded QR Code Design</li>
               <li><i data-lucide="check"></i> Double-sided Business Card</li>
@@ -1042,7 +738,7 @@
           <!-- 10. SEO Optimization -->
           <div class="brand-service-card">
             <div class="brand-service-icon"><i data-lucide="search"></i></div>
-            <h3>🔍 SEO Optimization</h3>
+            <h3>≡ƒöì SEO Optimization</h3>
             <ul class="brand-service-features">
               <li><i data-lucide="check"></i> Keyword research</li>
               <li><i data-lucide="check"></i> On-page SEO</li>
@@ -1057,7 +753,7 @@
           <!-- 11. Content Creation -->
           <div class="brand-service-card">
             <div class="brand-service-icon"><i data-lucide="edit-3"></i></div>
-            <h3>✍️ Content Creation</h3>
+            <h3>Γ£ì∩╕Å Content Creation</h3>
             <ul class="brand-service-features">
               <li><i data-lucide="check"></i> Website content</li>
               <li><i data-lucide="check"></i> Product descriptions</li>
@@ -1072,7 +768,7 @@
           <!-- 12. Photography & Marketing -->
           <div class="brand-service-card">
             <div class="brand-service-icon"><i data-lucide="camera"></i></div>
-            <h3>📸 Photos &amp; Digital Ads</h3>
+            <h3>≡ƒô╕ Photos &amp; Digital Ads</h3>
             <ul class="brand-service-features">
               <li><i data-lucide="check"></i> Background removal</li>
               <li><i data-lucide="check"></i> Image retouching &amp; edit</li>
@@ -1087,7 +783,7 @@
           <!-- 13. GBP Setup & Maintenance -->
           <div class="brand-service-card">
             <div class="brand-service-icon"><i data-lucide="map-pin"></i></div>
-            <h3>📍 GBP &amp; Brand Maintenance</h3>
+            <h3>≡ƒôì GBP &amp; Brand Maintenance</h3>
             <ul class="brand-service-features">
               <li><i data-lucide="check"></i> Google Business Profile Setup</li>
               <li><i data-lucide="check"></i> Google Maps category setup</li>
@@ -1101,7 +797,7 @@
           <!-- 14. Analytics & Reporting -->
           <div class="brand-service-card">
             <div class="brand-service-icon"><i data-lucide="bar-chart-2"></i></div>
-            <h3>📊 Analytics &amp; Reporting</h3>
+            <h3>≡ƒôè Analytics &amp; Reporting</h3>
             <ul class="brand-service-features">
               <li><i data-lucide="check"></i> Google Analytics setup</li>
               <li><i data-lucide="check"></i> Google Search Console</li>
