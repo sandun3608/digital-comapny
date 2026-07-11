@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Video Editing | MYLAB.LK</title>
+    <meta name="description" content="Professional video editing services by MYLAB.LK — cinematic color grading, motion graphics, sound design, and high-impact promotional videos for your brand." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -28,11 +29,11 @@
               <a href="mobile-app.html">Mobile Applications</a>
               <a href="uiux-design.html">UI/UX Development</a>
               <a href="social-media.html">Social Media Management</a>
-              <a href="branding-design.html">Branding & Graphic Design</a>
+              <a href="branding-design.html">Branding &amp; Graphic Design</a>
               <a href="video-editing.html">Video Editing</a>
               <a href="post-design.html">Social Media Post Design</a>
-              <a href="video-presenting.html">Video Presenting & Reels</a>
-              <a href="seo-optimization.html">SEO & Backlink Strategy</a>
+              <a href="video-presenting.html">Video Presenting &amp; Reels</a>
+              <a href="seo-optimization.html">SEO &amp; Backlink Strategy</a>
             </div>
           </div>
         </div>
@@ -98,7 +99,7 @@
         }
         .why-choose-header {
           text-align: center;
-          margin-bottom: 4.5rem;
+          margin-bottom: 3rem;
           position: relative;
           z-index: 1;
         }
@@ -241,7 +242,6 @@
         </div>
         <div class="why-choose-grid">
 
-          
           <div class="why-choose-card">
             <span class="backdrop-letter">M</span>
             <h3>Masterful Storytelling</h3>
@@ -274,7 +274,650 @@
         </div>
       </section>
 
-      
+
+      <!-- Video Editing Workflow Section -->
+      <style>
+      .ve-workflow-section {
+        padding: 6rem 4%;
+        background: var(--bg);
+        overflow: hidden;
+      }
+      .ve-wf-header {
+        text-align: center;
+        margin-bottom: 5rem;
+      }
+      .ve-wf-subtitle {
+        color: var(--accent);
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+        display: inline-block;
+      }
+      .ve-wf-title {
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        font-weight: 800;
+        color: #fff;
+        margin: 0;
+        letter-spacing: -1px;
+      }
+      .ve-wf-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .ve-wf-left {
+        position: relative;
+        flex-shrink: 0;
+      }
+      .ve-wf-main-circle {
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      }
+      .ve-wf-main-circle::after {
+        content: '';
+        position: absolute;
+        top: -12px; left: -12px; right: -12px; bottom: -12px;
+        border-radius: 50%;
+        background: conic-gradient(
+          #a855f7 0deg 72deg,
+          #ec4899 72deg 144deg,
+          #f59e0b 144deg 216deg,
+          #3b82f6 216deg 288deg,
+          #22c55e 288deg 360deg
+        );
+        z-index: -1;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        padding: 12px;
+      }
+      .ve-wf-main-circle span {
+        font-size: 1.1rem;
+        color: #666;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .ve-wf-main-circle strong {
+        font-size: 1.8rem;
+        color: #111;
+        font-weight: 800;
+        margin-top: 5px;
+        line-height: 1.1;
+        text-align: center;
+      }
+
+      .ve-wf-right {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 550px;
+        position: relative;
+      }
+
+      .ve-wf-connections {
+        position: absolute;
+        top: 0; left: -100px;
+        width: 120px;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .ve-wf-path {
+        fill: none;
+        stroke: rgba(255,255,255,0.15);
+        stroke-width: 2px;
+        stroke-dasharray: 4 4;
+      }
+
+      .ve-step-card {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, var(--c1), var(--c2));
+        border-radius: 60px;
+        padding: 0.6rem 1.5rem 0.6rem 0.6rem;
+        gap: 1rem;
+        transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+        position: relative;
+        z-index: 2;
+      }
+      .ve-step-card:hover {
+        transform: translateX(10px) scale(1.02);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      }
+      .ve-step-circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: #fff;
+      }
+      .ve-step-circle .step-lbl {
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.9;
+        font-weight: 600;
+      }
+      .ve-step-circle .step-val {
+        font-size: 1.2rem;
+        font-weight: 800;
+        line-height: 1;
+      }
+      .ve-step-content {
+        flex-grow: 1;
+      }
+      .ve-step-content h4 {
+        color: #fff;
+        font-size: 0.85rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin: 0 0 2px 0;
+      }
+      .ve-step-content p {
+        color: rgba(255,255,255,0.8);
+        font-size: 0.78rem;
+        line-height: 1.4;
+        margin: 0;
+      }
+      .ve-step-icon {
+        color: rgba(255,255,255,0.4);
+        flex-shrink: 0;
+      }
+      .ve-step-icon i {
+        width: 22px;
+        height: 22px;
+      }
+
+      @media (max-width: 900px) {
+        .ve-wf-wrapper {
+          flex-direction: column;
+          gap: 3rem;
+        }
+        .ve-wf-connections { display: none; }
+        .ve-wf-main-circle {
+          width: 220px;
+          height: 220px;
+        }
+        .ve-wf-main-circle span { font-size: 0.9rem; }
+        .ve-wf-main-circle strong { font-size: 1.4rem; }
+      }
+      </style>
+
+      <section class="ve-workflow-section">
+        <div class="ve-wf-header">
+          <span class="ve-wf-subtitle">How We Work</span>
+          <h2 class="ve-wf-title">Our Video Editing Workflow</h2>
+        </div>
+        
+        <div class="ve-wf-wrapper">
+          <!-- Left Circle -->
+          <div class="ve-wf-left">
+            <div class="ve-wf-main-circle">
+              <span>VIDEO</span>
+              <strong>EDITING</strong>
+            </div>
+          </div>
+          
+          <!-- Right Steps -->
+          <div class="ve-wf-right">
+            <!-- SVG Connections -->
+            <svg class="ve-wf-connections" viewBox="0 0 100 500" preserveAspectRatio="none">
+               <path class="ve-wf-path" d="M -50,250 C 20,250 50,50 90,50" />
+               <path class="ve-wf-path" d="M -50,250 C 20,250 50,150 90,150" />
+               <path class="ve-wf-path" d="M -50,250 C 20,250 50,250 90,250" />
+               <path class="ve-wf-path" d="M -50,250 C 20,250 50,350 90,350" />
+               <path class="ve-wf-path" d="M -50,250 C 20,250 50,450 90,450" />
+            </svg>
+          
+            <!-- Step 01 -->
+            <div class="ve-step-card" style="--c1: #a855f7; --c2: #c084fc;">
+              <div class="ve-step-circle">
+                <span class="step-lbl">STEP</span><span class="step-val">01</span>
+              </div>
+              <div class="ve-step-content">
+                <h4>FOOTAGE REVIEW</h4>
+                <p>Organizing raw clips, syncing audio, and selecting the best takes for your story.</p>
+              </div>
+              <div class="ve-step-icon"><i data-lucide="film"></i></div>
+            </div>
+            
+            <!-- Step 02 -->
+            <div class="ve-step-card" style="--c1: #ec4899; --c2: #f472b6;">
+              <div class="ve-step-circle">
+                <span class="step-lbl">STEP</span><span class="step-val">02</span>
+              </div>
+              <div class="ve-step-content">
+                <h4>ROUGH CUT & ASSEMBLY</h4>
+                <p>Establishing the storyline, pacing, and core structural edits of your video.</p>
+              </div>
+              <div class="ve-step-icon"><i data-lucide="scissors"></i></div>
+            </div>
+            
+            <!-- Step 03 -->
+            <div class="ve-step-card" style="--c1: #f59e0b; --c2: #fbbf24;">
+              <div class="ve-step-circle" style="color: #d97706;">
+                <span class="step-lbl">STEP</span><span class="step-val">03</span>
+              </div>
+              <div class="ve-step-content">
+                <h4>COLOR & VFX</h4>
+                <p>Professional color grading, visual effects, and motion graphics enhancement.</p>
+              </div>
+              <div class="ve-step-icon"><i data-lucide="palette"></i></div>
+            </div>
+            
+            <!-- Step 04 -->
+            <div class="ve-step-card" style="--c1: #3b82f6; --c2: #60a5fa;">
+              <div class="ve-step-circle">
+                <span class="step-lbl">STEP</span><span class="step-val">04</span>
+              </div>
+              <div class="ve-step-content">
+                <h4>SOUND DESIGN</h4>
+                <p>Audio mixing, SFX layering, background music, and voice enhancement.</p>
+              </div>
+              <div class="ve-step-icon"><i data-lucide="volume-2"></i></div>
+            </div>
+            
+            <!-- Step 05 -->
+            <div class="ve-step-card" style="--c1: #22c55e; --c2: #4ade80;">
+              <div class="ve-step-circle" style="color: #16a34a;">
+                <span class="step-lbl">STEP</span><span class="step-val">05</span>
+              </div>
+              <div class="ve-step-content">
+                <h4>FINAL RENDER & DELIVER</h4>
+                <p>High-resolution export in multiple formats optimized for all platforms.</p>
+              </div>
+              <div class="ve-step-icon"><i data-lucide="download"></i></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- What You Get Section -->
+      <style>
+        .wyg-section {
+          padding: 6rem 6%;
+          background: var(--bg-secondary);
+          position: relative;
+        }
+        .wyg-header {
+          text-align: center;
+          margin-bottom: 4rem;
+        }
+        .wyg-subtitle {
+          color: var(--accent);
+          font-weight: 700;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          font-size: 0.75rem;
+          margin-bottom: 1rem;
+          display: inline-block;
+        }
+        .wyg-title {
+          font-size: clamp(2rem, 4vw, 3rem);
+          font-weight: 800;
+          color: #fff;
+          margin: 0;
+          letter-spacing: -1px;
+        }
+        .wyg-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.5rem;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        @media (max-width: 1024px) { .wyg-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .wyg-grid { grid-template-columns: 1fr; } }
+
+        .wyg-card {
+          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(255,255,255,0.06);
+          border-radius: 18px;
+          padding: 2.2rem 1.8rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+          position: relative;
+          overflow: hidden;
+        }
+        .wyg-card:hover {
+          transform: translateY(-6px);
+          border-color: rgba(139,92,246,0.3);
+          box-shadow: 0 16px 40px rgba(139,92,246,0.08), 0 4px 12px rgba(0,0,0,0.3);
+          background: rgba(139,92,246,0.03);
+        }
+        .wyg-card-icon {
+          width: 48px;
+          height: 48px;
+          border-radius: 14px;
+          background: rgba(139,92,246,0.1);
+          border: 1px solid rgba(139,92,246,0.2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--accent);
+          transition: all 0.3s;
+        }
+        .wyg-card:hover .wyg-card-icon {
+          background: rgba(139,92,246,0.2);
+          transform: scale(1.05);
+        }
+        .wyg-card-icon i {
+          width: 22px;
+          height: 22px;
+          stroke-width: 2px;
+        }
+        .wyg-card h3 {
+          font-size: 1.05rem;
+          font-weight: 700;
+          color: #fff;
+          margin: 0;
+        }
+        .wyg-card p {
+          font-size: 0.85rem;
+          color: rgba(255,255,255,0.5);
+          line-height: 1.65;
+          margin: 0;
+        }
+      </style>
+
+      <section class="wyg-section">
+        <div class="wyg-header">
+          <span class="wyg-subtitle">What You Get</span>
+          <h2 class="wyg-title">Everything Included in Our Editing</h2>
+        </div>
+        <div class="wyg-grid">
+          <div class="wyg-card">
+            <div class="wyg-card-icon"><i data-lucide="film"></i></div>
+            <h3>Professional Editing</h3>
+            <p>Clean cuts, seamless transitions, and narrative-driven assembly using industry-standard NLEs.</p>
+          </div>
+          <div class="wyg-card">
+            <div class="wyg-card-icon"><i data-lucide="palette"></i></div>
+            <h3>Cinematic Color Grading</h3>
+            <p>Hollywood-quality DaVinci Resolve color science to give your footage a premium, filmic look.</p>
+          </div>
+          <div class="wyg-card">
+            <div class="wyg-card-icon"><i data-lucide="music"></i></div>
+            <h3>Sound Design & Mixing</h3>
+            <p>Professional audio mixing, SFX layering, noise reduction, and voice enhancement for crisp audio.</p>
+          </div>
+          <div class="wyg-card">
+            <div class="wyg-card-icon"><i data-lucide="type"></i></div>
+            <h3>Motion Graphics & Titles</h3>
+            <p>Custom animated text, lower-thirds, kinetic typography, and branded intro/outro animations.</p>
+          </div>
+          <div class="wyg-card">
+            <div class="wyg-card-icon"><i data-lucide="sparkles"></i></div>
+            <h3>Visual Effects (VFX)</h3>
+            <p>Green-screen compositing, speed ramps, lens flares, particle effects, and cinematic overlays.</p>
+          </div>
+          <div class="wyg-card">
+            <div class="wyg-card-icon"><i data-lucide="monitor-play"></i></div>
+            <h3>Multi-Platform Export</h3>
+            <p>Optimized rendering for YouTube 4K, Instagram Reels, TikTok, Facebook, and broadcast TV.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Pricing Section -->
+      <style>
+        .ve-pricing-section {
+          padding: 6rem 4%;
+          background: var(--bg);
+          position: relative;
+        }
+        .ve-pricing-header {
+          text-align: center;
+          margin-bottom: 4.5rem;
+        }
+        .ve-pricing-subtitle {
+          color: var(--accent);
+          font-weight: 700;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          font-size: 0.8rem;
+          margin-bottom: 1rem;
+          display: inline-block;
+        }
+        .ve-pricing-title {
+          font-size: clamp(2.2rem, 4vw, 3.2rem);
+          font-weight: 800;
+          color: #fff;
+          margin: 0;
+          letter-spacing: -1px;
+        }
+        .ve-pricing-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.2rem;
+          max-width: 1100px;
+          margin: 0 auto;
+        }
+        .ve-pricing-card {
+          background: rgba(255,255,255,0.015);
+          border: 1px solid rgba(255,255,255,0.05);
+          border-radius: 20px;
+          padding: 2rem 1.5rem;
+          display: flex;
+          flex-direction: column;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          position: relative;
+          overflow: hidden;
+        }
+        .ve-pricing-card.popular {
+          border-color: rgba(139,92,246,0.3);
+          background: rgba(139,92,246,0.02);
+          transform: scale(1.03);
+          z-index: 10;
+        }
+        .ve-pricing-card:hover {
+          border-color: rgba(139,92,246,0.4);
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .ve-pricing-card.popular:hover {
+          transform: scale(1.03) translateY(-8px);
+        }
+        .ve-popular-badge {
+          position: absolute;
+          top: 1.2rem;
+          right: -2.2rem;
+          background: linear-gradient(135deg, #8B5CF6, #3B82F6);
+          color: #fff;
+          font-size: 0.6rem;
+          font-weight: 800;
+          padding: 0.3rem 2.5rem;
+          transform: rotate(45deg);
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .ve-pricing-name {
+          color: rgba(255,255,255,0.9);
+          font-size: 1.1rem;
+          font-weight: 700;
+          margin-bottom: 0.3rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+        .ve-pricing-desc {
+          font-size: 0.78rem;
+          color: rgba(255,255,255,0.35);
+          margin-bottom: 1rem;
+          line-height: 1.5;
+        }
+        .ve-pricing-price {
+          font-size: 2.2rem;
+          font-weight: 800;
+          color: #fff;
+          margin-bottom: 1.5rem;
+          display: flex;
+          align-items: baseline;
+          gap: 5px;
+        }
+        .ve-pricing-price span.currency {
+          font-size: 1.2rem;
+          color: var(--accent);
+        }
+        .ve-pricing-price span.duration {
+          font-size: 0.85rem;
+          color: rgba(255,255,255,0.4);
+          font-weight: 500;
+        }
+        .ve-pricing-features {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 1.5rem 0;
+          flex-grow: 1;
+        }
+        .ve-pricing-features li {
+          color: rgba(255,255,255,0.7);
+          font-size: 0.85rem;
+          margin-bottom: 0.8rem;
+          display: flex;
+          align-items: flex-start;
+          gap: 8px;
+          line-height: 1.4;
+        }
+        .ve-pricing-features li i {
+          color: #10B981;
+          width: 16px;
+          height: 16px;
+          flex-shrink: 0;
+          margin-top: 2px;
+        }
+        .ve-pricing-btn {
+          background: rgba(255,255,255,0.05);
+          color: #fff;
+          border: 1px solid rgba(255,255,255,0.1);
+          padding: 0.9rem;
+          border-radius: 10px;
+          font-weight: 700;
+          text-align: center;
+          text-decoration: none;
+          transition: all 0.3s;
+          display: inline-block;
+          width: 100%;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-size: 0.9rem;
+        }
+        .ve-pricing-card.popular .ve-pricing-btn {
+          background: linear-gradient(135deg, #8B5CF6, #3B82F6);
+          border: none;
+        }
+        .ve-pricing-btn:hover {
+          background: rgba(255,255,255,0.1);
+        }
+        .ve-pricing-card.popular .ve-pricing-btn:hover {
+          opacity: 0.9;
+          box-shadow: 0 10px 25px rgba(139,92,246,0.3);
+        }
+        @media (max-width: 1024px) {
+          .ve-pricing-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+          .ve-pricing-card.popular { transform: none; z-index: 1; }
+          .ve-pricing-card.popular:hover { transform: translateY(-10px); }
+        }
+        @media (max-width: 768px) {
+          .ve-pricing-grid { grid-template-columns: 1fr; }
+        }
+      </style>
+
+      <section class="ve-pricing-section">
+        <div class="ve-pricing-header">
+          <span class="ve-pricing-subtitle">Pricing Plans</span>
+          <h2 class="ve-pricing-title">Video Editing Packages</h2>
+        </div>
+        
+        <div class="ve-pricing-grid">
+          
+          <!-- Starter Plan -->
+          <div class="ve-pricing-card">
+            <div class="ve-pricing-name">Starter</div>
+            <div class="ve-pricing-desc">Perfect for short-form content & social media clips.</div>
+            <div class="ve-pricing-price"><span class="currency">Rs</span> 15,000 <span class="duration">/video</span></div>
+            <ul class="ve-pricing-features">
+              <li><i data-lucide="check-circle-2"></i> Up to 3 Minutes Duration</li>
+              <li><i data-lucide="check-circle-2"></i> Professional Cuts & Transitions</li>
+              <li><i data-lucide="check-circle-2"></i> Basic Color Correction</li>
+              <li><i data-lucide="check-circle-2"></i> Background Music</li>
+              <li><i data-lucide="check-circle-2"></i> Text Overlays & Subtitles</li>
+              <li><i data-lucide="check-circle-2"></i> 1080p HD Export</li>
+              <li><i data-lucide="check-circle-2"></i> 2 Revision Rounds</li>
+              <li><i data-lucide="check-circle-2"></i> Social Media Optimized</li>
+            </ul>
+            <a href="#contact" class="ve-pricing-btn">Get Quotes</a>
+          </div>
+
+          <!-- Standard Plan (Popular) -->
+          <div class="ve-pricing-card popular">
+            <div class="ve-popular-badge">Most Popular</div>
+            <div class="ve-pricing-name">Standard</div>
+            <div class="ve-pricing-desc">Ideal for promotional videos, ads & YouTube content.</div>
+            <div class="ve-pricing-price"><span class="currency">Rs</span> 35,000 <span class="duration">/video</span></div>
+            <ul class="ve-pricing-features">
+              <li><i data-lucide="check-circle-2"></i> Up to 10 Minutes Duration</li>
+              <li><i data-lucide="check-circle-2"></i> Advanced Editing & Pacing</li>
+              <li><i data-lucide="check-circle-2"></i> Cinematic Color Grading</li>
+              <li><i data-lucide="check-circle-2"></i> Custom Sound Design & SFX</li>
+              <li><i data-lucide="check-circle-2"></i> Animated Titles & Lower-Thirds</li>
+              <li><i data-lucide="check-circle-2"></i> Motion Graphics Elements</li>
+              <li><i data-lucide="check-circle-2"></i> 4K UHD Export</li>
+              <li><i data-lucide="check-circle-2"></i> 3 Revision Rounds</li>
+              <li><i data-lucide="check-circle-2"></i> Multi-Platform Delivery</li>
+              <li><i data-lucide="check-circle-2"></i> Priority Turnaround</li>
+            </ul>
+            <a href="#contact" class="ve-pricing-btn">Get Quotes</a>
+          </div>
+
+          <!-- Premium Plan -->
+          <div class="ve-pricing-card">
+            <div class="ve-pricing-name">Premium</div>
+            <div class="ve-pricing-desc">Full production for corporate films, documentaries & brand stories.</div>
+            <div class="ve-pricing-price"><span class="currency">Rs</span> 75,000 <span class="duration">/video</span></div>
+            <ul class="ve-pricing-features">
+              <li><i data-lucide="check-circle-2"></i> Up to 30 Minutes Duration</li>
+              <li><i data-lucide="check-circle-2"></i> Advanced Storytelling Edits</li>
+              <li><i data-lucide="check-circle-2"></i> Cinema-Grade Color Grading</li>
+              <li><i data-lucide="check-circle-2"></i> Full Sound Design & Mixing</li>
+              <li><i data-lucide="check-circle-2"></i> Custom Motion Graphics & VFX</li>
+              <li><i data-lucide="check-circle-2"></i> Animated Logo Intro & Outro</li>
+              <li><i data-lucide="check-circle-2"></i> 4K UHD + ProRes Export</li>
+              <li><i data-lucide="check-circle-2"></i> Unlimited Revisions</li>
+              <li><i data-lucide="check-circle-2"></i> Dedicated Project Manager</li>
+              <li><i data-lucide="check-circle-2"></i> 24/7 Priority Support</li>
+            </ul>
+            <a href="#contact" class="ve-pricing-btn">Get Quotes</a>
+          </div>
+
+        </div>
+      </section>
 
 
       <!-- Custom Dropdown Styling and JavaScript -->
@@ -405,7 +1048,7 @@
           <div class="quote-header">
             <span class="hero-subtitle">GET A QUOTE</span>
             <h2>Let's Start Your Project</h2>
-            <p>Tell us about your project requirements and get a custom quote within 24 hours.</p>
+            <p>Tell us about your video editing requirements and get a custom quote within 24 hours.</p>
           </div>
           <form class="quote-form" action="#" method="POST">
             <div class="form-grid">
@@ -422,30 +1065,30 @@
                 <input type="tel" id="client-phone" name="phone" placeholder="+94 77 123 4567" required />
               </div>
               <div class="form-group">
-                <label for="service-level">Website Type</label>
+                <label for="service-level">Video Type</label>
                 <div class="custom-select-wrapper" id="customSelect">
                   <div class="custom-select-trigger">
-                    <span>Multi-Page Business Website</span>
+                    <span>Promotional Video</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dropdown-chevron"><path d="m6 9 6 6 6-6"/></svg>
                   </div>
                   <div class="custom-select-options">
-                    <div class="custom-option" data-value="landing">Landing Page (Single Page)</div>
-                    <div class="custom-option selected" data-value="business">Multi-Page Business Website</div>
-                    <div class="custom-option" data-value="ecommerce">E-Commerce Store</div>
-                    <div class="custom-option" data-value="portfolio">Portfolio Website</div>
-                    <div class="custom-option" data-value="tourism">Tourism & Travel Website</div>
-                    <div class="custom-option" data-value="booking">Service Booking Platform</div>
-                    <div class="custom-option" data-value="lms">Academy & Learning Portal</div>
-                    <div class="custom-option" data-value="directory">Real Estate Directory</div>
-                    <div class="custom-option" data-value="custom">Custom Web Application</div>
+                    <div class="custom-option selected" data-value="promo">Promotional Video</div>
+                    <div class="custom-option" data-value="social">Social Media Reel / Short</div>
+                    <div class="custom-option" data-value="corporate">Corporate / Brand Film</div>
+                    <div class="custom-option" data-value="youtube">YouTube Video</div>
+                    <div class="custom-option" data-value="event">Event / Wedding Highlight</div>
+                    <div class="custom-option" data-value="documentary">Documentary / Interview</div>
+                    <div class="custom-option" data-value="product">Product Demo / Explainer</div>
+                    <div class="custom-option" data-value="music">Music Video</div>
+                    <div class="custom-option" data-value="custom">Custom Project</div>
                   </div>
-                  <input type="hidden" id="service-level" name="package" value="business" />
+                  <input type="hidden" id="service-level" name="package" value="promo" />
                 </div>
               </div>
             </div>
             <div class="form-group full-width">
               <label for="project-details">Project Details / Requirements</label>
-              <textarea id="project-details" name="details" rows="5" placeholder="Describe your website goals, features, target audience, and timeline..." required></textarea>
+              <textarea id="project-details" name="details" rows="5" placeholder="Describe your video project — type of content, duration, style reference, footage available, deadline..." required></textarea>
             </div>
             <div class="form-submit">
               <button type="submit" class="btn btn-primary magnetic">SUBMIT REQUEST <i data-lucide="send"></i></button>
@@ -889,5 +1532,3 @@
 
   </body>
 </html>
-
-
