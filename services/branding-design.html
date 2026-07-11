@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Branding & Graphic Design | MYLAB.LK</title>
+    <meta name="description" content="Professional branding and graphic design services by MYLAB.LK — logos, packaging, product catalogs, brand identity, and social media templates." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -28,11 +29,11 @@
               <a href="mobile-app.html">Mobile Applications</a>
               <a href="uiux-design.html">UI/UX Development</a>
               <a href="social-media.html">Social Media Management</a>
-              <a href="branding-design.html">Branding & Graphic Design</a>
+              <a href="branding-design.html">Branding &amp; Graphic Design</a>
               <a href="video-editing.html">Video Editing</a>
               <a href="post-design.html">Social Media Post Design</a>
-              <a href="video-presenting.html">Video Presenting & Reels</a>
-              <a href="seo-optimization.html">SEO & Backlink Strategy</a>
+              <a href="video-presenting.html">Video Presenting &amp; Reels</a>
+              <a href="seo-optimization.html">SEO &amp; Backlink Strategy</a>
             </div>
           </div>
         </div>
@@ -58,7 +59,7 @@
               <span style="display: block; white-space: nowrap; -webkit-text-fill-color: #fff;">We craft memorable</span><span style="display: block; white-space: nowrap; -webkit-text-fill-color: #fff;">Brand Identities</span>
             </h1>
             <p class="service-hero-desc">
-              Elevate your business with premium logo design, comprehensive brand guidelines, and stunning corporate collaterals.
+              Elevate your business with premium logo design, comprehensive brand guidelines, packaging, catalogs, and full campaign creatives.
             </p>
             <div class="tech-icons-group" style="display: flex; gap: 1rem; align-items: center; margin-top: 0.2rem;">
               <div style="display: flex; gap: 1rem;">
@@ -98,7 +99,7 @@
         }
         .why-choose-header {
           text-align: center;
-          margin-bottom: 4.5rem;
+          margin-bottom: 3rem;
           position: relative;
           z-index: 1;
         }
@@ -199,17 +200,6 @@
           transform: scale(1.06) rotate(-3deg);
         }
 
-        /* Number badge */
-        .card-num {
-          font-size: 0.65rem;
-          font-weight: 700;
-          letter-spacing: 2px;
-          color: rgba(139,92,246,0.6);
-          text-transform: uppercase;
-          position: relative;
-          z-index: 1;
-        }
-
         .why-choose-card h3 {
           font-size: 1.05rem;
           font-weight: 700;
@@ -241,7 +231,6 @@
         </div>
         <div class="why-choose-grid">
 
-          
           <div class="why-choose-card">
             <span class="backdrop-letter">M</span>
             <h3>Modern Aesthetics</h3>
@@ -274,7 +263,330 @@
         </div>
       </section>
 
-      
+
+      <!-- Comprehensive Services & Features Section -->
+      <style>
+        .brand-services-section {
+          padding: 6rem 6%;
+          background: var(--bg);
+          position: relative;
+        }
+        .brand-services-header {
+          text-align: center;
+          margin-bottom: 5rem;
+        }
+        .brand-services-subtitle {
+          color: var(--accent);
+          font-weight: 700;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          font-size: 0.75rem;
+          margin-bottom: 1rem;
+          display: inline-block;
+        }
+        .brand-services-title {
+          font-size: clamp(2rem, 4vw, 3rem);
+          font-weight: 800;
+          color: #fff;
+          margin: 0;
+          letter-spacing: -1px;
+        }
+        .brand-services-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.8rem;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        @media (max-width: 1024px) { .brand-services-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .brand-services-grid { grid-template-columns: 1fr; } }
+
+        .brand-service-card {
+          background: rgba(255,255,255,0.015);
+          border: 1px solid rgba(255,255,255,0.05);
+          border-radius: 24px;
+          padding: 2.5rem 2rem;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          display: flex;
+          flex-direction: column;
+          gap: 1.2rem;
+          position: relative;
+          overflow: hidden;
+        }
+        .brand-service-card:hover {
+          transform: translateY(-8px);
+          border-color: rgba(139,92,246,0.3);
+          background: rgba(139,92,246,0.02);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .brand-service-icon {
+          width: 54px;
+          height: 54px;
+          border-radius: 16px;
+          background: rgba(139,92,246,0.1);
+          border: 1px solid rgba(139,92,246,0.2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--accent);
+          transition: all 0.3s;
+        }
+        .brand-service-card:hover .brand-service-icon {
+          background: rgba(139,92,246,0.2);
+          transform: scale(1.05) rotate(3deg);
+        }
+        .brand-service-icon i {
+          width: 24px;
+          height: 24px;
+          stroke-width: 2px;
+        }
+        .brand-service-card h3 {
+          font-size: 1.2rem;
+          font-weight: 700;
+          color: #fff;
+          margin: 0;
+        }
+        .brand-service-features {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.6rem;
+        }
+        .brand-service-features li {
+          color: rgba(255,255,255,0.6);
+          font-size: 0.85rem;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        .brand-service-features li i {
+          color: var(--accent);
+          width: 14px;
+          height: 14px;
+          flex-shrink: 0;
+        }
+      </style>
+
+      <section class="brand-services-section">
+        <div class="brand-services-header">
+          <span class="brand-services-subtitle">OUR CAPABILITIES</span>
+          <h2 class="brand-services-title">Complete Branding &amp; Design Services</h2>
+        </div>
+        <div class="brand-services-grid">
+
+          <!-- 1. Brand Strategy -->
+          <div class="brand-service-card">
+            <div class="brand-service-icon"><i data-lucide="target"></i></div>
+            <h3>🎯 Brand Strategy</h3>
+            <ul class="brand-service-features">
+              <li><i data-lucide="check"></i> Brand research</li>
+              <li><i data-lucide="check"></i> Competitor analysis</li>
+              <li><i data-lucide="check"></i> Target audience analysis</li>
+              <li><i data-lucide="check"></i> Brand positioning</li>
+              <li><i data-lucide="check"></i> Brand messaging</li>
+              <li><i data-lucide="check"></i> Brand voice development</li>
+              <li><i data-lucide="check"></i> Brand guidelines</li>
+            </ul>
+          </div>
+
+          <!-- 2. Logo Design -->
+          <div class="brand-service-card">
+            <div class="brand-service-icon"><i data-lucide="palette"></i></div>
+            <h3>🎨 Logo Design</h3>
+            <ul class="brand-service-features">
+              <li><i data-lucide="check"></i> Custom logo concepts</li>
+              <li><i data-lucide="check"></i> Unique brand identity</li>
+              <li><i data-lucide="check"></i> Vector files</li>
+              <li><i data-lucide="check"></i> PNG, SVG &amp; PDF formats</li>
+              <li><i data-lucide="check"></i> Color variations</li>
+              <li><i data-lucide="check"></i> Black &amp; white version</li>
+              <li><i data-lucide="check"></i> Editable source files</li>
+            </ul>
+          </div>
+
+          <!-- 3. Product Catalog Design -->
+          <div class="brand-service-card">
+            <div class="brand-service-icon"><i data-lucide="book-open"></i></div>
+            <h3>📘 Product Catalog Design</h3>
+            <ul class="brand-service-features">
+              <li><i data-lucide="check"></i> Professional catalog layout</li>
+              <li><i data-lucide="check"></i> Print-ready PDF</li>
+              <li><i data-lucide="check"></i> Digital catalog version</li>
+              <li><i data-lucide="check"></i> Product categorization</li>
+              <li><i data-lucide="check"></i> High-quality product images</li>
+              <li><i data-lucide="check"></i> Pricing tables</li>
+              <li><i data-lucide="check"></i> Brand color integration</li>
+              <li><i data-lucide="check"></i> Interactive links</li>
+            </ul>
+          </div>
+
+          <!-- 4. Product Launch Campaign -->
+          <div class="brand-service-card">
+            <div class="brand-service-icon"><i data-lucide="rocket"></i></div>
+            <h3>🚀 Product Launch Campaign</h3>
+            <ul class="brand-service-features">
+              <li><i data-lucide="check"></i> Launch strategy planning</li>
+              <li><i data-lucide="check"></i> Campaign creatives</li>
+              <li><i data-lucide="check"></i> Social media launch posts</li>
+              <li><i data-lucide="check"></i> Landing page design</li>
+              <li><i data-lucide="check"></i> Email campaign design</li>
+              <li><i data-lucide="check"></i> Countdown graphics</li>
+              <li><i data-lucide="check"></i> Paid ad creatives</li>
+              <li><i data-lucide="check"></i> Performance tracking</li>
+            </ul>
+          </div>
+
+          <!-- 5. Social Media Branding -->
+          <div class="brand-service-card">
+            <div class="brand-service-icon"><i data-lucide="smartphone"></i></div>
+            <h3>📱 Social Media Branding</h3>
+            <ul class="brand-service-features">
+              <li><i data-lucide="check"></i> Profile design</li>
+              <li><i data-lucide="check"></i> Cover/banner design</li>
+              <li><i data-lucide="check"></i> Post templates</li>
+              <li><i data-lucide="check"></i> Story templates</li>
+              <li><i data-lucide="check"></i> Highlight icons</li>
+              <li><i data-lucide="check"></i> Brand color consistency</li>
+              <li><i data-lucide="check"></i> Social media guidelines</li>
+              <li><i data-lucide="check"></i> Platform optimization</li>
+            </ul>
+          </div>
+
+          <!-- 6. Amazon / Etsy / Shopify Listing Design -->
+          <div class="brand-service-card">
+            <div class="brand-service-icon"><i data-lucide="shopping-cart"></i></div>
+            <h3>🛒 Store Listing Design</h3>
+            <ul class="brand-service-features">
+              <li><i data-lucide="check"></i> SEO product titles</li>
+              <li><i data-lucide="check"></i> Product descriptions</li>
+              <li><i data-lucide="check"></i> Feature graphics</li>
+              <li><i data-lucide="check"></i> Infographics</li>
+              <li><i data-lucide="check"></i> Lifestyle images</li>
+              <li><i data-lucide="check"></i> Store banner design</li>
+              <li><i data-lucide="check"></i> Conversion layouts</li>
+              <li><i data-lucide="check"></i> Image optimization</li>
+            </ul>
+          </div>
+
+          <!-- 7. Packaging Design -->
+          <div class="brand-service-card">
+            <div class="brand-service-icon"><i data-lucide="package"></i></div>
+            <h3>📦 Packaging Design</h3>
+            <ul class="brand-service-features">
+              <li><i data-lucide="check"></i> Box design</li>
+              <li><i data-lucide="check"></i> Label design</li>
+              <li><i data-lucide="check"></i> Bottle &amp; pouch design</li>
+              <li><i data-lucide="check"></i> Print-ready files</li>
+              <li><i data-lucide="check"></i> Barcode placement</li>
+              <li><i data-lucide="check"></i> Premium packaging concepts</li>
+            </ul>
+          </div>
+
+          <!-- 8. Product Mockups -->
+          <div class="brand-service-card">
+            <div class="brand-service-icon"><i data-lucide="layers"></i></div>
+            <h3>📦 Product Mockups</h3>
+            <ul class="brand-service-features">
+              <li><i data-lucide="check"></i> Realistic 3D mockups</li>
+              <li><i data-lucide="check"></i> Multiple viewing angles</li>
+              <li><i data-lucide="check"></i> Lifestyle mockups</li>
+              <li><i data-lucide="check"></i> Transparent background</li>
+              <li><i data-lucide="check"></i> High-resolution images</li>
+              <li><i data-lucide="check"></i> Marketing-ready visuals</li>
+            </ul>
+          </div>
+
+          <!-- 9. Custom Collaterals (QR, Cards, etc.) -->
+          <div class="brand-service-card">
+            <div class="brand-service-icon"><i data-lucide="qr-code"></i></div>
+            <h3>🔗 Custom Collaterals</h3>
+            <ul class="brand-service-features">
+              <li><i data-lucide="check"></i> Branded QR Code Design</li>
+              <li><i data-lucide="check"></i> Double-sided Business Card</li>
+              <li><i data-lucide="check"></i> Thank You Card Design</li>
+              <li><i data-lucide="check"></i> Print-ready files</li>
+              <li><i data-lucide="check"></i> QR logo &amp; color integration</li>
+              <li><i data-lucide="check"></i> Editable source files</li>
+            </ul>
+          </div>
+
+          <!-- 10. SEO Optimization -->
+          <div class="brand-service-card">
+            <div class="brand-service-icon"><i data-lucide="search"></i></div>
+            <h3>🔍 SEO Optimization</h3>
+            <ul class="brand-service-features">
+              <li><i data-lucide="check"></i> Keyword research</li>
+              <li><i data-lucide="check"></i> On-page SEO</li>
+              <li><i data-lucide="check"></i> Technical SEO</li>
+              <li><i data-lucide="check"></i> Meta tags optimization</li>
+              <li><i data-lucide="check"></i> Image optimization</li>
+              <li><i data-lucide="check"></i> Website speed optimization</li>
+              <li><i data-lucide="check"></i> Local SEO</li>
+            </ul>
+          </div>
+
+          <!-- 11. Content Creation -->
+          <div class="brand-service-card">
+            <div class="brand-service-icon"><i data-lucide="edit-3"></i></div>
+            <h3>✍️ Content Creation</h3>
+            <ul class="brand-service-features">
+              <li><i data-lucide="check"></i> Website content</li>
+              <li><i data-lucide="check"></i> Product descriptions</li>
+              <li><i data-lucide="check"></i> Blog articles</li>
+              <li><i data-lucide="check"></i> SEO content</li>
+              <li><i data-lucide="check"></i> Social media captions</li>
+              <li><i data-lucide="check"></i> Marketing copywriting</li>
+              <li><i data-lucide="check"></i> Email content</li>
+            </ul>
+          </div>
+
+          <!-- 12. Photography & Marketing -->
+          <div class="brand-service-card">
+            <div class="brand-service-icon"><i data-lucide="camera"></i></div>
+            <h3>📸 Photos &amp; Digital Ads</h3>
+            <ul class="brand-service-features">
+              <li><i data-lucide="check"></i> Background removal</li>
+              <li><i data-lucide="check"></i> Image retouching &amp; edit</li>
+              <li><i data-lucide="check"></i> Shadow &amp; reflection effects</li>
+              <li><i data-lucide="check"></i> Facebook &amp; Instagram Ads</li>
+              <li><i data-lucide="check"></i> Google Ads campaign setup</li>
+              <li><i data-lucide="check"></i> Audience targeting &amp; retargeting</li>
+              <li><i data-lucide="check"></i> E-commerce optimized visuals</li>
+            </ul>
+          </div>
+
+          <!-- 13. GBP Setup & Maintenance -->
+          <div class="brand-service-card">
+            <div class="brand-service-icon"><i data-lucide="map-pin"></i></div>
+            <h3>📍 GBP &amp; Brand Maintenance</h3>
+            <ul class="brand-service-features">
+              <li><i data-lucide="check"></i> Google Business Profile Setup</li>
+              <li><i data-lucide="check"></i> Google Maps category setup</li>
+              <li><i data-lucide="check"></i> Website &amp; content updates</li>
+              <li><i data-lucide="check"></i> SEO &amp; brand monitoring</li>
+              <li><i data-lucide="check"></i> Design improvements</li>
+              <li><i data-lucide="check"></i> Brand consistency management</li>
+            </ul>
+          </div>
+
+          <!-- 14. Analytics & Reporting -->
+          <div class="brand-service-card">
+            <div class="brand-service-icon"><i data-lucide="bar-chart-2"></i></div>
+            <h3>📊 Analytics &amp; Reporting</h3>
+            <ul class="brand-service-features">
+              <li><i data-lucide="check"></i> Google Analytics setup</li>
+              <li><i data-lucide="check"></i> Google Search Console</li>
+              <li><i data-lucide="check"></i> Website traffic reports</li>
+              <li><i data-lucide="check"></i> SEO performance reports</li>
+              <li><i data-lucide="check"></i> Conversion tracking</li>
+              <li><i data-lucide="check"></i> Monthly performance reports</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
 
 
       <!-- Custom Dropdown Styling and JavaScript -->
@@ -422,30 +734,30 @@
                 <input type="tel" id="client-phone" name="phone" placeholder="+94 77 123 4567" required />
               </div>
               <div class="form-group">
-                <label for="service-level">Website Type</label>
+                <label for="service-level">Design Service Needed</label>
                 <div class="custom-select-wrapper" id="customSelect">
                   <div class="custom-select-trigger">
-                    <span>Multi-Page Business Website</span>
+                    <span>Full Brand Identity Pack</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dropdown-chevron"><path d="m6 9 6 6 6-6"/></svg>
                   </div>
                   <div class="custom-select-options">
-                    <div class="custom-option" data-value="landing">Landing Page (Single Page)</div>
-                    <div class="custom-option" data-value="business">Multi-Page Business Website</div>
-                    <div class="custom-option" data-value="ecommerce">E-Commerce Store</div>
-                    <div class="custom-option selected" data-value="portfolio">Portfolio Website</div>
-                    <div class="custom-option" data-value="tourism">Tourism & Travel Website</div>
-                    <div class="custom-option" data-value="booking">Service Booking Platform</div>
-                    <div class="custom-option" data-value="lms">Academy & Learning Portal</div>
-                    <div class="custom-option" data-value="directory">Real Estate Directory</div>
-                    <div class="custom-option" data-value="custom">Custom Web Application</div>
+                    <div class="custom-option selected" data-value="brand-pack">Full Brand Identity Pack</div>
+                    <div class="custom-option" data-value="logo-only">Custom Logo Design Concept</div>
+                    <div class="brand-option" data-value="packaging">Premium Packaging Design</div>
+                    <div class="custom-option" data-value="catalog">Product Catalog Layout</div>
+                    <div class="custom-option" data-value="sm-branding">Social Media Brand Kit</div>
+                    <div class="custom-option" data-value="launch">Product Launch Creatives</div>
+                    <div class="custom-option" data-value="seo">SEO &amp; Content Creation</div>
+                    <div class="custom-option" data-value="listing">Shopify/Amazon Listing Visuals</div>
+                    <div class="custom-option" data-value="maintenance">Ongoing Design Maintenance</div>
                   </div>
-                  <input type="hidden" id="service-level" name="package" value="business" />
+                  <input type="hidden" id="service-level" name="package" value="brand-pack" />
                 </div>
               </div>
             </div>
             <div class="form-group full-width">
               <label for="project-details">Project Details / Requirements</label>
-              <textarea id="project-details" name="details" rows="5" placeholder="Describe your website goals, features, target audience, and timeline..." required></textarea>
+              <textarea id="project-details" name="details" rows="5" placeholder="Describe your branding goals, items you need designed, target audience, and timeline..." required></textarea>
             </div>
             <div class="form-submit">
               <button type="submit" class="btn btn-primary magnetic">SUBMIT REQUEST <i data-lucide="send"></i></button>
@@ -460,7 +772,7 @@
           if (!wrapper) return;
           const trigger = wrapper.querySelector('.custom-select-trigger');
           const triggerSpan = trigger.querySelector('span');
-          const optionItems = wrapper.querySelectorAll('.custom-option');
+          const optionItems = wrapper.querySelectorAll('.custom-option, .brand-option');
           const hiddenInput = wrapper.querySelector('#service-level');
 
           trigger.addEventListener('click', (e) => {
@@ -471,7 +783,7 @@
           optionItems.forEach(item => {
             item.addEventListener('click', (e) => {
               e.stopPropagation();
-              const currentSelected = wrapper.querySelector('.custom-option.selected');
+              const currentSelected = wrapper.querySelector('.custom-option.selected, .brand-option.selected');
               if (currentSelected) currentSelected.classList.remove('selected');
               item.classList.add('selected');
               triggerSpan.textContent = item.textContent;
@@ -511,232 +823,6 @@
       </section>
 
       <!-- Client Testimonials Section (Google Review Widget Style) -->
-      <style>
-        .google-reviews-section {
-          padding: 6rem 10%;
-          background: var(--bg);
-          position: relative;
-        }
-        .google-reviews-container {
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-        .reviews-header {
-          text-align: center;
-          margin-bottom: 4rem;
-        }
-        .reviews-header .subtitle {
-          font-size: 0.72rem;
-          font-weight: 700;
-          letter-spacing: 4px;
-          text-transform: uppercase;
-          color: var(--accent);
-          margin-bottom: 1rem;
-          display: inline-block;
-          opacity: 0.9;
-        }
-        .reviews-header h2 {
-          font-size: clamp(2rem, 5vw, 3.5rem);
-          font-weight: 800;
-          letter-spacing: -1px;
-          text-transform: uppercase;
-          margin: 0 0 1rem 0;
-          color: #fff;
-        }
-        .reviews-header p {
-          font-size: 1rem;
-          color: var(--text-secondary);
-          margin: 0;
-        }
-        
-        /* Summary Card */
-        .reviews-summary-card {
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid rgba(255, 255, 255, 0.06);
-          border-radius: 20px;
-          padding: 2rem 3rem;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 4rem;
-          flex-wrap: wrap;
-          gap: 2rem;
-        }
-        .summary-left {
-          display: flex;
-          align-items: center;
-          gap: 1.5rem;
-          flex-wrap: wrap;
-        }
-        .rating-stars {
-          display: flex;
-          gap: 4px;
-          color: #ffb800;
-        }
-        .rating-value {
-          font-size: 2.2rem;
-          font-weight: 800;
-          color: #fff;
-        }
-        .reviews-count {
-          font-size: 0.95rem;
-          color: var(--text-secondary);
-        }
-        .write-review-btn {
-          background: linear-gradient(135deg, #b91c1c, #7f1d1d) !important;
-          color: #fff !important;
-          border: none;
-          padding: 0.9rem 2rem;
-          border-radius: 10px;
-          font-size: 0.85rem;
-          font-weight: 700;
-          letter-spacing: 0.5px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          text-decoration: none;
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          box-shadow: 0 4px 15px rgba(127, 29, 29, 0.5), inset 0 1px 0 rgba(255,255,255,0.12);
-          position: relative;
-          overflow: hidden;
-        }
-        .write-review-btn::before {
-          content: '';
-          position: absolute;
-          top: 0; left: 0; right: 0;
-          height: 50%;
-          background: rgba(255,255,255,0.07);
-          border-radius: 10px 10px 0 0;
-          pointer-events: none;
-        }
-        .write-review-btn:hover {
-          background: linear-gradient(135deg, #991b1b, #6b1c1c) !important;
-          color: #fff !important;
-          transform: translateY(-2px);
-          box-shadow: 0 12px 28px rgba(127, 29, 29, 0.6), inset 0 1px 0 rgba(255,255,255,0.1);
-        }
-
-        /* Reviews Grid */
-        .reviews-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 2.5rem;
-          margin-bottom: 3rem;
-        }
-        @media (max-width: 1024px) {
-          .reviews-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-        @media (max-width: 768px) {
-          .reviews-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-
-        .review-item-card {
-          background: rgba(255, 255, 255, 0.01);
-          border: 1px solid rgba(255, 255, 255, 0.04);
-          border-radius: 20px;
-          padding: 2.5rem;
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          transition: all 0.3s;
-        }
-        .review-item-card:hover {
-          background: rgba(255, 255, 255, 0.02);
-          border-color: rgba(139, 92, 246, 0.2);
-          transform: translateY(-5px);
-        }
-        .review-card-top {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 1.5rem;
-        }
-        .review-stars-time {
-          display: flex;
-          flex-direction: column;
-          gap: 6px;
-        }
-        .review-stars-row {
-          display: flex;
-          gap: 3px;
-          color: #ffb800;
-        }
-        .review-time {
-          font-size: 0.8rem;
-          color: rgba(255, 255, 255, 0.35);
-        }
-        .google-icon {
-          width: 18px;
-          height: 18px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .review-card-text {
-          font-size: 0.95rem;
-          color: rgba(255, 255, 255, 0.7);
-          line-height: 1.7;
-          margin: 0 0 2rem 0;
-          flex-grow: 1;
-        }
-        .review-card-user {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-        }
-        .user-avatar {
-          width: 44px;
-          height: 44px;
-          border-radius: 50%;
-          background: rgba(139, 92, 246, 0.1);
-          border: 1px solid rgba(139, 92, 246, 0.2);
-          color: var(--accent);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: 700;
-          font-size: 0.9rem;
-        }
-        .user-info-name {
-          font-weight: 600;
-          font-size: 0.95rem;
-          color: #fff;
-        }
-
-        /* Carousel Navigation at the bottom */
-        .reviews-nav {
-          display: flex;
-          justify-content: center;
-          gap: 1rem;
-          margin-top: 1rem;
-        }
-        .nav-arrow-btn {
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          background: rgba(255, 255, 255, 0.02);
-          color: #fff;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          transition: all 0.3s;
-        }
-        .nav-arrow-btn:hover {
-          background: var(--accent);
-          border-color: var(--accent);
-          color: #000;
-          transform: scale(1.05);
-        }
-      </style>
-
       <section class="google-reviews-section">
         <div class="google-reviews-container">
           <div class="reviews-header">
@@ -851,11 +937,10 @@
       </section>
     </main>
 
-        <footer class="custom-footer">
+    <footer class="custom-footer">
       <div class="footer-bg-overlay"></div>
       <div class="custom-footer-content">
         <div class="footer-logo-area">
-          
           <h2>MYLAB.LK</h2>
         </div>
         
@@ -869,7 +954,7 @@
 
         <div class="footer-socials">
           <a href="https://web.facebook.com/profile.php?id=61581934980767" target="_blank" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="https://wa.me/94724729166" target="_blank" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+          <a href="https://wa.me/94724729166" target="_blank" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
           <a href="https://www.linkedin.com/in/mylab-lk-10596040a/" target="_blank" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
           <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
         </div>
@@ -889,5 +974,3 @@
 
   </body>
 </html>
-
-
