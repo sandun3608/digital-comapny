@@ -262,6 +262,348 @@
           </div>
         </div>
       </section>
+      </section>
+
+
+      <!-- Modern Branding Methodology Section -->
+      <style>
+        .branding-methodology-section {
+          padding: 7rem 8%;
+          background: var(--bg);
+          border-top: 1px solid var(--border);
+          border-bottom: 1px solid var(--border);
+          position: relative;
+          overflow: hidden;
+        }
+        .methodology-container {
+          max-width: 1300px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1.2fr 0.8fr; /* 60% left, 40% right */
+          gap: 4rem;
+          align-items: center;
+        }
+        @media (max-width: 1024px) {
+          .methodology-container {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+          }
+        }
+        .methodology-left {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+        .methodology-header .sub {
+          color: var(--accent);
+          font-weight: 700;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          font-size: 0.75rem;
+          margin-bottom: 1rem;
+          display: inline-block;
+        }
+        .methodology-header h2 {
+          font-size: clamp(2rem, 4vw, 2.8rem);
+          font-weight: 800;
+          color: #fff;
+          margin: 0;
+          letter-spacing: -1.5px;
+          line-height: 1.15;
+        }
+        .methodology-steps {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+        .methodology-step-item {
+          display: flex;
+          gap: 1.5rem;
+          background: rgba(255, 255, 255, 0.015);
+          border: 1px solid rgba(255, 255, 255, 0.04);
+          padding: 1.8rem;
+          border-radius: 20px;
+          transition: all 0.3s ease;
+        }
+        .methodology-step-item:hover {
+          background: rgba(139, 92, 246, 0.03);
+          border-color: rgba(139, 92, 246, 0.2);
+          transform: translateX(8px);
+        }
+        .step-icon-box {
+          width: 48px;
+          height: 48px;
+          border-radius: 12px;
+          background: rgba(139, 92, 246, 0.1);
+          color: var(--accent);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+        .step-icon-box i {
+          width: 20px;
+          height: 20px;
+        }
+        .step-text h4 {
+          font-size: 1.05rem;
+          font-weight: 700;
+          color: #fff;
+          margin: 0 0 0.5rem 0;
+        }
+        .step-text p {
+          font-size: 0.85rem;
+          color: rgba(255,255,255,0.5);
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        /* Right Column Slider Styling */
+        .methodology-right {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+        }
+        .branding-slider-wrapper {
+          width: 100%;
+          max-width: 380px; /* Kept constrained because they are narrow */
+          aspect-ratio: 3 / 4;
+          position: relative;
+          border-radius: 24px;
+          overflow: hidden;
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+        .branding-slider-track {
+          display: flex;
+          width: 400%;
+          height: 100%;
+          transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .branding-slide {
+          width: 25%;
+          height: 100%;
+          position: relative;
+        }
+        .branding-slide img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.8s ease;
+        }
+        .branding-slider-wrapper:hover .branding-slide img {
+          transform: scale(1.05);
+        }
+        
+        /* Slider Overlay Gradient */
+        .slider-overlay {
+          position: absolute;
+          bottom: 0; left: 0; right: 0;
+          height: 40%;
+          background: linear-gradient(to top, rgba(15,15,15,0.9), transparent);
+          z-index: 2;
+          pointer-events: none;
+        }
+        
+        /* Slider Controls */
+        .slider-controls {
+          position: absolute;
+          bottom: 1.5rem;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 0.8rem;
+          z-index: 3;
+        }
+        .slider-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.3);
+          cursor: pointer;
+          transition: all 0.3s;
+        }
+        .slider-dot.active {
+          background: var(--accent);
+          width: 24px;
+          border-radius: 4px;
+        }
+        .slider-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: rgba(20, 20, 20, 0.6);
+          border: 1px solid rgba(255,255,255,0.1);
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          z-index: 3;
+          transition: all 0.3s;
+          opacity: 0;
+        }
+        .branding-slider-wrapper:hover .slider-btn {
+          opacity: 1;
+        }
+        .slider-btn:hover {
+          background: var(--accent);
+          color: #000;
+          border-color: var(--accent);
+        }
+        .slider-btn.prev { left: 1rem; }
+        .slider-btn.next { right: 1rem; }
+      </style>
+
+      <section class="branding-methodology-section">
+        <div class="methodology-container">
+          <!-- Left Content Info (60% width) -->
+          <div class="methodology-left">
+            <div class="methodology-header">
+              <span class="sub">Our Process</span>
+              <h2>How We Do Branding &amp; Visual Identity</h2>
+            </div>
+            
+            <div class="methodology-steps">
+              <!-- Phase 1 -->
+              <div class="methodology-step-item">
+                <div class="step-icon-box"><i data-lucide="compass"></i></div>
+                <div class="step-text">
+                  <h4>Phase 01: Deep Strategy &amp; Position</h4>
+                  <p>අපි මුලින්ම ඔයාගේ Business එකේ Target Audience එක සහ තරඟකරුවන් (Competitors) ගැන ගැඹුරින් අධ්‍යයනය කරලා ඔයාගේ Brand එක වෙනස්ම කෝණයකින් වෙළඳපොලේ ස්ථානගත (Position) කරන්න අවශ්‍ය Blueprint එක හදනවා.</p>
+                </div>
+              </div>
+              
+              <!-- Phase 2 -->
+              <div class="methodology-step-item">
+                <div class="step-icon-box"><i data-lucide="palette"></i></div>
+                <div class="step-text">
+                  <h4>Phase 02: Visual Identity &amp; Aesthetic Blueprint</h4>
+                  <p>ලෝගෝ නිර්මාණය (Logo Concept Development), වර්ණ තෝරාගැනීම (Color Palette Integration) සහ අකුරු සැකසුම (Typography Guidelines) ඇතුළුව පාරිභෝගිකයාගේ හිතට තදින්ම කාවදින Visual Assets නිර්මාණය කරනවා.</p>
+                </div>
+              </div>
+              
+              <!-- Phase 3 -->
+              <div class="methodology-step-item">
+                <div class="step-icon-box"><i data-lucide="layers"></i></div>
+                <div class="step-text">
+                  <h4>Phase 03: Brand Assets &amp; Packaging Mockups</h4>
+                  <p>Catalog Design, Packaging Designs, Business Cards, සහ Custom QR Codes වැනි Brand Collateral නිර්මාණය කරලා ඒවායේ High-Resolution 3D Mockups සහ පින්තූර සකස් කරනවා.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Slideshow Column (40% width) -->
+          <div class="methodology-right">
+            <div class="branding-slider-wrapper">
+              <div class="branding-slider-track" id="brandingSliderTrack">
+                <div class="branding-slide">
+                  <img src="../a5/1.jpeg" alt="Branding Showcase 1" />
+                </div>
+                <div class="branding-slide">
+                  <img src="../a5/2.jpeg" alt="Branding Showcase 2" />
+                </div>
+                <div class="branding-slide">
+                  <img src="../a5/3.jpeg" alt="Branding Showcase 3" />
+                </div>
+                <div class="branding-slide">
+                  <img src="../a5/4.jpeg" alt="Branding Showcase 4" />
+                </div>
+              </div>
+              
+              <div class="slider-overlay"></div>
+              
+              <button class="slider-btn prev" id="sliderPrevBtn" aria-label="Previous image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button class="slider-btn next" id="sliderNextBtn" aria-label="Next image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+
+              <div class="slider-controls" id="sliderDotsContainer">
+                <div class="slider-dot active" data-index="0"></div>
+                <div class="slider-dot" data-index="1"></div>
+                <div class="slider-dot" data-index="2"></div>
+                <div class="slider-dot" data-index="3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const track = document.getElementById('brandingSliderTrack');
+          const dots = document.querySelectorAll('.slider-dot');
+          const prevBtn = document.getElementById('sliderPrevBtn');
+          const nextBtn = document.getElementById('sliderNextBtn');
+          
+          if (!track || !dots.length) return;
+          
+          let currentIndex = 0;
+          const slideCount = dots.length;
+          let autoSlideInterval;
+
+          const updateSlider = (index) => {
+            currentIndex = index;
+            track.style.transform = `translateX(-${currentIndex * 25}%)`;
+            
+            dots.forEach((dot, idx) => {
+              if (idx === currentIndex) {
+                dot.classList.add('active');
+              } else {
+                dot.classList.remove('active');
+              }
+            });
+          };
+
+          const nextSlide = () => {
+            let nextIdx = (currentIndex + 1) % slideCount;
+            updateSlider(nextIdx);
+          };
+
+          const prevSlide = () => {
+            let prevIdx = (currentIndex - 1 + slideCount) % slideCount;
+            updateSlider(prevIdx);
+          };
+
+          const startAutoSlide = () => {
+            autoSlideInterval = setInterval(nextSlide, 4000);
+          };
+
+          const stopAutoSlide = () => {
+            clearInterval(autoSlideInterval);
+          };
+
+          nextBtn.addEventListener('click', () => {
+            stopAutoSlide();
+            nextSlide();
+            startAutoSlide();
+          });
+
+          prevBtn.addEventListener('click', () => {
+            stopAutoSlide();
+            prevSlide();
+            startAutoSlide();
+          });
+
+          dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+              stopAutoSlide();
+              updateSlider(idx);
+              startAutoSlide();
+            });
+          });
+
+          startAutoSlide();
+        });
+      </script>
 
 
       <!-- Comprehensive Services & Features Section -->
