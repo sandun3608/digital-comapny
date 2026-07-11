@@ -214,24 +214,45 @@
           box-shadow: 0 35px 70px rgba(0, 0, 0, 0.6);
         }
         .branding-slider-track {
-          display: flex;
-          width: 300%; /* 3 slides */
+          position: relative;
+          width: 100%;
           height: 100%;
-          transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+          perspective: 1000px;
         }
         .branding-slide {
-          width: 33.333%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
           height: 100%;
-          position: relative;
+          border-radius: 28px;
+          overflow: hidden;
+          transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+          opacity: 0;
+          transform: scale(0.8) translate3d(0, 0, -100px);
+          z-index: 1;
+        }
+        .branding-slide.active {
+          opacity: 1;
+          transform: scale(1) translate3d(0, 0, 0);
+          z-index: 3;
+        }
+        .branding-slide.next-stack {
+          opacity: 0.6;
+          transform: scale(0.9) translate3d(20px, 0, -50px);
+          z-index: 2;
+          cursor: pointer;
+        }
+        .branding-slide.prev-stack {
+          opacity: 0.6;
+          transform: scale(0.9) translate3d(-20px, 0, -50px);
+          z-index: 2;
+          cursor: pointer;
         }
         .branding-slide img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .branding-slider-wrapper:hover .branding-slide img {
-          transform: scale(1.06);
         }
         
         /* Slider Overlay Gradient */
@@ -340,13 +361,13 @@
           <div class="methodology-right">
             <div class="branding-slider-wrapper">
               <div class="branding-slider-track" id="brandingSliderTrack">
-                <div class="branding-slide">
+                <div class="branding-slide active">
                   <img src="../branding/4fe25b94ebad2d079d2419ddc27be738.jpg" alt="Branding Showcase 1" />
                 </div>
-                <div class="branding-slide">
+                <div class="branding-slide next-stack">
                   <img src="../branding/dd7ed3bfe0711a3f2231866355491b67.jpg" alt="Branding Showcase 2" />
                 </div>
-                <div class="branding-slide">
+                <div class="branding-slide prev-stack">
                   <img src="../branding/ee382fad6c3dcb3265ab87e45f2f38a2.jpg" alt="Branding Showcase 3" />
                 </div>
               </div>
@@ -372,20 +393,32 @@
 
       <script>
         document.addEventListener('DOMContentLoaded', () => {
-          const track = document.getElementById('brandingSliderTrack');
+          const slides = document.querySelectorAll('.branding-slide');
           const dots = document.querySelectorAll('.slider-dot');
           const prevBtn = document.getElementById('sliderPrevBtn');
           const nextBtn = document.getElementById('sliderNextBtn');
           
-          if (!track || !dots.length) return;
+          if (!slides.length || !dots.length) return;
           
           let currentIndex = 0;
-          const slideCount = dots.length;
+          const slideCount = slides.length;
           let autoSlideInterval;
 
           const updateSlider = (index) => {
             currentIndex = index;
-            track.style.transform = `translateX(-${currentIndex * (100 / 3)}%)`;
+            
+            // Loop through all slides and apply 3D stack classes
+            slides.forEach((slide, idx) => {
+              slide.classList.remove('active', 'next-stack', 'prev-stack');
+              
+              if (idx === currentIndex) {
+                slide.classList.add('active');
+              } else if (idx === (currentIndex + 1) % slideCount) {
+                slide.classList.add('next-stack');
+              } else if (idx === (currentIndex - 1 + slideCount) % slideCount) {
+                slide.classList.add('prev-stack');
+              }
+            });
             
             dots.forEach((dot, idx) => {
               if (idx === currentIndex) {
@@ -407,7 +440,7 @@
           };
 
           const startAutoSlide = () => {
-            autoSlideInterval = setInterval(nextSlide, 4000);
+            autoSlideInterval = setInterval(nextSlide, 4500);
           };
 
           const stopAutoSlide = () => {
@@ -431,6 +464,21 @@
               stopAutoSlide();
               updateSlider(idx);
               startAutoSlide();
+            });
+          });
+
+          // Add click event to stacked cards directly for modern quick browsing
+          slides.forEach((slide, idx) => {
+            slide.addEventListener('click', () => {
+              if (slide.classList.contains('next-stack')) {
+                stopAutoSlide();
+                nextSlide();
+                startAutoSlide();
+              } else if (slide.classList.contains('prev-stack')) {
+                stopAutoSlide();
+                prevSlide();
+                startAutoSlide();
+              }
             });
           });
 
