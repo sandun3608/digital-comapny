@@ -377,12 +377,14 @@
         }
         .center-video-mockup {
           width: 100%;
-          aspect-ratio: 16 / 9;
+          max-width: 280px;
+          margin: 0 auto;
+          aspect-ratio: 9 / 16;
           background: #000;
-          border-radius: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 32px;
+          border: 6px solid #1a1a1a;
           overflow: hidden;
-          box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 40px rgba(139, 92, 246, 0.15);
+          box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 40px rgba(139, 92, 246, 0.15), inset 0 0 0 2px rgba(255,255,255,0.05);
           position: relative;
           transition: all 0.5s ease;
         }
@@ -486,19 +488,19 @@
             <div class="diagram-node" id="node-1" onmouseover="highlightLine('line-1', true)" onmouseout="highlightLine('line-1', false)">
               <div class="diagram-node-icon"><i data-lucide="compass"></i></div>
               <h4>Brand Strategy</h4>
-              <p>Positioning plans, target audience profiles, guidelines and identity blue prints.</p>
+              <p>We define your brand values, target audience, and positioning to set you apart.</p>
             </div>
             <!-- Node 2 -->
             <div class="diagram-node" id="node-2" onmouseover="highlightLine('line-2', true)" onmouseout="highlightLine('line-2', false)">
               <div class="diagram-node-icon"><i data-lucide="palette"></i></div>
               <h4>Logo Concepts</h4>
-              <p>Unique master logo options with standard vector, SVG and source export packages.</p>
+              <p>We design unique, high-quality, and modern logos specifically for your brand.</p>
             </div>
             <!-- Node 3 -->
             <div class="diagram-node" id="node-3" onmouseover="highlightLine('line-3', true)" onmouseout="highlightLine('line-3', false)">
               <div class="diagram-node-icon"><i data-lucide="package"></i></div>
-              <h4>Product Packaging</h4>
-              <p>Custom structural boxes, label variations, and realistic 3D mockup renders.</p>
+              <h4>Premium Packaging</h4>
+              <p>Box layouts and label designs created with realistic 3D mockups.</p>
             </div>
           </div>
 
@@ -516,20 +518,20 @@
             <!-- Node 4 -->
             <div class="diagram-node" id="node-4" onmouseover="highlightLine('line-4', true)" onmouseout="highlightLine('line-4', false)">
               <div class="diagram-node-icon"><i data-lucide="book-open"></i></div>
-              <h4>Catalog Layouts</h4>
-              <p>Clean digital catalogues, interactive links, product sheets and print PDFs.</p>
+              <h4>Digital Catalogs</h4>
+              <p>Elegant catalog designs with interactive links and engaging product pricing sheets.</p>
             </div>
             <!-- Node 5 -->
             <div class="diagram-node" id="node-5" onmouseover="highlightLine('line-5', true)" onmouseout="highlightLine('line-5', false)">
               <div class="diagram-node-icon"><i data-lucide="shopping-cart"></i></div>
               <h4>Store Visuals</h4>
-              <p>Optimized Shopify graphics, listing listings and converting store graphics.</p>
+              <p>E-commerce listing images (Shopify/Amazon) optimized to boost your product sales.</p>
             </div>
             <!-- Node 6 -->
             <div class="diagram-node" id="node-6" onmouseover="highlightLine('line-6', true)" onmouseout="highlightLine('line-6', false)">
               <div class="diagram-node-icon"><i data-lucide="qr-code"></i></div>
-              <h4>Custom Collaterals</h4>
-              <p>Branded dynamic QR codes, premium cards and customized thank you cards.</p>
+              <h4>Business Collaterals</h4>
+              <p>Custom business cards, branded QR codes, and beautiful thank you cards.</p>
             </div>
           </div>
 
