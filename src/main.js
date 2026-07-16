@@ -286,37 +286,37 @@ function initCoverFlow() {
           zOffset = -150 // Push center back
           rotY = 0
           opacity = 1
-          scale = 0.75 // Center is smallest
+          scale = 1 // Use natural perspective size
           blurVal = 0
           slide.classList.add('active')
         } else {
           slide.classList.remove('active')
           
           const isMobile = window.innerWidth <= 768
-          const rotStep = isMobile ? 22 : 35
+          const rotStep = isMobile ? 18 : 28 // Smoother curve
           rotY = -direction * rotStep
 
           const slideW = slide.offsetWidth || 300
-          const spacingFactor = isMobile ? 0.65 : 0.8
+          const spacingFactor = isMobile ? 0.75 : 0.95
           
           if (absOffset === 1) xOffset = direction * slideW * spacingFactor
-          else if (absOffset === 2) xOffset = direction * slideW * spacingFactor * 1.85
-          else if (absOffset === 3) xOffset = direction * slideW * spacingFactor * 2.7
+          else if (absOffset === 2) xOffset = direction * slideW * spacingFactor * 1.95
+          else if (absOffset === 3) xOffset = direction * slideW * spacingFactor * 2.85
  
-          const zStep = isMobile ? 60 : 120
+          const zStep = isMobile ? 50 : 80
           zOffset = absOffset * zStep // Bring outer items forward
  
           if (absOffset === 1) {
             opacity = 0.95
-            scale = 0.95 // Slightly larger than center
+            scale = 1 
             blurVal = 0
           } else if (absOffset === 2) {
             opacity = 1
-            scale = 1.2 // Even larger
+            scale = 1 
             blurVal = 0
           } else if (absOffset === 3) {
             opacity = 1
-            scale = 1.5 // Largest
+            scale = 1 
             blurVal = 0
           }
         }
