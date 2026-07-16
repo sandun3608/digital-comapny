@@ -2873,21 +2873,22 @@ footer.custom-footer::before {
 
 /* Premium Shimmer CTA Button in Navbar */
 .nav-cta-btn {
-  background: #8b5cf6 !important; /* Premium solid purple background */
+  background: linear-gradient(135deg, #a855f7, #7c3aed) !important; /* Modern vibrant purple gradient */
   color: #ffffff !important; /* Clear white text */
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  padding: 0.8rem 2.8rem !important; /* Made larger and longer */
-  font-size: 0.88rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 1.2px !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  padding: 1.1rem 3.8rem !important; /* Made significantly larger and longer */
+  font-size: 1.1rem !important; /* Larger text */
+  font-weight: 800 !important; /* Bolder text for visibility */
+  letter-spacing: 1.5px !important;
   border-radius: 50px !important; /* Pill shaped for premium aesthetic */
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3) !important;
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4) !important;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
   position: relative !important;
   overflow: hidden !important;
   display: inline-flex !important;
   align-items: center !important;
   text-decoration: none !important;
+  text-transform: uppercase !important;
 }
 
 .nav-cta-btn::before {
