@@ -275,7 +275,7 @@ function initCoverFlow() {
       let zOffset = 0
       let rotY = 0
       let opacity = 1
-      let zIndex = 10 - absOffset
+      let zIndex = 10 + absOffset // Outer items have higher z-index (overlap center)
       let isCenter = offset === 0
       let scale = 1
       let blurVal = 0
@@ -283,44 +283,44 @@ function initCoverFlow() {
       if (absOffset <= 3) {
         if (isCenter) {
           xOffset = 0
-          zOffset = 0
+          zOffset = -150 // Push center back
           rotY = 0
           opacity = 1
-          scale = 1.15
+          scale = 0.75 // Center is smallest
           blurVal = 0
           slide.classList.add('active')
         } else {
           slide.classList.remove('active')
           
           const isMobile = window.innerWidth <= 768
-          const rotStep = isMobile ? 22 : 30
+          const rotStep = isMobile ? 22 : 35
           rotY = -direction * rotStep
 
           if (!isMobile) {
-            if (absOffset === 1) xOffset = direction * 380
-            else if (absOffset === 2) xOffset = direction * 660
-            else if (absOffset === 3) xOffset = direction * 880
+            if (absOffset === 1) xOffset = direction * 250
+            else if (absOffset === 2) xOffset = direction * 520
+            else if (absOffset === 3) xOffset = direction * 850
           } else {
-            if (absOffset === 1) xOffset = direction * 160
-            else if (absOffset === 2) xOffset = direction * 280
+            if (absOffset === 1) xOffset = direction * 130
+            else if (absOffset === 2) xOffset = direction * 250
             else if (absOffset === 3) xOffset = direction * 380
           }
  
-          const zStep = isMobile ? 80 : 150
-          zOffset = -absOffset * zStep
+          const zStep = isMobile ? 60 : 120
+          zOffset = absOffset * zStep // Bring outer items forward
  
           if (absOffset === 1) {
-            opacity = 0.8
-            scale = 0.70
-            blurVal = 4
+            opacity = 0.95
+            scale = 0.95 // Slightly larger than center
+            blurVal = 0
           } else if (absOffset === 2) {
-            opacity = 0.5
-            scale = 0.50
-            blurVal = 8
+            opacity = 1
+            scale = 1.2 // Even larger
+            blurVal = 0
           } else if (absOffset === 3) {
-            opacity = 0.2
-            scale = 0.35
-            blurVal = 12
+            opacity = 1
+            scale = 1.5 // Largest
+            blurVal = 0
           }
         }
       } else {
