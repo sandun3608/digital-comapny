@@ -214,6 +214,11 @@ nav.scrolled {
   stroke-width: 1.8;
 }
 
+/* Hide mobile socials on desktop screens */
+.mobile-socials {
+  display: none;
+}
+
 /* Hero Section Full Background Overlay Styles */
 .overlay-hero {
   position: relative;
@@ -2868,11 +2873,11 @@ footer.custom-footer::before {
 
 /* Premium Shimmer CTA Button in Navbar */
 .nav-cta-btn {
-  background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%) !important;
-  color: #ffffff !important;
+  background: var(--accent) !important;
+  color: #000000 !important;
   border: none !important;
-  padding: 0.7rem 2.2rem !important; /* Made wider and longer for a premium look */
-  font-size: 0.82rem !important;
+  padding: 0.8rem 2.4rem !important; /* Larger padding to match the hero button style */
+  font-size: 0.85rem !important;
   font-weight: 700 !important;
   letter-spacing: 1.2px !important;
   border-radius: 50px !important; /* Pill shaped for premium aesthetic */
