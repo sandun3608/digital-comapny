@@ -2934,3 +2934,13 @@ footer.custom-footer::before {
     height: 240px;
   }
 }
+
+.portrait-coverflow .slide-image-wrapper::after {
+  display: none !important;
+}
+
+.portrait-coverflow .slide-image-wrapper img {
+  filter: none !important;
+  opacity: 1 !important;
+}
+

@@ -281,9 +281,11 @@ function initCoverFlow() {
       let blurVal = 0
 
       if (absOffset <= 3) {
+        const isPortrait = container.closest('.portrait-coverflow') !== null
+        
         if (isCenter) {
           xOffset = 0
-          zOffset = -150 // Push center back
+          zOffset = isPortrait ? -200 : -150 // Push center back more for portrait
           rotY = 0
           opacity = 1
           scale = 1 // Use natural perspective size
@@ -293,17 +295,17 @@ function initCoverFlow() {
           slide.classList.remove('active')
           
           const isMobile = window.innerWidth <= 768
-          const rotStep = isMobile ? 18 : 28 // Smoother curve
+          const rotStep = isMobile ? 18 : (isPortrait ? 22 : 28) // Smoother curve
           rotY = -direction * rotStep
 
           const slideW = slide.offsetWidth || 300
-          const spacingFactor = isMobile ? 0.75 : 0.95
+          const spacingFactor = isMobile ? (isPortrait ? 0.9 : 0.75) : (isPortrait ? 1.1 : 0.95)
           
           if (absOffset === 1) xOffset = direction * slideW * spacingFactor
-          else if (absOffset === 2) xOffset = direction * slideW * spacingFactor * 1.95
-          else if (absOffset === 3) xOffset = direction * slideW * spacingFactor * 2.85
+          else if (absOffset === 2) xOffset = direction * slideW * spacingFactor * (isPortrait ? 1.9 : 1.95)
+          else if (absOffset === 3) xOffset = direction * slideW * spacingFactor * (isPortrait ? 2.8 : 2.85)
  
-          const zStep = isMobile ? 50 : 80
+          const zStep = isMobile ? 50 : (isPortrait ? 80 : 80)
           zOffset = absOffset * zStep // Bring outer items forward
  
           if (absOffset === 1) {
