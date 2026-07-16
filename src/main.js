@@ -243,13 +243,16 @@ counters.forEach(counter => {
 })
 // 10. 3D Cover Flow Portfolio Showcase Logic
 function initCoverFlow() {
-  const track = document.querySelector('.coverflow-track')
-  if (!track) return
+  const showcaseContainers = document.querySelectorAll('.showcase-container')
+  
+  showcaseContainers.forEach(container => {
+    const track = container.querySelector('.coverflow-track')
+    if (!track) return
 
-  const slides = Array.from(track.querySelectorAll('.coverflow-slide'))
-  const dots = Array.from(document.querySelectorAll('.coverflow-dots .dot'))
-  const prevBtn = document.querySelector('.coverflow-prev-btn')
-  const nextBtn = document.querySelector('.coverflow-next-btn')
+    const slides = Array.from(track.querySelectorAll('.coverflow-slide'))
+    const dots = Array.from(container.querySelectorAll('.coverflow-dots .dot'))
+    const prevBtn = container.querySelector('.coverflow-prev-btn')
+    const nextBtn = container.querySelector('.coverflow-next-btn')
 
   let currentIndex = Math.floor(slides.length / 2)
   let autoPlayTimer = null
@@ -436,6 +439,7 @@ function initCoverFlow() {
   startAutoPlay()
 
   window.addEventListener('resize', updateSlides)
+  })
 }
 
 initCoverFlow()
