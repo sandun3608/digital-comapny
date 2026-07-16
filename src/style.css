@@ -2873,21 +2873,22 @@ footer.custom-footer::before {
 
 /* Premium Shimmer CTA Button in Navbar */
 .nav-cta-btn {
-  background: linear-gradient(135deg, #a855f7, #7c3aed) !important; /* Modern vibrant purple gradient */
+  background: linear-gradient(180deg, #c074ff, #8b2cff) !important; /* Matched Canva vibrant purple gradient */
   color: #ffffff !important; /* Clear white text */
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  padding: 0.7rem 1.8rem !important; /* Adjusted padding to fit properly */
-  font-size: 0.85rem !important; /* Smaller text */
-  font-weight: 700 !important; /* Bolder text for visibility */
+  border: none !important; /* Removed border */
+  padding: 0.8rem 2rem !important; /* Good pill padding */
+  font-size: 0.9rem !important; /* Adjusted text */
+  font-weight: 700 !important;
   letter-spacing: 1px !important;
   border-radius: 50px !important; /* Pill shaped for premium aesthetic */
-  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4) !important;
+  box-shadow: 0 10px 25px rgba(139, 44, 255, 0.4) !important; /* Matched soft purple shadow */
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
   position: relative !important;
   overflow: hidden !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 8px !important; /* Space between text and icon */
+  justify-content: center !important;
+  flex-shrink: 0 !important; /* Prevent the button from getting squished in the navbar */
   text-decoration: none !important;
   text-transform: uppercase !important;
   white-space: nowrap !important; /* Keep text on one straight line */
