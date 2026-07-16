@@ -2871,12 +2871,12 @@ footer.custom-footer::before {
   background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%) !important;
   color: #ffffff !important;
   border: none !important;
-  padding: 0.55rem 1.35rem !important;
-  font-size: 0.78rem !important;
+  padding: 0.7rem 2.2rem !important; /* Made wider and longer for a premium look */
+  font-size: 0.82rem !important;
   font-weight: 700 !important;
-  letter-spacing: 1px !important;
-  border-radius: 30px !important; /* Pill shaped for premium aesthetic */
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25) !important;
+  letter-spacing: 1.2px !important;
+  border-radius: 50px !important; /* Pill shaped for premium aesthetic */
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3) !important;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
   position: relative !important;
   overflow: hidden !important;
