@@ -2876,8 +2876,8 @@ footer.custom-footer::before {
   background: linear-gradient(180deg, #c074ff, #8b2cff) !important; /* Matched Canva vibrant purple gradient */
   color: #ffffff !important; /* Clear white text */
   border: none !important; /* Removed border */
-  padding: 0.8rem 2rem !important; /* Good pill padding */
-  font-size: 0.9rem !important; /* Adjusted text */
+  padding: 0.6rem 1.6rem !important; /* Made button slightly smaller */
+  font-size: 0.8rem !important; /* Slightly smaller text */
   font-weight: 700 !important;
   letter-spacing: 1px !important;
   border-radius: 50px !important; /* Pill shaped for premium aesthetic */
