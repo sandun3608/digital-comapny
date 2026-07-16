@@ -2916,3 +2916,21 @@ footer.custom-footer::before {
 .nav-cta-btn:hover::before {
   left: 100%;
 }
+
+/* Portrait Coverflow Overrides */
+.portrait-coverflow .coverflow-slide {
+  width: 260px;
+  height: 420px;
+}
+.portrait-coverflow .slide-image-wrapper {
+  height: 350px;
+}
+@media (max-width: 768px) {
+  .portrait-coverflow .coverflow-slide {
+    width: 180px;
+    height: 290px;
+  }
+  .portrait-coverflow .slide-image-wrapper {
+    height: 240px;
+  }
+}

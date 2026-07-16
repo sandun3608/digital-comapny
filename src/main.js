@@ -296,15 +296,12 @@ function initCoverFlow() {
           const rotStep = isMobile ? 22 : 35
           rotY = -direction * rotStep
 
-          if (!isMobile) {
-            if (absOffset === 1) xOffset = direction * 250
-            else if (absOffset === 2) xOffset = direction * 520
-            else if (absOffset === 3) xOffset = direction * 850
-          } else {
-            if (absOffset === 1) xOffset = direction * 130
-            else if (absOffset === 2) xOffset = direction * 250
-            else if (absOffset === 3) xOffset = direction * 380
-          }
+          const slideW = slide.offsetWidth || 300
+          const spacingFactor = isMobile ? 0.65 : 0.8
+          
+          if (absOffset === 1) xOffset = direction * slideW * spacingFactor
+          else if (absOffset === 2) xOffset = direction * slideW * spacingFactor * 1.85
+          else if (absOffset === 3) xOffset = direction * slideW * spacingFactor * 2.7
  
           const zStep = isMobile ? 60 : 120
           zOffset = absOffset * zStep // Bring outer items forward
