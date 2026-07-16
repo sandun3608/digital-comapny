@@ -2889,6 +2889,8 @@ footer.custom-footer::before {
   align-items: center !important;
   justify-content: center !important;
   flex-shrink: 0 !important; /* Prevent the button from getting squished in the navbar */
+  width: auto !important; /* Override 20px width from .nav-socials a */
+  height: auto !important; /* Override 20px height from .nav-socials a */
   text-decoration: none !important;
   text-transform: uppercase !important;
   white-space: nowrap !important; /* Keep text on one straight line */
