@@ -16,7 +16,7 @@ export default defineConfig({
         videoEditing: resolve(__dirname, 'services/video-editing.html'),
         postDesign: resolve(__dirname, 'services/post-design.html'),
         videoPresenting: resolve(__dirname, 'services/video-presenting.html'),
-        seoOptimization: resolve(__dirname, 'services/seo-optimization.html'),
+
       }
     }
   }

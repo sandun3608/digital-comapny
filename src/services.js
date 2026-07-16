@@ -151,7 +151,7 @@ document.addEventListener('submit', async (e) => {
   else if (fileName.includes('video-editing')) serviceName = 'Video Editing'
   else if (fileName.includes('post-design')) serviceName = 'Social Media Post Design'
   else if (fileName.includes('video-presenting')) serviceName = 'Video Presenting & Reels'
-  else if (fileName.includes('seo-optimization')) serviceName = 'SEO & Backlink Strategy'
+
   
   const packageText = serviceLevelSelect 
     ? (serviceLevelSelect.options ? serviceLevelSelect.options[serviceLevelSelect.selectedIndex]?.text : serviceLevelSelect.value)
