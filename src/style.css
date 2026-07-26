@@ -3004,11 +3004,11 @@ footer.custom-footer::before {
   }
 }
 
-/* Creative Showcase Section (TrendZone Clean White Theme) */
+/* Creative Showcase Section (MYLAB Dark Theme) */
 .creative-showcase-section {
   padding: 5rem 5% 6rem 5%;
-  background: #ffffff;
-  color: #0b0b0b;
+  background: var(--bg, #0B0B0B);
+  color: #ffffff;
   overflow: hidden;
 }
 
@@ -3038,7 +3038,7 @@ footer.custom-footer::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .circular-text-badge svg {
@@ -3054,14 +3054,14 @@ footer.custom-footer::before {
   position: absolute;
   width: 34px;
   height: 34px;
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.85rem;
-  color: #0b0b0b;
+  color: #ffffff;
 }
 
 .creative-headline-center {
@@ -3074,11 +3074,11 @@ footer.custom-footer::before {
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #0b0b0b;
+  color: #ffffff;
 }
 
 .creative-main-title .highlight-text {
-  color: #0b0b0b;
+  color: #ffffff;
 }
 
 .creative-avatars-right {
@@ -3095,10 +3095,9 @@ footer.custom-footer::before {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  border: 2px solid #ffffff;
+  border: 2px solid #0b0b0b;
   object-fit: cover;
   margin-left: -12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .avatar-stack img:first-child {
@@ -3109,8 +3108,8 @@ footer.custom-footer::before {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: #0b0b0b;
-  border: 2px solid #ffffff;
+  background: #18181c;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3139,9 +3138,9 @@ footer.custom-footer::before {
   position: relative;
   overflow: hidden;
   border-radius: 28px;
-  background: #f4f4f6;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  background: #141419;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 .bento-card img {
@@ -3150,10 +3149,12 @@ footer.custom-footer::before {
   object-fit: cover;
   display: block;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  filter: brightness(0.95);
 }
 
 .bento-card:hover img {
   transform: scale(1.05);
+  filter: brightness(1.08);
 }
 
 /* Specific Card Heights: Outermost edges (Col 1 & 5) are TALLEST, inner cols (2 & 4) are shorter */
@@ -3211,15 +3212,15 @@ footer.custom-footer::before {
   gap: 8px;
   width: 100%;
   height: 46px;
-  background: #000000;
-  border: 1px solid #000000;
+  background: #111116;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   color: #ffffff;
   font-weight: 600;
   font-size: 0.86rem;
   border-radius: 9999px;
   text-decoration: none;
   transition: all 0.4s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   margin-top: 0.65rem;
 }
 
@@ -3227,7 +3228,7 @@ footer.custom-footer::before {
   background: var(--accent, #8B5CF6);
   border-color: var(--accent, #8B5CF6);
   transform: translateY(-2px);
-  box-shadow: 0 12px 25px rgba(139, 92, 246, 0.4);
+  box-shadow: 0 12px 28px rgba(139, 92, 246, 0.45);
 }
 
 /* Bottom Footer Row */
@@ -3237,7 +3238,7 @@ footer.custom-footer::before {
   gap: 3rem;
   align-items: center;
   padding-top: 2rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .creative-quote-box {
@@ -3250,14 +3251,14 @@ footer.custom-footer::before {
   font-family: var(--font-serif);
   font-size: 3.5rem;
   line-height: 1;
-  color: #9ca3af;
+  color: rgba(255, 255, 255, 0.25);
   margin-top: -0.5rem;
 }
 
 .quote-content p {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #4b5563;
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: 0.4rem;
 }
 
@@ -3265,7 +3266,7 @@ footer.custom-footer::before {
   font-family: var(--font-serif);
   font-size: 1.2rem;
   font-style: italic;
-  color: #111827;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .creative-feature-badge {
@@ -3279,7 +3280,7 @@ footer.custom-footer::before {
   font-size: 2.8rem;
   font-weight: 800;
   font-family: var(--font-heading);
-  color: #111827;
+  color: #ffffff;
   line-height: 1;
 }
 
@@ -3291,7 +3292,7 @@ footer.custom-footer::before {
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 1.5px;
-  color: #6b7280;
+  color: rgba(255, 255, 255, 0.5);
   display: block;
   margin-bottom: 0.25rem;
 }
@@ -3299,7 +3300,7 @@ footer.custom-footer::before {
 .feature-info h4 {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #111827;
+  color: #ffffff;
   line-height: 1.35;
 }
 
@@ -3307,18 +3308,18 @@ footer.custom-footer::before {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #111827;
+  color: #ffffff;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .feature-arrow-btn:hover {
-  background: #111827;
-  color: #ffffff;
+  background: #ffffff;
+  color: #0b0b0b;
   transform: translateX(4px);
 }
 
