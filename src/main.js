@@ -287,33 +287,30 @@ function initCoverFlow() {
         if (absOffset <= 3) {
           if (isCenter) {
             xOffset = 0
-            zOffset = isPortrait ? 70 : 80 // Active center card pops forward
+            zOffset = isPortrait ? 60 : 70 // Active center card pops forward
             yOffset = 0
             rotY = 0
             opacity = 1
-            scale = 1.05
+            scale = 1.06
             blurVal = 0
             slide.classList.add('active')
           } else {
             slide.classList.remove('active')
             
             // 3D Angle: Left cards rotate negative (-deg), Right cards rotate positive (+deg)
-            // This brings the inner edges (facing center) forward (+Z) and pushes outer edges back (-Z),
-            // creating the top & bottom outward curve slant framing the center card!
-            const rotStep = isMobile ? 18 : (isPortrait ? 24 : 28)
-            rotY = direction * (rotStep + (absOffset - 1) * 5)
+            const rotStep = isMobile ? 16 : (isPortrait ? 22 : 26)
+            rotY = direction * (rotStep + (absOffset - 1) * 6)
 
-            // Horizontal spacing along perspective curve
-            const slideW = slide.offsetWidth || (isPortrait ? (isMobile ? 180 : 250) : 320)
-            const spacingFactor = isMobile ? (isPortrait ? 0.70 : 0.62) : (isPortrait ? 0.76 : 0.72)
+            // Horizontal spacing: Spread cards wide across screen like Flowblox 7-card arc
+            const spacingStep = isMobile ? (isPortrait ? 135 : 150) : (isPortrait ? 225 : 260)
             
-            if (absOffset === 1) xOffset = direction * slideW * spacingFactor
-            else if (absOffset === 2) xOffset = direction * slideW * spacingFactor * 1.75
-            else if (absOffset === 3) xOffset = direction * slideW * spacingFactor * 2.45
+            if (absOffset === 1) xOffset = direction * spacingStep
+            else if (absOffset === 2) xOffset = direction * spacingStep * 1.92
+            else if (absOffset === 3) xOffset = direction * spacingStep * 2.78
 
             // Step outer cards back in 3D Z-depth
-            const zStep = isMobile ? 55 : (isPortrait ? 75 : 85)
-            zOffset = 20 - absOffset * zStep
+            const zStep = isMobile ? 50 : (isPortrait ? 70 : 80)
+            zOffset = 30 - absOffset * zStep
 
             yOffset = 0
 
@@ -322,11 +319,11 @@ function initCoverFlow() {
               scale = 0.94
               blurVal = 0
             } else if (absOffset === 2) {
-              opacity = 0.82
+              opacity = 0.85
               scale = 0.84
               blurVal = 0
             } else if (absOffset === 3) {
-              opacity = 0.55
+              opacity = 0.65
               scale = 0.74
               blurVal = isMobile ? 0 : 1
             }
@@ -334,8 +331,8 @@ function initCoverFlow() {
         } else {
           opacity = 0
           scale = 0.5
-          xOffset = direction * 800
-          zOffset = -300
+          xOffset = direction * 900
+          zOffset = -350
           yOffset = 0
           slide.classList.remove('active')
         }
