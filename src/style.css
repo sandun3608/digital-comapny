@@ -3167,7 +3167,11 @@ footer.custom-footer::before {
   border-radius: 28px;
 }
 
-/* Column 2 & 4 Tall height (Shorter than outermost edges 1 & 5) */
+/* Column 2 & 4 Tall height & top offset (Shorter & shifted slightly lower down from top) */
+.col-tall {
+  margin-top: 26px;
+}
+
 .col-tall .card-full-tall {
   height: 435px;
   border-radius: 28px 48px 28px 28px;
