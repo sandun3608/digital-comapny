@@ -3114,11 +3114,11 @@ footer.custom-footer::before {
   margin-left: -10px;
 }
 
-/* 5-Column Bento Photo Grid */
+/* 5-Column Bento Photo Grid (TrendZone Tight Layout) */
 .creative-bento-grid {
   display: grid;
-  grid-template-columns: 1fr 1.1fr 1.25fr 1.1fr 1fr;
-  gap: 1.25rem;
+  grid-template-columns: 1fr 1.05fr 1.15fr 1.05fr 1fr;
+  gap: 0.85rem;
   align-items: stretch;
   margin-bottom: 4rem;
 }
@@ -3126,16 +3126,16 @@ footer.custom-footer::before {
 .bento-col {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 0.85rem;
 }
 
 .bento-card {
   position: relative;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 28px;
   background: #15151a;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 .bento-card img {
@@ -3144,7 +3144,7 @@ footer.custom-footer::before {
   object-fit: cover;
   display: block;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
-  filter: brightness(0.95);
+  filter: brightness(0.96);
 }
 
 .bento-card:hover img {
@@ -3152,29 +3152,47 @@ footer.custom-footer::before {
   filter: brightness(1.08);
 }
 
-/* Column 1 & 5 Stacked heights */
-.card-med {
-  height: 270px;
+/* Specific Card Tab Shapes matching TrendZone reference */
+.col-stacked .card-med {
+  height: 310px;
+  border-radius: 28px 42px 28px 28px;
 }
 
-.card-small {
-  height: 190px;
+.col-stacked .card-small {
+  height: 155px;
+  border-radius: 28px;
 }
 
-/* Column 2 & 4 Tall height */
-.card-full-tall {
-  height: 480px;
+/* Column 2 & 4 Tall height & Tab cutout */
+.col-tall .card-full-tall {
+  height: 473px;
+  border-radius: 28px 48px 28px 28px;
 }
 
 /* Column 3 Center main height & action button */
 .col-center {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.center-star-top {
+  color: var(--accent, #8B5CF6);
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  animation: pulseStar 3s ease-in-out infinite;
+}
+
+@keyframes pulseStar {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+  50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
 }
 
 .card-center-main {
-  height: 410px;
+  width: 100%;
+  height: 245px;
+  border-radius: 28px;
 }
 
 .bento-action-btn {
@@ -3182,24 +3200,25 @@ footer.custom-footer::before {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: #111116;
+  width: 100%;
+  height: 48px;
+  background: #0d0d12;
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #ffffff;
   font-weight: 600;
-  font-size: 0.95rem;
-  padding: 1.05rem 1.6rem;
+  font-size: 0.88rem;
   border-radius: 9999px;
   text-decoration: none;
   transition: all 0.4s ease;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   margin-top: 0.8rem;
 }
 
 .bento-action-btn:hover {
   background: var(--accent, #8B5CF6);
   border-color: var(--accent, #8B5CF6);
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(139, 92, 246, 0.45);
 }
 
 /* Bottom Footer Row */
