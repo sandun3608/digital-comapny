@@ -254,190 +254,218 @@ function initCoverFlow() {
     const prevBtn = container.querySelector('.coverflow-prev-btn')
     const nextBtn = container.querySelector('.coverflow-next-btn')
 
-  let currentIndex = Math.floor(slides.length / 2)
-  let autoPlayTimer = null
+    let currentIndex = Math.floor(slides.length / 2)
+    let autoPlayTimer = null
 
-  function updateSlides() {
-    const L = slides.length
-    slides.forEach((slide, index) => {
-      let offset = index - currentIndex
-      const halfL = L / 2
-      if (offset < -halfL) {
-        offset += L
-      } else if (offset >= halfL) {
-        offset -= L
-      }
-      
-      const absOffset = Math.abs(offset)
-      const direction = offset > 0 ? 1 : -1
-      
-      let xOffset = 0
-      let zOffset = 0
-      let rotY = 0
-      let opacity = 1
-      let zIndex = 10 + absOffset // Outer items have higher z-index (overlap center)
-      let isCenter = offset === 0
-      let scale = 1
-      let blurVal = 0
+    function updateSlides() {
+      const L = slides.length
+      const isMobile = window.innerWidth <= 768
+      const isPortrait = container.closest('.portrait-coverflow') !== null
 
-      if (absOffset <= 3) {
-        const isPortrait = container.closest('.portrait-coverflow') !== null
-        
-        if (isCenter) {
-          xOffset = 0
-          zOffset = isPortrait ? -200 : -150 // Push center back more for portrait
-          rotY = 0
-          opacity = 1
-          scale = 1 // Use natural perspective size
-          blurVal = 0
-          slide.classList.add('active')
-        } else {
-          slide.classList.remove('active')
-          
-          const isMobile = window.innerWidth <= 768
-          const rotStep = isMobile ? 18 : (isPortrait ? 22 : 28) // Smoother curve
-          rotY = -direction * rotStep
-
-          const slideW = slide.offsetWidth || 300
-          const spacingFactor = isMobile ? (isPortrait ? 0.9 : 0.75) : (isPortrait ? 1.1 : 0.95)
-          
-          if (absOffset === 1) xOffset = direction * slideW * spacingFactor
-          else if (absOffset === 2) xOffset = direction * slideW * spacingFactor * (isPortrait ? 1.9 : 1.95)
-          else if (absOffset === 3) xOffset = direction * slideW * spacingFactor * (isPortrait ? 2.8 : 2.85)
- 
-          const zStep = isMobile ? 50 : (isPortrait ? 80 : 80)
-          zOffset = absOffset * zStep // Bring outer items forward
- 
-          if (absOffset === 1) {
-            opacity = 0.95
-            scale = 1 
-            blurVal = 0
-          } else if (absOffset === 2) {
-            opacity = 1
-            scale = 1 
-            blurVal = 0
-          } else if (absOffset === 3) {
-            opacity = 1
-            scale = 1 
-            blurVal = 0
-          }
+      slides.forEach((slide, index) => {
+        let offset = index - currentIndex
+        const halfL = L / 2
+        if (offset < -halfL) {
+          offset += L
+        } else if (offset >= halfL) {
+          offset -= L
         }
-      } else {
-        opacity = 0
-        scale = 0.5
-        slide.classList.remove('active')
-      }
+        
+        const absOffset = Math.abs(offset)
+        const direction = offset > 0 ? 1 : (offset < 0 ? -1 : 0)
+        
+        let xOffset = 0
+        let zOffset = 0
+        let yOffset = 0
+        let rotY = 0
+        let opacity = 1
+        let zIndex = 100 - absOffset * 10 // Center card is highest (100) so outer slides sit behind center
+        let isCenter = offset === 0
+        let scale = 1
+        let blurVal = 0
 
-      gsap.to(slide, {
-        x: xOffset,
-        z: zOffset,
-        rotationY: rotY,
-        scale: scale,
-        filter: blurVal > 0 ? `blur(${blurVal}px)` : 'none',
-        opacity: opacity,
-        zIndex: zIndex,
-        autoAlpha: opacity > 0 ? 1 : 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        overwrite: 'auto'
+        if (absOffset <= 3) {
+          if (isCenter) {
+            xOffset = 0
+            zOffset = isPortrait ? 70 : 80 // Active center card pops forward
+            yOffset = 0
+            rotY = 0
+            opacity = 1
+            scale = 1.05
+            blurVal = 0
+            slide.classList.add('active')
+          } else {
+            slide.classList.remove('active')
+            
+            // 3D Angle: Left cards rotate negative (-deg), Right cards rotate positive (+deg)
+            // This brings the inner edges (facing center) forward (+Z) and pushes outer edges back (-Z),
+            // creating the top & bottom outward curve slant framing the center card!
+            const rotStep = isMobile ? 18 : (isPortrait ? 24 : 28)
+            rotY = direction * (rotStep + (absOffset - 1) * 5)
+
+            // Horizontal spacing along perspective curve
+            const slideW = slide.offsetWidth || (isPortrait ? (isMobile ? 180 : 250) : 320)
+            const spacingFactor = isMobile ? (isPortrait ? 0.70 : 0.62) : (isPortrait ? 0.76 : 0.72)
+            
+            if (absOffset === 1) xOffset = direction * slideW * spacingFactor
+            else if (absOffset === 2) xOffset = direction * slideW * spacingFactor * 1.75
+            else if (absOffset === 3) xOffset = direction * slideW * spacingFactor * 2.45
+
+            // Step outer cards back in 3D Z-depth
+            const zStep = isMobile ? 55 : (isPortrait ? 75 : 85)
+            zOffset = 20 - absOffset * zStep
+
+            yOffset = 0
+
+            if (absOffset === 1) {
+              opacity = 0.95
+              scale = 0.94
+              blurVal = 0
+            } else if (absOffset === 2) {
+              opacity = 0.82
+              scale = 0.84
+              blurVal = 0
+            } else if (absOffset === 3) {
+              opacity = 0.55
+              scale = 0.74
+              blurVal = isMobile ? 0 : 1
+            }
+          }
+        } else {
+          opacity = 0
+          scale = 0.5
+          xOffset = direction * 800
+          zOffset = -300
+          yOffset = 0
+          slide.classList.remove('active')
+        }
+
+        gsap.to(slide, {
+          x: xOffset,
+          y: yOffset,
+          z: zOffset,
+          rotationY: rotY,
+          scale: scale,
+          filter: blurVal > 0 ? `blur(${blurVal}px)` : 'none',
+          opacity: opacity,
+          zIndex: zIndex,
+          autoAlpha: opacity > 0 ? 1 : 0,
+          duration: 0.7,
+          ease: 'power3.out',
+          overwrite: 'auto'
+        })
+      })
+
+      dots.forEach((dot, index) => {
+        if (index === currentIndex) dot.classList.add('active')
+        else dot.classList.remove('active')
+      })
+    }
+
+    function goToSlide(index) {
+      if (index < 0) {
+        currentIndex = slides.length - 1
+      } else if (index >= slides.length) {
+        currentIndex = 0
+      } else {
+        currentIndex = index
+      }
+      updateSlides()
+      resetAutoPlay()
+    }
+
+    slides.forEach((slide, index) => {
+      slide.addEventListener('click', (e) => {
+        if (currentIndex !== index) {
+          e.preventDefault()
+          goToSlide(index)
+        }
       })
     })
 
-    dots.forEach((dot, index) => {
-      if (index === currentIndex) dot.classList.add('active')
-      else dot.classList.remove('active')
-    })
-  }
-
-  function goToSlide(index) {
-    if (index < 0) {
-      currentIndex = slides.length - 1
-    } else if (index >= slides.length) {
-      currentIndex = 0
-    } else {
-      currentIndex = index
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1))
     }
-    updateSlides()
-    resetAutoPlay()
-  }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1))
+    }
 
-  slides.forEach((slide, index) => {
-    slide.addEventListener('click', () => {
-      if (currentIndex !== index) {
-        goToSlide(index)
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToSlide(index))
+    })
+
+    document.addEventListener('keydown', (e) => {
+      const rect = track.getBoundingClientRect()
+      const inViewport = rect.top < window.innerHeight && rect.bottom > 0
+      if (!inViewport) return
+
+      if (e.key === 'ArrowLeft') {
+        goToSlide(currentIndex - 1)
+      } else if (e.key === 'ArrowRight') {
+        goToSlide(currentIndex + 1)
       }
     })
-  })
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1))
-  }
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1))
-  }
+    // Drag / Swipe support for Mouse and Touch
+    let startX = 0
+    let isDragging = false
 
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => goToSlide(index))
-  })
-
-  document.addEventListener('keydown', (e) => {
-    const rect = track.getBoundingClientRect()
-    const inViewport = rect.top < window.innerHeight && rect.bottom > 0
-    if (!inViewport) return
-
-    if (e.key === 'ArrowLeft') {
-      goToSlide(currentIndex - 1)
-    } else if (e.key === 'ArrowRight') {
-      goToSlide(currentIndex + 1)
+    const onStart = (e) => {
+      isDragging = true
+      startX = e.pageX || (e.touches && e.touches[0].pageX) || 0
+      stopAutoPlay()
     }
-  })
 
-  let touchStartX = 0
-  let touchEndX = 0
+    const onEnd = (e) => {
+      if (!isDragging) return
+      isDragging = false
+      const endX = e.pageX || (e.changedTouches && e.changedTouches[0].pageX) || 0
+      const diffX = startX - endX
+      const threshold = 40
 
-  track.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX
-    stopAutoPlay()
-  }, { passive: true })
-
-  track.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX
-    handleSwipe()
-    startAutoPlay()
-  }, { passive: true })
-
-  function handleSwipe() {
-    const swipeThreshold = 50
-    if (touchStartX - touchEndX > swipeThreshold) {
-      goToSlide(currentIndex + 1)
-    } else if (touchEndX - touchStartX > swipeThreshold) {
-      goToSlide(currentIndex - 1)
+      if (diffX > threshold) {
+        goToSlide(currentIndex + 1)
+      } else if (diffX < -threshold) {
+        goToSlide(currentIndex - 1)
+      } else {
+        startAutoPlay()
+      }
     }
-  }
 
-  function startAutoPlay() {
-    stopAutoPlay()
-    autoPlayTimer = setInterval(() => {
-      goToSlide(currentIndex + 1)
-    }, 5000)
-  }
+    track.addEventListener('mousedown', onStart)
+    track.addEventListener('mouseup', onEnd)
+    track.addEventListener('mouseleave', () => {
+      if (isDragging) {
+        isDragging = false
+        startAutoPlay()
+      }
+    })
 
-  function stopAutoPlay() {
-    if (autoPlayTimer) clearInterval(autoPlayTimer)
-  }
+    track.addEventListener('touchstart', onStart, { passive: true })
+    track.addEventListener('touchend', onEnd, { passive: true })
 
-  function resetAutoPlay() {
-    stopAutoPlay()
+    function startAutoPlay() {
+      stopAutoPlay()
+      autoPlayTimer = setInterval(() => {
+        goToSlide(currentIndex + 1)
+      }, 4500)
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayTimer) clearInterval(autoPlayTimer)
+    }
+
+    function resetAutoPlay() {
+      stopAutoPlay()
+      startAutoPlay()
+    }
+
+    track.addEventListener('mouseenter', stopAutoPlay)
+
+    updateSlides()
     startAutoPlay()
-  }
 
-  track.addEventListener('mouseenter', stopAutoPlay)
-  track.addEventListener('mouseleave', startAutoPlay)
-
-  updateSlides()
-  startAutoPlay()
-
-  window.addEventListener('resize', updateSlides)
+    window.addEventListener('resize', updateSlides)
   })
 }
 
