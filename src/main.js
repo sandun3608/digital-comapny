@@ -286,29 +286,29 @@ function initCoverFlow() {
 
         if (absOffset === 0) {
           xOffset = 0
-          zOffset = 120
+          zOffset = 110
           yOffset = 0
           rotY = 0
           opacity = 1
-          scale = 1.05
+          scale = 1.04
           blurVal = 0
           zIndex = 100
           slide.classList.add('active')
         } else if (absOffset === 1) {
           slide.classList.remove('active')
           rotY = direction * (isMobile ? 14 : 18)
-          xOffset = direction * (isMobile ? 240 : 460)
-          zOffset = -70
+          xOffset = direction * (isMobile ? 220 : 380)
+          zOffset = -60
           yOffset = 0
-          opacity = 0.90
-          scale = 0.85
+          opacity = 0.88
+          scale = 0.84
           blurVal = 0
           zIndex = 80
         } else if (absOffset === 2) {
           slide.classList.remove('active')
-          rotY = direction * (isMobile ? 24 : 30)
-          xOffset = direction * (isMobile ? 400 : 860)
-          zOffset = -200
+          rotY = direction * (isMobile ? 24 : 28)
+          xOffset = direction * (isMobile ? 360 : 660)
+          zOffset = -180
           yOffset = 0
           opacity = 0.65
           scale = 0.68
@@ -317,8 +317,8 @@ function initCoverFlow() {
         } else {
           opacity = 0
           scale = 0.4
-          xOffset = direction * 1200
-          zOffset = -450
+          xOffset = direction * 1000
+          zOffset = -400
           yOffset = 0
           zIndex = 0
           slide.classList.remove('active')
