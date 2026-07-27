@@ -1131,17 +1131,7 @@ platforms that help businesses grow faster, operate efficiently, and compete suc
     <script type="module" src="./src/main.js"></script>
 
     <script>
-      // Bento Grid Image Shuffle — Fixed
-      const bentoImages = [
-        "/a9/032102cf1d364cf6e91f681ab52713f5.jpg",
-        "/a9/0b48dcde938408f23d75fa99309adc9a.jpg",
-        "/a9/1491ade39561c7b9b6b50a4c89e6b3e1.jpg",
-        "/a9/423a7646dbcb9355987aa1bb255b2dbd.jpg",
-        "/a9/9cab6d0d1c6166ed2828c069a995d39e.jpg",
-        "/a9/d7803675eb083c29a78fbd0ba7e9954c.jpg",
-        "/a9/ee382fad6c3dcb3265ab87e45f2f38a2.jpg"
-      ];
-
+      // Bento Grid Image Shuffle — reads src from DOM (works with Vite hashed paths)
       function shuffleArray(arr) {
         const a = [...arr];
         for (let i = a.length - 1; i > 0; i--) {
@@ -1151,11 +1141,20 @@ platforms that help businesses grow faster, operate efficiently, and compete suc
         return a;
       }
 
+      let bentoSrcs = [];
+
       function shuffleBentoGrid() {
-        const cards = document.querySelectorAll('.creative-bento-grid .bento-card img');
-        if (!cards.length) return;
-        const shuffled = shuffleArray(bentoImages);
-        cards.forEach((img, i) => {
+        const imgs = document.querySelectorAll('.creative-bento-grid .bento-card img');
+        if (!imgs.length) return;
+
+        // Collect srcs on first run
+        if (bentoSrcs.length === 0) {
+          imgs.forEach(img => { if (img.src) bentoSrcs.push(img.src); });
+        }
+        if (bentoSrcs.length === 0) return;
+
+        const shuffled = shuffleArray(bentoSrcs);
+        imgs.forEach((img, i) => {
           setTimeout(() => {
             img.style.transition = 'opacity 0.4s ease';
             img.style.opacity = '0';
@@ -1163,21 +1162,20 @@ platforms that help businesses grow faster, operate efficiently, and compete suc
               img.src = shuffled[i % shuffled.length];
               img.onload = () => { img.style.opacity = '1'; };
               img.onerror = () => { img.style.opacity = '1'; };
-            }, 400);
-          }, i * 100);
+            }, 420);
+          }, i * 110);
         });
       }
 
-      // Robust start — works whether DOM is ready or not
       function startShuffle() {
-        // Make sure all images are visible first
+        // Ensure all images visible first
         document.querySelectorAll('.creative-bento-grid .bento-card img').forEach(img => {
           img.style.opacity = '1';
         });
         setTimeout(() => {
           shuffleBentoGrid();
           setInterval(shuffleBentoGrid, 4000);
-        }, 2000);
+        }, 2500);
       }
 
       if (document.readyState === 'loading') {
