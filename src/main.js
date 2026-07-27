@@ -291,18 +291,18 @@ function initCoverFlow() {
             yOffset = 0
             rotY = 0
             opacity = 1
-            scale = 1.04
+            scale = 1.02
             blurVal = 0
             zIndex = 100
             slide.classList.add('active')
           } else {
             slide.classList.remove('active')
-            rotY = direction * (isMobile ? 18 : 25)
-            xOffset = direction * (isMobile ? 310 : 490)
-            zOffset = -120
+            rotY = direction * (isMobile ? 18 : 22)
+            xOffset = direction * (isMobile ? 260 : 410)
+            zOffset = -100
             yOffset = 0
             opacity = 0.75
-            scale = 0.82
+            scale = 0.85
             blurVal = 0
             zIndex = 50
           }
