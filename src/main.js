@@ -286,32 +286,32 @@ function initCoverFlow() {
 
         if (absOffset === 0) {
           xOffset = 0
-          zOffset = 100
+          zOffset = 110
           yOffset = 0
           rotY = 0
           opacity = 1
-          scale = 1.02
+          scale = 1.05
           blurVal = 0
           zIndex = 100
           slide.classList.add('active')
         } else if (absOffset === 1) {
           slide.classList.remove('active')
-          rotY = direction * (isMobile ? 15 : 24)
-          xOffset = direction * (isMobile ? 220 : 330)
-          zOffset = -80
+          rotY = direction * (isMobile ? 14 : 20)
+          xOffset = direction * (isMobile ? 210 : 330)
+          zOffset = -60
           yOffset = 0
-          opacity = 0.85
-          scale = 0.82
+          opacity = 0.88
+          scale = 0.85
           blurVal = 0
           zIndex = 80
         } else if (absOffset === 2) {
           slide.classList.remove('active')
-          rotY = direction * (isMobile ? 25 : 36)
-          xOffset = direction * (isMobile ? 380 : 600)
-          zOffset = -220
+          rotY = direction * (isMobile ? 24 : 32)
+          xOffset = direction * (isMobile ? 360 : 570)
+          zOffset = -190
           yOffset = 0
-          opacity = 0.55
-          scale = 0.65
+          opacity = 0.60
+          scale = 0.68
           blurVal = 0
           zIndex = 60
         } else {
