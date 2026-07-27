@@ -1332,7 +1332,6 @@ footer.custom-footer::before {
   display: flex;
   justify-content: center;
   align-items: center;
-  perspective: 900px;
   margin-bottom: 2rem;
 }
 
@@ -1343,7 +1342,7 @@ footer.custom-footer::before {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform-style: preserve-3d;
+  transform-style: flat;
 }
 
 .coverflow-slide {

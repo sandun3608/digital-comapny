@@ -286,19 +286,19 @@ function initCoverFlow() {
 
         if (absOffset === 0) {
           xOffset = 0
-          zOffset = 110
+          zOffset = 0
           yOffset = 0
           rotY = 0
           opacity = 1
-          scale = 1.04
+          scale = 1.05
           blurVal = 0
           zIndex = 100
           slide.classList.add('active')
         } else if (absOffset === 1) {
           slide.classList.remove('active')
-          rotY = direction * (isMobile ? 14 : 18)
+          rotY = direction * (isMobile ? 3 : 5)
           xOffset = direction * (isMobile ? 220 : 380)
-          zOffset = -60
+          zOffset = 0
           yOffset = 0
           opacity = 0.88
           scale = 0.84
@@ -306,9 +306,9 @@ function initCoverFlow() {
           zIndex = 80
         } else if (absOffset === 2) {
           slide.classList.remove('active')
-          rotY = direction * (isMobile ? 24 : 28)
+          rotY = direction * (isMobile ? 5 : 8)
           xOffset = direction * (isMobile ? 360 : 660)
-          zOffset = -180
+          zOffset = 0
           yOffset = 0
           opacity = 0.65
           scale = 0.68
@@ -318,16 +318,17 @@ function initCoverFlow() {
           opacity = 0
           scale = 0.4
           xOffset = direction * 1000
-          zOffset = -400
+          zOffset = 0
           yOffset = 0
           zIndex = 0
           slide.classList.remove('active')
         }
 
+        slide.style.zIndex = zIndex
+
         gsap.to(slide, {
           x: xOffset,
           y: yOffset,
-          z: zOffset,
           rotationY: rotY,
           scale: scale,
           filter: blurVal > 0 ? `blur(${blurVal}px)` : 'none',
