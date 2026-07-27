@@ -1129,61 +1129,7 @@ platforms that help businesses grow faster, operate efficiently, and compete suc
     </footer>
 
     <script type="module" src="./src/main.js"></script>
-
-    <script>
-      // Bento Grid Image Shuffle — reads src from DOM (works with Vite hashed paths)
-      function shuffleArray(arr) {
-        const a = [...arr];
-        for (let i = a.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [a[i], a[j]] = [a[j], a[i]];
-        }
-        return a;
-      }
-
-      let bentoSrcs = [];
-
-      function shuffleBentoGrid() {
-        const imgs = document.querySelectorAll('.creative-bento-grid .bento-card img');
-        if (!imgs.length) return;
-
-        // Collect srcs on first run
-        if (bentoSrcs.length === 0) {
-          imgs.forEach(img => { if (img.src) bentoSrcs.push(img.src); });
-        }
-        if (bentoSrcs.length === 0) return;
-
-        const shuffled = shuffleArray(bentoSrcs);
-        imgs.forEach((img, i) => {
-          setTimeout(() => {
-            img.style.transition = 'opacity 0.4s ease';
-            img.style.opacity = '0';
-            setTimeout(() => {
-              img.src = shuffled[i % shuffled.length];
-              img.onload = () => { img.style.opacity = '1'; };
-              img.onerror = () => { img.style.opacity = '1'; };
-            }, 420);
-          }, i * 110);
-        });
-      }
-
-      function startShuffle() {
-        // Ensure all images visible first
-        document.querySelectorAll('.creative-bento-grid .bento-card img').forEach(img => {
-          img.style.opacity = '1';
-        });
-        setTimeout(() => {
-          shuffleBentoGrid();
-          setInterval(shuffleBentoGrid, 4000);
-        }, 2500);
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', startShuffle);
-      } else {
-        startShuffle();
-      }
-    </script>
+  
   </body>
 </html>
 
