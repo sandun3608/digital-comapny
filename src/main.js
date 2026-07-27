@@ -284,33 +284,41 @@ function initCoverFlow() {
         let scale = 1
         let blurVal = 0
 
-        if (absOffset <= 1) {
-          if (isCenter) {
-            xOffset = 0
-            zOffset = 80
-            yOffset = 0
-            rotY = 0
-            opacity = 1
-            scale = 1.02
-            blurVal = 0
-            zIndex = 100
-            slide.classList.add('active')
-          } else {
-            slide.classList.remove('active')
-            rotY = direction * (isMobile ? 18 : 22)
-            xOffset = direction * (isMobile ? 260 : 410)
-            zOffset = -100
-            yOffset = 0
-            opacity = 0.75
-            scale = 0.85
-            blurVal = 0
-            zIndex = 50
-          }
+        if (absOffset === 0) {
+          xOffset = 0
+          zOffset = 100
+          yOffset = 0
+          rotY = 0
+          opacity = 1
+          scale = 1.02
+          blurVal = 0
+          zIndex = 100
+          slide.classList.add('active')
+        } else if (absOffset === 1) {
+          slide.classList.remove('active')
+          rotY = direction * (isMobile ? 15 : 24)
+          xOffset = direction * (isMobile ? 220 : 330)
+          zOffset = -80
+          yOffset = 0
+          opacity = 0.85
+          scale = 0.82
+          blurVal = 0
+          zIndex = 80
+        } else if (absOffset === 2) {
+          slide.classList.remove('active')
+          rotY = direction * (isMobile ? 25 : 36)
+          xOffset = direction * (isMobile ? 380 : 600)
+          zOffset = -220
+          yOffset = 0
+          opacity = 0.55
+          scale = 0.65
+          blurVal = 0
+          zIndex = 60
         } else {
           opacity = 0
-          scale = 0.5
+          scale = 0.4
           xOffset = direction * 950
-          zOffset = -350
+          zOffset = -400
           yOffset = 0
           zIndex = 0
           slide.classList.remove('active')
