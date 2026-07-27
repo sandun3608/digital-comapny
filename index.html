@@ -1131,7 +1131,7 @@ platforms that help businesses grow faster, operate efficiently, and compete suc
     <script type="module" src="./src/main.js"></script>
 
     <script>
-      // Bento Grid Image Shuffle
+      // Bento Grid Image Shuffle — Fixed
       const bentoImages = [
         "/a9/032102cf1d364cf6e91f681ab52713f5.jpg",
         "/a9/0b48dcde938408f23d75fa99309adc9a.jpg",
@@ -1154,26 +1154,37 @@ platforms that help businesses grow faster, operate efficiently, and compete suc
       function shuffleBentoGrid() {
         const cards = document.querySelectorAll('.creative-bento-grid .bento-card img');
         if (!cards.length) return;
-
         const shuffled = shuffleArray(bentoImages);
-
         cards.forEach((img, i) => {
-          img.style.transition = 'opacity 0.5s ease';
-          img.style.opacity = '0';
           setTimeout(() => {
-            img.src = shuffled[i % shuffled.length];
-            img.style.opacity = '1';
-          }, 500 + i * 80);
+            img.style.transition = 'opacity 0.4s ease';
+            img.style.opacity = '0';
+            setTimeout(() => {
+              img.src = shuffled[i % shuffled.length];
+              img.onload = () => { img.style.opacity = '1'; };
+              img.onerror = () => { img.style.opacity = '1'; };
+            }, 400);
+          }, i * 100);
         });
       }
 
-      // Start shuffle after page load
-      window.addEventListener('load', () => {
+      // Robust start — works whether DOM is ready or not
+      function startShuffle() {
+        // Make sure all images are visible first
+        document.querySelectorAll('.creative-bento-grid .bento-card img').forEach(img => {
+          img.style.opacity = '1';
+        });
         setTimeout(() => {
           shuffleBentoGrid();
-          setInterval(shuffleBentoGrid, 3500);
-        }, 1500);
-      });
+          setInterval(shuffleBentoGrid, 4000);
+        }, 2000);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', startShuffle);
+      } else {
+        startShuffle();
+      }
     </script>
   </body>
 </html>
