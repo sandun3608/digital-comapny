@@ -60,7 +60,7 @@
         <a href="#contact">Contact</a>
       </div>
       <div class="nav-socials">
-        <a href="#contact" class="btn btn-primary nav-cta-btn magnetic">GET QUTETION</a>
+        <a href="#contact" class="btn btn-primary nav-cta-btn magnetic">GET A QUOTE</a>
         <button class="theme-toggle" aria-label="Toggle Theme" style="background: none; border: none; cursor: pointer; color: inherit; padding-left: 0.5rem;">
           <i data-lucide="sun"></i>
         </button>
@@ -409,91 +409,383 @@
 
       <!-- Portfolio 3D Cover Flow Showcase -->
       <section id="work" class="showcase-section">
+        <div class="showcase-glow-backdrop"></div>
         <div class="showcase-container">
+          
           <div class="showcase-header">
-            <span class="hero-subtitle reveal-item">CASE STUDIES</span>
-            <h2 class="reveal-text">Explore Our Selected Projects</h2>
+            <span class="showcase-pill-badge reveal-item">
+              <span class="badge-pulse"></span> PORTFOLIO &amp; CASE STUDIES
+            </span>
+            <h2 class="reveal-text">Explore Our <span class="text-gradient">Selected Projects</span></h2>
+            <p class="showcase-description reveal-item">
+              Explore real-world web applications, high-converting e-commerce platforms, and custom digital solutions engineered by MYLAB.LK.
+            </p>
+            
+            <!-- Category Filter Tabs -->
+            <div class="portfolio-filter-bar reveal-item">
+              <button class="filter-tab active" data-filter="all">All Projects</button>
+              <button class="filter-tab" data-filter="ecommerce">E-Commerce</button>
+              <button class="filter-tab" data-filter="webapp">Web Apps</button>
+              <button class="filter-tab" data-filter="uiux">UI/UX Design</button>
+              <button class="filter-tab" data-filter="enterprise">Enterprise</button>
+            </div>
           </div>
           
+          <!-- 3D Cover Flow Showcase Carousel -->
           <div class="coverflow-container">
             <div class="coverflow-track">
+              
               <!-- Slide 1 -->
-              <div class="coverflow-slide" data-index="0">
-                <div class="slide-image-wrapper">
-                  <img src="/sample/1.png" alt="Mobile Experience App" />
-                </div>
-                <div class="modern-slide-label">
-                  <span class="sample-num">SAMPLE 01</span>
-                  <span class="sample-year">2026</span>
+              <div class="coverflow-slide" data-index="0" data-category="ecommerce">
+                <div class="modern-card-frame">
+                  <div class="browser-mockup-header">
+                    <div class="window-dots">
+                      <span class="dot-red"></span>
+                      <span class="dot-yellow"></span>
+                      <span class="dot-green"></span>
+                    </div>
+                    <div class="mockup-url-bar">
+                      <i data-lucide="lock" class="lock-icon"></i>
+                      <span>electrohub.mylab.lk</span>
+                    </div>
+                    <span class="category-pill-tag">E-Commerce</span>
+                  </div>
+
+                  <div class="slide-image-wrapper">
+                    <img src="/se/t (1).png" alt="ElectroHub E-Commerce Store" loading="lazy" />
+                    <div class="slide-glass-overlay">
+                      <div class="overlay-badge">FEATURED STORE</div>
+                      <div class="overlay-details">
+                        <span class="project-category-label">⚡ E-COMMERCE PLATFORM</span>
+                        <h3 class="project-title">ElectroHub Tech Store</h3>
+                        <p class="project-desc">High-performance tech & electronics online store with automated checkout and real-time inventory.</p>
+                        <div class="tech-stack-list">
+                          <span class="tech-tag">React</span>
+                          <span class="tech-tag">Node.js</span>
+                          <span class="tech-tag">Tailwind</span>
+                          <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-actions">
+                          <button class="btn-card-action primary open-project-modal" data-title="ElectroHub Tech Store" data-cat="E-Commerce Platform" data-img="/se/t (1).png" data-desc="Complete custom e-commerce engine developed for electronics retail with real-time stock sync, payment gateway integration, multi-currency support, and optimized mobile shopping experience." data-stack="React, Node.js, Tailwind CSS, PostgreSQL, Stripe">
+                            View Details <i data-lucide="arrow-up-right"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="card-bottom-bar">
+                    <span class="card-title-preview">ElectroHub Tech Store</span>
+                    <span class="card-year">2026</span>
+                  </div>
                 </div>
               </div>
+
               <!-- Slide 2 -->
-              <div class="coverflow-slide" data-index="1">
-                <div class="slide-image-wrapper">
-                  <img src="/sample/2.png" alt="Data Analytics Platform" />
-                </div>
-                <div class="modern-slide-label">
-                  <span class="sample-num">SAMPLE 02</span>
-                  <span class="sample-year">2026</span>
+              <div class="coverflow-slide" data-index="1" data-category="webapp">
+                <div class="modern-card-frame">
+                  <div class="browser-mockup-header">
+                    <div class="window-dots">
+                      <span class="dot-red"></span>
+                      <span class="dot-yellow"></span>
+                      <span class="dot-green"></span>
+                    </div>
+                    <div class="mockup-url-bar">
+                      <i data-lucide="lock" class="lock-icon"></i>
+                      <span>apex.mylab.lk</span>
+                    </div>
+                    <span class="category-pill-tag">Web App</span>
+                  </div>
+
+                  <div class="slide-image-wrapper">
+                    <img src="/se/t (2).png" alt="Apex Data Analytics Platform" loading="lazy" />
+                    <div class="slide-glass-overlay">
+                      <div class="overlay-badge">SAAS PLATFORM</div>
+                      <div class="overlay-details">
+                        <span class="project-category-label">📊 DATA ANALYTICS WEB APP</span>
+                        <h3 class="project-title">Apex Analytics Suite</h3>
+                        <p class="project-desc">Enterprise business intelligence web application with interactive telemetry & charting.</p>
+                        <div class="tech-stack-list">
+                          <span class="tech-tag">Vue.js</span>
+                          <span class="tech-tag">Python</span>
+                          <span class="tech-tag">Chart.js</span>
+                          <span class="tech-tag">AWS</span>
+                        </div>
+                        <div class="project-actions">
+                          <button class="btn-card-action primary open-project-modal" data-title="Apex Analytics Suite" data-cat="Data Analytics Web App" data-img="/se/t (2).png" data-desc="Real-time web application monitoring sales metrics, user acquisition, and financial forecasting with custom interactive SVG charts and automated weekly report generation." data-stack="Vue 3, Python FastAPI, Chart.js, Docker, AWS">
+                            View Details <i data-lucide="arrow-up-right"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card-bottom-bar">
+                    <span class="card-title-preview">Apex Analytics Suite</span>
+                    <span class="card-year">2026</span>
+                  </div>
                 </div>
               </div>
+
               <!-- Slide 3 -->
-              <div class="coverflow-slide" data-index="2">
-                <div class="slide-image-wrapper">
-                  <img src="/sample/3.png" alt="Digital Growth Solution" />
-                </div>
-                <div class="modern-slide-label">
-                  <span class="sample-num">SAMPLE 03</span>
-                  <span class="sample-year">2026</span>
+              <div class="coverflow-slide" data-index="2" data-category="uiux">
+                <div class="modern-card-frame">
+                  <div class="browser-mockup-header">
+                    <div class="window-dots">
+                      <span class="dot-red"></span>
+                      <span class="dot-yellow"></span>
+                      <span class="dot-green"></span>
+                    </div>
+                    <div class="mockup-url-bar">
+                      <i data-lucide="lock" class="lock-icon"></i>
+                      <span>vogue.mylab.lk</span>
+                    </div>
+                    <span class="category-pill-tag">UI/UX</span>
+                  </div>
+
+                  <div class="slide-image-wrapper">
+                    <img src="/se/t (3).png" alt="Vogue Luxe Fashion & Retail" loading="lazy" />
+                    <div class="slide-glass-overlay">
+                      <div class="overlay-badge">LUXURY BRANDING</div>
+                      <div class="overlay-details">
+                        <span class="project-category-label">✨ FASHION & LUXURY RETAIL</span>
+                        <h3 class="project-title">Vogue Luxe Collective</h3>
+                        <p class="project-desc">Ultra-responsive luxury apparel showcase with 3D product interaction & dynamic cart.</p>
+                        <div class="tech-stack-list">
+                          <span class="tech-tag">Next.js</span>
+                          <span class="tech-tag">GSAP</span>
+                          <span class="tech-tag">Shopify</span>
+                          <span class="tech-tag">WebGL</span>
+                        </div>
+                        <div class="project-actions">
+                          <button class="btn-card-action primary open-project-modal" data-title="Vogue Luxe Collective" data-cat="Fashion & Luxury Retail" data-img="/se/t (3).png" data-desc="High-end fashion brand web portal with immersive product showcases, micro-animations, fast lookbooks, and seamless multi-currency checkout." data-stack="Next.js, GSAP, Tailwind CSS, Shopify Headless API">
+                            View Details <i data-lucide="arrow-up-right"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card-bottom-bar">
+                    <span class="card-title-preview">Vogue Luxe Collective</span>
+                    <span class="card-year">2026</span>
+                  </div>
                 </div>
               </div>
+
               <!-- Slide 4 -->
-              <div class="coverflow-slide" data-index="3">
-                <div class="slide-image-wrapper">
-                  <img src="/sample/4.png" alt="Security & DevOps Architecture" />
-                </div>
-                <div class="modern-slide-label">
-                  <span class="sample-num">SAMPLE 04</span>
-                  <span class="sample-year">2026</span>
+              <div class="coverflow-slide" data-index="3" data-category="enterprise">
+                <div class="modern-card-frame">
+                  <div class="browser-mockup-header">
+                    <div class="window-dots">
+                      <span class="dot-red"></span>
+                      <span class="dot-yellow"></span>
+                      <span class="dot-green"></span>
+                    </div>
+                    <div class="mockup-url-bar">
+                      <i data-lucide="lock" class="lock-icon"></i>
+                      <span>cyberguard.mylab.lk</span>
+                    </div>
+                    <span class="category-pill-tag">Enterprise</span>
+                  </div>
+
+                  <div class="slide-image-wrapper">
+                    <img src="/se/t (4).png" alt="CyberGuard Security Architecture" loading="lazy" />
+                    <div class="slide-glass-overlay">
+                      <div class="overlay-badge">SECURITY PORTAL</div>
+                      <div class="overlay-details">
+                        <span class="project-category-label">🛡️ CLOUD SECURITY SYSTEM</span>
+                        <h3 class="project-title">CyberGuard Ops Portal</h3>
+                        <p class="project-desc">High-security DevOps architecture & infrastructure management portal for cloud tech.</p>
+                        <div class="tech-stack-list">
+                          <span class="tech-tag">React</span>
+                          <span class="tech-tag">TypeScript</span>
+                          <span class="tech-tag">Go</span>
+                          <span class="tech-tag">Docker</span>
+                        </div>
+                        <div class="project-actions">
+                          <button class="btn-card-action primary open-project-modal" data-title="CyberGuard Ops Portal" data-cat="Cloud Security & DevOps" data-img="/se/t (4).png" data-desc="Mission-critical cloud monitoring console providing automated threat detection, server health analytics, and zero-trust authentication workflows." data-stack="React 18, TypeScript, Go API, Kubernetes, Docker">
+                            View Details <i data-lucide="arrow-up-right"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card-bottom-bar">
+                    <span class="card-title-preview">CyberGuard Ops Portal</span>
+                    <span class="card-year">2026</span>
+                  </div>
                 </div>
               </div>
+
               <!-- Slide 5 -->
-              <div class="coverflow-slide" data-index="4">
-                <div class="slide-image-wrapper">
-                  <img src="/sample/5.png" alt="Branding & Design System" />
-                </div>
-                <div class="modern-slide-label">
-                  <span class="sample-num">SAMPLE 05</span>
-                  <span class="sample-year">2026</span>
+              <div class="coverflow-slide" data-index="4" data-category="uiux">
+                <div class="modern-card-frame">
+                  <div class="browser-mockup-header">
+                    <div class="window-dots">
+                      <span class="dot-red"></span>
+                      <span class="dot-yellow"></span>
+                      <span class="dot-green"></span>
+                    </div>
+                    <div class="mockup-url-bar">
+                      <i data-lucide="lock" class="lock-icon"></i>
+                      <span>novastudio.mylab.lk</span>
+                    </div>
+                    <span class="category-pill-tag">UI/UX</span>
+                  </div>
+
+                  <div class="slide-image-wrapper">
+                    <img src="/se/t (5).png" alt="Nova Studio Design System" loading="lazy" />
+                    <div class="slide-glass-overlay">
+                      <div class="overlay-badge">DESIGN SYSTEM</div>
+                      <div class="overlay-details">
+                        <span class="project-category-label">🎨 CREATIVE AGENCY WEBSITE</span>
+                        <h3 class="project-title">Nova Design System</h3>
+                        <p class="project-desc">Modular design system & component library built for rapid digital product development.</p>
+                        <div class="tech-stack-list">
+                          <span class="tech-tag">Figma</span>
+                          <span class="tech-tag">HTML5/CSS3</span>
+                          <span class="tech-tag">JS</span>
+                        </div>
+                        <div class="project-actions">
+                          <button class="btn-card-action primary open-project-modal" data-title="Nova Design System" data-cat="Creative Agency & UI/UX" data-img="/se/t (5).png" data-desc="Complete brand identity, interactive component showcase, and modern dark-themed web platform for international creative studio." data-stack="Figma, Modern CSS Architecture, Vanilla JS, Vite">
+                            View Details <i data-lucide="arrow-up-right"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card-bottom-bar">
+                    <span class="card-title-preview">Nova Design System</span>
+                    <span class="card-year">2026</span>
+                  </div>
                 </div>
               </div>
+
               <!-- Slide 6 -->
-              <div class="coverflow-slide" data-index="5">
-                <div class="slide-image-wrapper">
-                  <img src="/sample/6.png" alt="Next-Gen Web Platform" />
-                </div>
-                <div class="modern-slide-label">
-                  <span class="sample-num">SAMPLE 06</span>
-                  <span class="sample-year">2026</span>
+              <div class="coverflow-slide" data-index="5" data-category="webapp">
+                <div class="modern-card-frame">
+                  <div class="browser-mockup-header">
+                    <div class="window-dots">
+                      <span class="dot-red"></span>
+                      <span class="dot-yellow"></span>
+                      <span class="dot-green"></span>
+                    </div>
+                    <div class="mockup-url-bar">
+                      <i data-lucide="lock" class="lock-icon"></i>
+                      <span>omnipay.mylab.lk</span>
+                    </div>
+                    <span class="category-pill-tag">Web App</span>
+                  </div>
+
+                  <div class="slide-image-wrapper">
+                    <img src="/se/t (6).png" alt="OmniPay Fintech Solution" loading="lazy" />
+                    <div class="slide-glass-overlay">
+                      <div class="overlay-badge">FINTECH APP</div>
+                      <div class="overlay-details">
+                        <span class="project-category-label">💳 FINTECH & PAYMENTS</span>
+                        <h3 class="project-title">OmniPay Global</h3>
+                        <p class="project-desc">Next-generation payment Gateway integration & SaaS billing management app.</p>
+                        <div class="tech-stack-list">
+                          <span class="tech-tag">React</span>
+                          <span class="tech-tag">Node.js</span>
+                          <span class="tech-tag">Stripe</span>
+                          <span class="tech-tag">Redis</span>
+                        </div>
+                        <div class="project-actions">
+                          <button class="btn-card-action primary open-project-modal" data-title="OmniPay Global" data-cat="Fintech & Digital Payments" data-img="/se/t (6).png" data-desc="Secure merchant billing system with instant payout tracking, automated invoices, transaction risk scoring, and web dashboard." data-stack="React, Node.js, Stripe Connect API, Redis, PostgreSQL">
+                            View Details <i data-lucide="arrow-up-right"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card-bottom-bar">
+                    <span class="card-title-preview">OmniPay Global</span>
+                    <span class="card-year">2026</span>
+                  </div>
                 </div>
               </div>
+
             </div>
           </div>
           
-          <div class="coverflow-controls">
-            <button class="coverflow-prev-btn" aria-label="Previous Project"><i data-lucide="arrow-left"></i></button>
-            <div class="coverflow-dots">
-              <span class="dot active" data-index="0"></span>
-              <span class="dot" data-index="1"></span>
-              <span class="dot" data-index="2"></span>
-              <span class="dot" data-index="3"></span>
-              <span class="dot" data-index="4"></span>
-              <span class="dot" data-index="5"></span>
+          <!-- Bottom Controls & Indicators -->
+          <div class="coverflow-controls-wrapper">
+            <button class="coverflow-prev-btn magnetic" aria-label="Previous Project"><i data-lucide="chevron-left"></i></button>
+            
+            <div class="showcase-status-indicator">
+              <span class="slide-counter-badge">PROJECT <strong id="current-slide-num">01</strong> / 06</span>
+              <div class="slide-progress-track">
+                <div class="slide-progress-fill" id="showcase-progress-bar"></div>
+              </div>
+              <div class="coverflow-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+                <span class="dot" data-index="4"></span>
+                <span class="dot" data-index="5"></span>
+              </div>
             </div>
-            <button class="coverflow-next-btn" aria-label="Next Project"><i data-lucide="arrow-right"></i></button>
+
+            <button class="coverflow-next-btn magnetic" aria-label="Next Project"><i data-lucide="chevron-right"></i></button>
           </div>
+          
         </div>
       </section>
+
+      <!-- Project Quick View Modal -->
+      <div id="project-modal" class="project-modal-backdrop" aria-hidden="true">
+        <div class="project-modal-content">
+          <button class="modal-close-btn" aria-label="Close modal"><i data-lucide="x"></i></button>
+          
+          <div class="modal-grid">
+            <div class="modal-image-col">
+              <div class="modal-browser-header">
+                <div class="window-dots">
+                  <span class="dot-red"></span>
+                  <span class="dot-yellow"></span>
+                  <span class="dot-green"></span>
+                </div>
+                <span id="modal-url-display">mylab.lk/projects</span>
+              </div>
+              <div class="modal-image-container">
+                <img id="modal-project-img" src="/sample/1.png" alt="Project Preview" />
+              </div>
+            </div>
+            
+            <div class="modal-info-col">
+              <span id="modal-project-cat" class="modal-cat-badge">E-COMMERCE</span>
+              <h3 id="modal-project-title">Project Title</h3>
+              <p id="modal-project-desc">Project details and implementation notes...</p>
+              
+              <div class="modal-meta-box">
+                <div class="meta-item">
+                  <span class="meta-label">DELIVERABLES</span>
+                  <span class="meta-val">Full-Stack Web App, UI/UX</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">YEAR</span>
+                  <span class="meta-val">2026</span>
+                </div>
+              </div>
+
+              <div class="modal-stack-box">
+                <span class="meta-label">TECHNOLOGIES USED</span>
+                <div id="modal-stack-tags" class="tech-stack-list"></div>
+              </div>
+
+              <div class="modal-cta-box">
+                <a href="#contact" class="btn btn-primary modal-contact-btn">Request Similar Website <i data-lucide="arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Stats Section -->
       <section id="stats" class="stats-section">

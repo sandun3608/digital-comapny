@@ -284,56 +284,35 @@ function initCoverFlow() {
         let scale = 1
         let blurVal = 0
 
-        if (absOffset <= 3) {
+        if (absOffset <= 1) {
           if (isCenter) {
             xOffset = 0
-            zOffset = isPortrait ? 60 : 70 // Active center card pops forward
+            zOffset = 80
             yOffset = 0
             rotY = 0
             opacity = 1
-            scale = 1.06
+            scale = 1.04
             blurVal = 0
+            zIndex = 100
             slide.classList.add('active')
           } else {
             slide.classList.remove('active')
-            
-            // 3D Angle: Left cards rotate negative (-deg), Right cards rotate positive (+deg)
-            const rotStep = isMobile ? 16 : (isPortrait ? 22 : 26)
-            rotY = direction * (rotStep + (absOffset - 1) * 6)
-
-            // Horizontal spacing: Spread cards wide across screen like Flowblox 7-card arc
-            const spacingStep = isMobile ? (isPortrait ? 135 : 150) : (isPortrait ? 225 : 260)
-            
-            if (absOffset === 1) xOffset = direction * spacingStep
-            else if (absOffset === 2) xOffset = direction * spacingStep * 1.92
-            else if (absOffset === 3) xOffset = direction * spacingStep * 2.78
-
-            // Step outer cards back in 3D Z-depth
-            const zStep = isMobile ? 50 : (isPortrait ? 70 : 80)
-            zOffset = 30 - absOffset * zStep
-
+            rotY = direction * (isMobile ? 18 : 25)
+            xOffset = direction * (isMobile ? 310 : 490)
+            zOffset = -120
             yOffset = 0
-
-            if (absOffset === 1) {
-              opacity = 0.95
-              scale = 0.94
-              blurVal = 0
-            } else if (absOffset === 2) {
-              opacity = 0.85
-              scale = 0.84
-              blurVal = 0
-            } else if (absOffset === 3) {
-              opacity = 0.65
-              scale = 0.74
-              blurVal = isMobile ? 0 : 1
-            }
+            opacity = 0.75
+            scale = 0.82
+            blurVal = 0
+            zIndex = 50
           }
         } else {
           opacity = 0
           scale = 0.5
-          xOffset = direction * 900
+          xOffset = direction * 950
           zOffset = -350
           yOffset = 0
+          zIndex = 0
           slide.classList.remove('active')
         }
 
@@ -357,6 +336,17 @@ function initCoverFlow() {
         if (index === currentIndex) dot.classList.add('active')
         else dot.classList.remove('active')
       })
+
+      // Update progress bar & counter
+      const currentSlideNumEl = document.getElementById('current-slide-num')
+      const progressBarEl = document.getElementById('showcase-progress-bar')
+      if (currentSlideNumEl) {
+        currentSlideNumEl.textContent = String(currentIndex + 1).padStart(2, '0')
+      }
+      if (progressBarEl) {
+        const percent = ((currentIndex + 1) / slides.length) * 100
+        progressBarEl.style.width = `${percent}%`
+      }
     }
 
     function goToSlide(index) {
@@ -373,9 +363,29 @@ function initCoverFlow() {
 
     slides.forEach((slide, index) => {
       slide.addEventListener('click', (e) => {
+        if (e.target.closest('.open-project-modal')) return
         if (currentIndex !== index) {
           e.preventDefault()
           goToSlide(index)
+        }
+      })
+    })
+
+    // Category Filtering
+    const filterTabs = container.querySelectorAll('.filter-tab')
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => t.classList.remove('active'))
+        tab.classList.add('active')
+
+        const filter = tab.getAttribute('data-filter')
+        if (filter === 'all') {
+          goToSlide(0)
+        } else {
+          const targetIndex = slides.findIndex(s => s.getAttribute('data-category') === filter)
+          if (targetIndex !== -1) {
+            goToSlide(targetIndex)
+          }
         }
       })
     })
@@ -408,6 +418,7 @@ function initCoverFlow() {
     let isDragging = false
 
     const onStart = (e) => {
+      if (e.target.closest('.open-project-modal')) return
       isDragging = true
       startX = e.pageX || (e.touches && e.touches[0].pageX) || 0
       stopAutoPlay()
@@ -466,7 +477,67 @@ function initCoverFlow() {
   })
 }
 
+// Global Project Modal Logic
+function initProjectModal() {
+  const modal = document.getElementById('project-modal')
+  if (!modal) return
+
+  const closeBtn = modal.querySelector('.modal-close-btn')
+  const modalImg = document.getElementById('modal-project-img')
+  const modalTitle = document.getElementById('modal-project-title')
+  const modalCat = document.getElementById('modal-project-cat')
+  const modalDesc = document.getElementById('modal-project-desc')
+  const modalStack = document.getElementById('modal-stack-tags')
+  const modalUrl = document.getElementById('modal-url-display')
+
+  document.body.addEventListener('click', (e) => {
+    const btn = e.target.closest('.open-project-modal')
+    if (!btn) return
+
+    e.preventDefault()
+    e.stopPropagation()
+
+    const title = btn.getAttribute('data-title')
+    const cat = btn.getAttribute('data-cat')
+    const img = btn.getAttribute('data-img')
+    const desc = btn.getAttribute('data-desc')
+    const stackStr = btn.getAttribute('data-stack')
+
+    if (modalTitle) modalTitle.textContent = title
+    if (modalCat) modalCat.textContent = cat
+    if (modalImg) modalImg.src = img
+    if (modalDesc) modalDesc.textContent = desc
+    if (modalUrl) modalUrl.textContent = `mylab.lk/case-studies/${title.toLowerCase().replace(/[^a-z0-0]/g, '-')}`
+
+    if (modalStack && stackStr) {
+      const tags = stackStr.split(',').map(s => `<span class="tech-tag">${s.trim()}</span>`).join('')
+      modalStack.innerHTML = tags
+    }
+
+    modal.classList.add('active')
+    modal.setAttribute('aria-hidden', 'false')
+    document.body.style.overflow = 'hidden'
+  })
+
+  function closeModal() {
+    modal.classList.remove('active')
+    modal.setAttribute('aria-hidden', 'true')
+    document.body.style.overflow = ''
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal)
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal()
+  })
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal()
+    }
+  })
+}
+
 initCoverFlow()
+initProjectModal()
 
 // Awards Slider Logic
 function initAwardsSlider() {
