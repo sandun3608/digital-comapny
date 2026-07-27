@@ -1129,6 +1129,52 @@ platforms that help businesses grow faster, operate efficiently, and compete suc
     </footer>
 
     <script type="module" src="./src/main.js"></script>
+
+    <script>
+      // Bento Grid Image Shuffle
+      const bentoImages = [
+        "/a9/032102cf1d364cf6e91f681ab52713f5.jpg",
+        "/a9/0b48dcde938408f23d75fa99309adc9a.jpg",
+        "/a9/1491ade39561c7b9b6b50a4c89e6b3e1.jpg",
+        "/a9/423a7646dbcb9355987aa1bb255b2dbd.jpg",
+        "/a9/9cab6d0d1c6166ed2828c069a995d39e.jpg",
+        "/a9/d7803675eb083c29a78fbd0ba7e9954c.jpg",
+        "/a9/ee382fad6c3dcb3265ab87e45f2f38a2.jpg"
+      ];
+
+      function shuffleArray(arr) {
+        const a = [...arr];
+        for (let i = a.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+      }
+
+      function shuffleBentoGrid() {
+        const cards = document.querySelectorAll('.creative-bento-grid .bento-card img');
+        if (!cards.length) return;
+
+        const shuffled = shuffleArray(bentoImages);
+
+        cards.forEach((img, i) => {
+          img.style.transition = 'opacity 0.5s ease';
+          img.style.opacity = '0';
+          setTimeout(() => {
+            img.src = shuffled[i % shuffled.length];
+            img.style.opacity = '1';
+          }, 500 + i * 80);
+        });
+      }
+
+      // Start shuffle after page load
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          shuffleBentoGrid();
+          setInterval(shuffleBentoGrid, 3500);
+        }, 1500);
+      });
+    </script>
   </body>
 </html>
 
