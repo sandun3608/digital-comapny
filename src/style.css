@@ -1351,12 +1351,13 @@ footer.custom-footer::before {
   width: 520px;
   height: 370px;
   border-radius: 18px;
-  transform-style: preserve-3d;
   cursor: pointer;
   user-select: none;
-  background: #0e0e16;
+  background: #0b0b14;
   overflow: hidden;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 @media (max-width: 768px) {
@@ -1383,20 +1384,22 @@ footer.custom-footer::before {
 .modern-card-frame {
   width: 100%;
   height: 100%;
-  background: #0e0e16;
+  background: #0b0b14;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(168, 85, 247, 0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(168, 85, 247, 0.15);
   display: flex;
   flex-direction: column;
   position: relative;
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .coverflow-slide.active .modern-card-frame {
   border-color: rgba(168, 85, 247, 0.7);
-  box-shadow: 0 22px 65px rgba(0, 0, 0, 0.8), 0 0 50px rgba(168, 85, 247, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 22px 65px rgba(0, 0, 0, 0.9), 0 0 50px rgba(168, 85, 247, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.25);
 }
 
 /* Browser Mockup Top Bar */
@@ -1405,11 +1408,11 @@ footer.custom-footer::before {
   align-items: center;
   justify-content: space-between;
   padding: 0.65rem 1.1rem;
-  background: rgba(14, 14, 22, 0.85);
-  backdrop-filter: blur(16px);
+  background: #12121e;
   border-bottom: 1px solid rgba(255, 255, 255, 0.09);
   height: 40px;
   z-index: 5;
+  position: relative;
 }
 
 .window-dots {
@@ -1468,7 +1471,8 @@ footer.custom-footer::before {
   width: 100%;
   flex: 1;
   overflow: hidden;
-  background: #0d0d16;
+  background: #0b0b14;
+  isolation: isolate;
 }
 
 .slide-image-wrapper img {
@@ -1480,6 +1484,10 @@ footer.custom-footer::before {
   filter: brightness(1.05) contrast(1.05) saturate(1.05);
   image-rendering: -webkit-optimize-contrast;
   border: none;
+  display: block;
+  background: #0b0b14;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .coverflow-slide.active .slide-image-wrapper img {
@@ -1493,7 +1501,7 @@ footer.custom-footer::before {
 .slide-glass-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10, 10, 16, 0.88) 0%, rgba(10, 10, 16, 0.25) 25%, transparent 45%);
+  background: linear-gradient(to top, rgba(10, 10, 16, 0.92) 0%, rgba(10, 10, 16, 0.25) 25%, transparent 45%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1546,8 +1554,10 @@ footer.custom-footer::before {
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 1.2rem;
-  background: rgba(14, 14, 22, 0.95);
+  background: #12121e;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 5;
 }
 
 .card-title-preview {
