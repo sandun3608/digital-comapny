@@ -188,15 +188,11 @@ const renderChart = () => {
   const categories = {
     'UI/UX Design': 0,
     'Web Development': 0,
-    'E-commerce': 0,
     'Mobile Apps': 0,
-    'Systems Development': 0,
     'Social Media': 0,
     'Branding & Graphic Design': 0,
-    'Video Editing': 0,
     'Social Media Post Design': 0,
-    'Video Presenting & Reels': 0,
-    'SEO & Backlink Strategy': 0
+    'Video Presenting & Reels': 0
   }
   
   submissions.forEach(s => {
@@ -213,15 +209,11 @@ const renderChart = () => {
   const barMapping = {
     'UI/UX Design': 'bar-uiux',
     'Web Development': 'bar-web',
-    'E-commerce': 'bar-ecom',
     'Mobile Apps': 'bar-mobile',
-    'Systems Development': 'bar-systems',
     'Social Media': 'bar-social',
     'Branding & Graphic Design': 'bar-branding',
-    'Video Editing': 'bar-video-editing',
     'Social Media Post Design': 'bar-post-design',
-    'Video Presenting & Reels': 'bar-video-presenting',
-    'SEO & Backlink Strategy': 'bar-seo'
+    'Video Presenting & Reels': 'bar-video-presenting'
   }
   
   Object.keys(categories).forEach(service => {
@@ -537,15 +529,11 @@ const setupLogout = () => {
 const MEDIA_ASSETS = [
   { key: '/assets/s_web.png', name: 'Web Dev Mockup', defaultUrl: '/assets/s_web.png' },
   { key: '/assets/s_uiux.png', name: 'UI/UX Mockup', defaultUrl: '/assets/s_uiux.png' },
-  { key: '/assets/s_ecom.png', name: 'E-commerce Mockup', defaultUrl: '/assets/s_ecom.png' },
   { key: '/assets/s_mobile.png', name: 'Mobile Apps Mockup', defaultUrl: '/assets/s_mobile.png' },
-  { key: '/assets/s_system.png', name: 'Systems Mockup', defaultUrl: '/assets/s_system.png' },
   { key: '/assets/s_smm.png', name: 'Social Media Mockup', defaultUrl: '/assets/s_smm.png' },
   { key: '/assets/s_branding.png', name: 'Branding Mockup', defaultUrl: '/assets/s_branding.png' },
-  { key: '/assets/s_video_edit.png', name: 'Video Editing Mockup', defaultUrl: '/assets/s_video_edit.png' },
   { key: '/assets/s_post_design.png', name: 'Post Design Mockup', defaultUrl: '/assets/s_post_design.png' },
   { key: '/assets/s_presenter.png', name: 'Video Presenter Mockup', defaultUrl: '/assets/s_presenter.png' },
-  { key: '/assets/s_seo.png', name: 'SEO Mockup', defaultUrl: '/assets/s_seo.png' },
   { key: '/assets/intro_team.png', name: 'Team Hexagon Image', defaultUrl: '/assets/intro_team.png' },
   { key: '/assets/cta_person.png', name: 'CTA Banner Person', defaultUrl: '/assets/cta_person.png' },
   { key: '/assets/footer_logo.png', name: 'Footer Logo Image', defaultUrl: '/assets/footer_logo.png' },
