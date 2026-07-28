@@ -82,8 +82,8 @@ if (processSteps) {
   })
 }
 
-// 3b. Scroll-triggered Mockup Pop-up Animation
-// When scrolling, the phone mockup scales up and moves over the text, then reverses on scroll back
+// 3b. Scroll-triggered Mockup Pop-up Animation (Disabled as per request)
+/*
 const mockupWrapper = document.querySelector('.service-mockup-wrapper')
 if (mockupWrapper) {
   // Set initial state
@@ -109,6 +109,7 @@ if (mockupWrapper) {
     ease: 'power2.out'
   })
 }
+*/
 
 // 4. Initialize Lucide Icons
 createIcons({ icons })
