@@ -14,7 +14,6 @@ export default defineConfig({
         uiuxDesign: resolve(__dirname, 'services/uiux-design.html'),
         socialMedia: resolve(__dirname, 'services/social-media.html'),
         brandingDesign: resolve(__dirname, 'services/branding-design.html'),
-        videoEditing: resolve(__dirname, 'services/video-editing.html'),
         postDesign: resolve(__dirname, 'services/post-design.html'),
         videoPresenting: resolve(__dirname, 'services/video-presenting.html'),
 
