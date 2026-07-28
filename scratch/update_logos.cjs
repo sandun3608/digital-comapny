@@ -17,41 +17,34 @@ const rootFiles = ['index.html', 'contact.html', 'dashboard.html'];
 rootFiles.forEach(file => {
   const filePath = path.join(__dirname, '..', file);
   updateFile(filePath, (content, fp) => {
-    // A. Favicon check/update
-    // Replace existing favicon link tag if it exists
+    // A. Favicon check/update (keep favicon as is)
     if (content.includes('rel="icon"')) {
       content = content.replace(/<link\s+rel="icon"[^>]*>/g, '<link rel="icon" type="image/png" href="logo/3.png" />');
-    } else {
-      // Add favicon link before </head>
-      content = content.replace('</head>', '    <link rel="icon" type="image/png" href="logo/3.png" />\n  </head>');
     }
 
-    // B. Navbar logo check/update
-    // Target logo links like: <a href="..." class="logo" style="...">MYLAB.LK</a>
-    // We want to insert the image inside.
-    const logoRegex = /(<a\s+[^>]*class="logo"[^>]*>)\s*MYLAB\.LK\s*(<\/a>)/g;
-    content = content.replace(logoRegex, (match, openingTag, closingTag) => {
-      // Modify styling to flex alignment
-      let modifiedOpening = openingTag;
-      if (!modifiedOpening.includes('display:')) {
-        modifiedOpening = modifiedOpening.replace('style="', 'style="display: flex; align-items: center; gap: 8px; ');
-      }
-      return `${modifiedOpening}<img src="logo/3.png" alt="Logo" style="height: 32px; width: auto; border-radius: 4px; object-fit: contain;">MYLAB.LK${closingTag}`;
+    // B. Navbar logo: Remove the image, use text with span for .LK
+    // We match the tag we modified previously or the original tag
+    // Match either <a class="logo">...</a> or similar
+    const logoRegex = /<a\s+([^>]*class="logo"[^>]*>)([\s\S]*?)<\/a>/g;
+    content = content.replace(logoRegex, (match, attributes, innerContent) => {
+      // Clean up inline style we added (keep the original clean style or attributes)
+      let cleanedAttributes = attributes.replace(/style="display:\s*flex;\s*align-items:\s*center;\s*gap:\s*\d+px;\s*/g, 'style="');
+      return `<a ${cleanedAttributes}MYLAB<span>.LK</span></a>`;
     });
 
-    // For dashboard admin logo
-    content = content.replace(/<div\s+class="logo">\s*MYLAB\.LK\s*<\/div>/g, 
-      '<div class="logo" style="display: flex; align-items: center; gap: 8px;"><img src="logo/3.png" alt="Logo" style="height: 32px; width: auto; border-radius: 4px; object-fit: contain;">MYLAB.LK</div>'
+    // Dashboard header logo
+    content = content.replace(/<div\s+class="logo"[^>]*>([\s\S]*?)<\/div>/g, 
+      '<div class="logo">MYLAB<span>.LK</span></div>'
     );
 
-    // For dashboard auth logo
-    content = content.replace(/<div\s+class="auth-logo">\s*MYLAB\.LK\s*<\/div>/g, 
-      '<div class="auth-logo" style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 2.2rem;"><img src="logo/3.png" alt="Logo" style="height: 40px; width: auto; border-radius: 4px; object-fit: contain;">MYLAB.LK</div>'
+    // Dashboard auth logo
+    content = content.replace(/<div\s+class="auth-logo"[^>]*>([\s\S]*?)<\/div>/g, 
+      '<div class="auth-logo">MYLAB<span>.LK</span></div>'
     );
 
-    // C. Footer logo check/update
-    content = content.replace(/<div\s+class="footer-logo-area">\s*(<!--.*?-->)?\s*<h2>\s*MYLAB\.LK\s*<\/h2>\s*<\/div>/g, 
-      '<div class="footer-logo-area" style="display: flex; align-items: center; gap: 10px;"><img src="logo/3.png" alt="Logo" style="height: 40px; width: auto; border-radius: 4px; object-fit: contain;"><h2 style="margin: 0;">MYLAB.LK</h2></div>'
+    // C. Footer logo: Remove image, use text with span for .LK
+    content = content.replace(/<div\s+class="footer-logo-area"[^>]*>([\s\S]*?)<\/div>/g, 
+      '<div class="footer-logo-area"><h2>MYLAB<span>.LK</span></h2></div>'
     );
 
     return content;
@@ -65,26 +58,21 @@ if (fs.existsSync(servicesDir)) {
   files.forEach(file => {
     const filePath = path.join(servicesDir, file);
     updateFile(filePath, (content) => {
-      // A. Favicon check/update (using relative path ../logo/3.png)
+      // A. Favicon check/update (keep favicon)
       if (content.includes('rel="icon"')) {
         content = content.replace(/<link\s+rel="icon"[^>]*>/g, '<link rel="icon" type="image/png" href="../logo/3.png" />');
-      } else {
-        content = content.replace('</head>', '    <link rel="icon" type="image/png" href="../logo/3.png" />\n  </head>');
       }
 
-      // B. Navbar logo check/update
-      const logoRegex = /(<a\s+[^>]*class="logo"[^>]*>)\s*MYLAB\.LK\s*(<\/a>)/g;
-      content = content.replace(logoRegex, (match, openingTag, closingTag) => {
-        let modifiedOpening = openingTag;
-        if (!modifiedOpening.includes('display:')) {
-          modifiedOpening = modifiedOpening.replace('style="', 'style="display: flex; align-items: center; gap: 8px; ');
-        }
-        return `${modifiedOpening}<img src="../logo/3.png" alt="Logo" style="height: 32px; width: auto; border-radius: 4px; object-fit: contain;">MYLAB.LK${closingTag}`;
+      // B. Navbar logo
+      const logoRegex = /<a\s+([^>]*class="logo"[^>]*>)([\s\S]*?)<\/a>/g;
+      content = content.replace(logoRegex, (match, attributes, innerContent) => {
+        let cleanedAttributes = attributes.replace(/style="display:\s*flex;\s*align-items:\s*center;\s*gap:\s*\d+px;\s*/g, 'style="');
+        return `<a ${cleanedAttributes}MYLAB<span>.LK</span></a>`;
       });
 
-      // C. Footer logo check/update
-      content = content.replace(/<div\s+class="footer-logo-area">\s*(<!--.*?-->)?\s*<h2>\s*MYLAB\.LK\s*<\/h2>\s*<\/div>/g, 
-        '<div class="footer-logo-area" style="display: flex; align-items: center; gap: 10px;"><img src="../logo/3.png" alt="Logo" style="height: 40px; width: auto; border-radius: 4px; object-fit: contain;"><h2 style="margin: 0;">MYLAB.LK</h2></div>'
+      // C. Footer logo
+      content = content.replace(/<div\s+class="footer-logo-area"[^>]*>([\s\S]*?)<\/div>/g, 
+        '<div class="footer-logo-area"><h2>MYLAB<span>.LK</span></h2></div>'
       );
 
       return content;
