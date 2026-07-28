@@ -396,7 +396,7 @@
 .service-mockup-wrapper {
   position: relative;
   width: 100%;
-  max-width: 520px;
+  max-width: 720px;
   will-change: transform, opacity;
   z-index: 1;
 }
