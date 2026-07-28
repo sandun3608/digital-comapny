@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard.html
+Disallow: /src/
+Disallow: /node_modules/
+
+Sitemap: https://www.mylab.lk/sitemap.xml
