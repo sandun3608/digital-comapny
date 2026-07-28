@@ -92,7 +92,7 @@ function initPreloader() {
   // Check if visited in this session
   if (sessionStorage.getItem('mylab_visited') === 'true') {
     preloader.remove();
-    document.body.style.overflow = '';
+    document.body.style.overflow = 'auto';
     heroTl.play();
     return;
   }
@@ -127,7 +127,7 @@ function initPreloader() {
     const exitTl = gsap.timeline({
       onComplete: () => {
         preloader.remove();
-        document.body.style.overflow = '';
+        document.body.style.overflow = 'auto';
         // Start Hero section animations
         heroTl.play();
       }
