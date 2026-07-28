@@ -89,6 +89,17 @@ function initPreloader() {
   const preloader = document.getElementById('preloader');
   if (!preloader) return;
 
+  // Check if visited in this session
+  if (sessionStorage.getItem('mylab_visited') === 'true') {
+    preloader.remove();
+    document.body.style.overflow = '';
+    heroTl.play();
+    return;
+  }
+
+  // Set visited key
+  sessionStorage.setItem('mylab_visited', 'true');
+
   const chars = document.querySelectorAll('.preloader-char');
   const progress = document.querySelector('.preloader-progress');
   const preloaderContent = document.querySelector('.preloader-content');

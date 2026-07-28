@@ -10,28 +10,108 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="/theme.js"></script>
-  </head>
-  <body style="overflow: hidden;">
-    <!-- Premium Preloader / Splash Screen -->
-    <div id="preloader" class="preloader">
-      <div class="preloader-content">
-        <h1 class="preloader-title">
-          <span class="preloader-char">M</span>
-          <span class="preloader-char">Y</span>
-          <span class="preloader-char">L</span>
-          <span class="preloader-char">A</span>
-          <span class="preloader-char">B</span>
-          <span class="preloader-char dot">.</span>
-          <span class="preloader-char">L</span>
-          <span class="preloader-char">K</span>
-        </h1>
-        <div class="preloader-bar">
-          <div class="preloader-progress"></div>
-        </div>
-        <p class="preloader-subtext">DIGITAL EXPERIENCE LAB // CONTACT US</p>
-      </div>
-    </div>
+    <style>
+      /* Premium overrides for Contact page */
+      .contact-grid {
+        position: relative;
+      }
+      .contact-grid::before {
+        content: '';
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+        top: -100px;
+        left: -200px;
+        z-index: -1;
+        pointer-events: none;
+      }
+      .contact-grid::after {
+        content: '';
+        position: absolute;
+        width: 450px;
+        height: 450px;
+        background: radial-gradient(circle, rgba(236, 72, 153, 0.08) 0%, transparent 70%);
+        bottom: -150px;
+        right: -150px;
+        z-index: -1;
+        pointer-events: none;
+      }
+      
+      /* Glassmorphic Cards */
+      .premium-glass-card {
+        background: linear-gradient(135deg, rgba(20, 20, 20, 0.6) 0%, rgba(10, 10, 10, 0.95) 100%) !important;
+        border: 1px solid rgba(255, 255, 255, 0.06) !important;
+        border-radius: 28px !important;
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+        backdrop-filter: blur(25px);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+      
+      .premium-glass-card:hover {
+        border-color: rgba(139, 92, 246, 0.3) !important;
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), 0 0 30px rgba(139, 92, 246, 0.1) !important;
+      }
 
+      /* Premium Inputs */
+      .premium-input-field {
+        width: 100%;
+        padding: 1.15rem 1.4rem !important;
+        border-radius: 14px !important;
+        background: rgba(255, 255, 255, 0.01) !important;
+        border: 1px solid rgba(255, 255, 255, 0.06) !important;
+        color: #fff !important;
+        font-size: 0.95rem !important;
+        outline: none !important;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+      }
+      
+      .premium-input-field:focus {
+        border-color: var(--accent) !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+        box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.18), inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+      }
+
+      /* Contact Tiles */
+      .premium-contact-tile {
+        display: flex;
+        gap: 1.3rem;
+        align-items: center;
+        padding: 1.4rem !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.005) 100%) !important;
+        border: 1px solid rgba(255, 255, 255, 0.04) !important;
+        border-radius: 20px !important;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+
+      .premium-contact-tile:hover {
+        transform: translateY(-5px) scale(1.02);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%) !important;
+        border-color: rgba(139, 92, 246, 0.3) !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(139, 92, 246, 0.08) !important;
+      }
+
+      .tile-icon-container {
+        background: rgba(139, 92, 246, 0.12) !important;
+        border: 1px solid rgba(139, 92, 246, 0.2);
+        padding: 0.9rem !important;
+        border-radius: 14px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent) !important;
+        transition: all 0.3s ease;
+      }
+
+      .premium-contact-tile:hover .tile-icon-container {
+        background: var(--accent) !important;
+        color: #fff !important;
+        box-shadow: 0 0 15px var(--accent);
+      }
+    </style>
+  </head>
+  <body>
     <!-- Custom Cursor -->
     <div id="custom-cursor"></div>
     <div id="cursor-follower"></div>
@@ -60,7 +140,7 @@
         <a href="./contact.html" class="active">Contact</a>
       </div>
       <div class="nav-socials">
-        <a href="./contact.html" class="btn btn-primary nav-cta-btn magnetic">GET A QUOTE</a>
+        <a href="./contact.html" class="btn btn-primary nav-cta-btn magnetic" target="_blank">GET A QUOTE</a>
         <button class="theme-toggle" aria-label="Toggle Theme" style="background: none; border: none; cursor: pointer; color: inherit; padding-left: 0.5rem;">
           <i data-lucide="sun"></i>
         </button>
@@ -86,18 +166,18 @@
           <!-- Left Column: Form -->
           <div class="reveal-item">
             <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.5px;">Send Us A Message</h2>
-            <form class="modern-form-card" id="contact-page-form" style="background: rgba(15, 15, 15, 0.35); border: 1px solid rgba(255, 255, 255, 0.08); padding: 2.5rem; border-radius: 24px; backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,0.4);">
-              <div class="form-group" style="margin-bottom: 1.5rem;">
-                <label for="quote-name" style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--text-secondary);">Your Name</label>
-                <input type="text" id="quote-name" placeholder="John Doe" required style="width: 100%; padding: 1rem 1.2rem; border-radius: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); color: #fff; font-size: 0.95rem; outline: none; transition: all 0.3s;" onfocus="this.style.borderColor='var(--accent)'; this.style.background='rgba(255,255,255,0.04)';" onblur="this.style.borderColor='rgba(255,255,255,0.08)'; this.style.background='rgba(255,255,255,0.02)';" />
+            <form class="premium-glass-card" id="contact-page-form" style="padding: 3rem; display: flex; flex-direction: column; gap: 1.5rem;">
+              <div class="form-group" style="margin-bottom: 0.2rem;">
+                <label for="quote-name" style="display: block; margin-bottom: 0.6rem; font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Your Name</label>
+                <input type="text" id="quote-name" placeholder="John Doe" required class="premium-input-field" />
               </div>
-              <div class="form-group" style="margin-bottom: 1.5rem;">
-                <label for="quote-email" style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--text-secondary);">Email Address</label>
-                <input type="email" id="quote-email" placeholder="john@example.com" required style="width: 100%; padding: 1rem 1.2rem; border-radius: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); color: #fff; font-size: 0.95rem; outline: none; transition: all 0.3s;" onfocus="this.style.borderColor='var(--accent)'; this.style.background='rgba(255,255,255,0.04)';" onblur="this.style.borderColor='rgba(255,255,255,0.08)'; this.style.background='rgba(255,255,255,0.02)';" />
+              <div class="form-group" style="margin-bottom: 0.2rem;">
+                <label for="quote-email" style="display: block; margin-bottom: 0.6rem; font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Email Address</label>
+                <input type="email" id="quote-email" placeholder="john@example.com" required class="premium-input-field" />
               </div>
-              <div class="form-group" style="margin-bottom: 1.5rem;">
-                <label for="quote-service" style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--text-secondary);">Service Needed</label>
-                <select id="quote-service" style="width: 100%; padding: 1rem 1.2rem; border-radius: 12px; background: rgba(15,15,15,0.9); border: 1px solid rgba(255,255,255,0.08); color: #fff; font-size: 0.95rem; outline: none; transition: all 0.3s;" onfocus="this.style.borderColor='var(--accent)';" onblur="this.style.borderColor='rgba(255,255,255,0.08)';">
+              <div class="form-group" style="margin-bottom: 0.2rem;">
+                <label for="quote-service" style="display: block; margin-bottom: 0.6rem; font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Service Needed</label>
+                <select id="quote-service" class="premium-input-field" style="background: rgba(15,15,15,0.95) !important;">
                   <option>Website Development</option>
                   <option>Mobile Applications</option>
                   <option>UI/UX Development</option>
@@ -108,51 +188,51 @@
                   <option>Video Presenting & Reels</option>
                 </select>
               </div>
-              <div class="form-group" style="margin-bottom: 1.8rem;">
-                <label for="quote-message" style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--text-secondary);">Project Description</label>
-                <textarea id="quote-message" rows="4" placeholder="Tell us about your project goals, features, and timeline..." required style="width: 100%; padding: 1rem 1.2rem; border-radius: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); color: #fff; font-size: 0.95rem; outline: none; transition: all 0.3s; resize: vertical;" onfocus="this.style.borderColor='var(--accent)'; this.style.background='rgba(255,255,255,0.04)';" onblur="this.style.borderColor='rgba(255,255,255,0.08)'; this.style.background='rgba(255,255,255,0.02)';"></textarea>
+              <div class="form-group" style="margin-bottom: 0.5rem;">
+                <label for="quote-message" style="display: block; margin-bottom: 0.6rem; font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Project Description</label>
+                <textarea id="quote-message" rows="4" placeholder="Tell us about your project goals, features, and timeline..." required class="premium-input-field" style="resize: vertical;"></textarea>
               </div>
               
-              <button type="submit" class="btn btn-primary magnetic" style="width: 100%; justify-content: center; padding: 1.2rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; border-radius: 12px; font-weight: 700;">
+              <button type="submit" class="btn btn-primary magnetic" style="width: 100%; justify-content: center; padding: 1.25rem; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; border-radius: 14px; font-weight: 700;">
                 GET A FREE QUOTE <i data-lucide="send"></i>
               </button>
             </form>
           </div>
 
           <!-- Right Column: Info & Social Media -->
-          <div class="reveal-item" style="display: grid; gap: 2rem;">
+          <div class="reveal-item" style="display: grid; gap: 2.5rem;">
             <div>
               <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.5px;">Contact Info</h2>
               <p style="color: var(--text-secondary); margin-bottom: 2rem;">Feel free to reach out directly through any of our channels below. We are active 24/7.</p>
               
               <div class="contact-info-list" style="display: grid; gap: 1.5rem;">
-                <div style="display: flex; gap: 1.2rem; align-items: center; padding: 1.2rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px;">
-                  <div style="background: rgba(139, 92, 246, 0.15); padding: 0.8rem; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent);">
+                <div class="premium-contact-tile">
+                  <div class="tile-icon-container">
                     <i data-lucide="mail" style="width: 24px; height: 24px;"></i>
                   </div>
                   <div>
-                    <h4 style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 0.2rem;">Email Us</h4>
-                    <p style="font-weight: 600;"><a href="mailto:info@mylab.lk" style="text-decoration: none; color: inherit; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='inherit'">info@mylab.lk</a></p>
+                    <h4 style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-secondary); margin-bottom: 0.3rem;">Email Us</h4>
+                    <p style="font-weight: 700; font-size: 1.05rem;"><a href="mailto:info@mylab.lk" style="text-decoration: none; color: inherit; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='inherit'">info@mylab.lk</a></p>
                   </div>
                 </div>
 
-                <div style="display: flex; gap: 1.2rem; align-items: center; padding: 1.2rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px;">
-                  <div style="background: rgba(139, 92, 246, 0.15); padding: 0.8rem; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent);">
+                <div class="premium-contact-tile">
+                  <div class="tile-icon-container">
                     <i data-lucide="phone" style="width: 24px; height: 24px;"></i>
                   </div>
                   <div>
-                    <h4 style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 0.2rem;">Call Us / WhatsApp</h4>
-                    <p style="font-weight: 600;"><a href="https://wa.me/94724729166" target="_blank" style="text-decoration: none; color: inherit; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='inherit'">+94 72 472 9166</a></p>
+                    <h4 style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-secondary); margin-bottom: 0.3rem;">Call Us / WhatsApp</h4>
+                    <p style="font-weight: 700; font-size: 1.05rem;"><a href="https://wa.me/94724729166" target="_blank" style="text-decoration: none; color: inherit; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='inherit'">+94 72 472 9166</a></p>
                   </div>
                 </div>
 
-                <div style="display: flex; gap: 1.2rem; align-items: center; padding: 1.2rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px;">
-                  <div style="background: rgba(139, 92, 246, 0.15); padding: 0.8rem; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent);">
+                <div class="premium-contact-tile">
+                  <div class="tile-icon-container">
                     <i data-lucide="map-pin" style="width: 24px; height: 24px;"></i>
                   </div>
                   <div>
-                    <h4 style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 0.2rem;">Location</h4>
-                    <p style="font-weight: 600; color: #fff;">Kuliyapitiya, Sri Lanka</p>
+                    <h4 style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-secondary); margin-bottom: 0.3rem;">Location</h4>
+                    <p style="font-weight: 700; font-size: 1.05rem; color: #fff;">Kuliyapitiya, Sri Lanka</p>
                   </div>
                 </div>
               </div>

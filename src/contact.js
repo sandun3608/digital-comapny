@@ -51,59 +51,6 @@ if (cursor && follower) {
   })
 }
 
-// 3. Preloader Animation
-function initPreloader() {
-  const preloader = document.getElementById('preloader')
-  if (!preloader) return
-
-  const chars = document.querySelectorAll('.preloader-char')
-  const progress = document.querySelector('.preloader-progress')
-  const preloaderContent = document.querySelector('.preloader-content')
-
-  const preloaderTl = gsap.timeline()
-
-  // Start progress bar filling
-  preloaderTl.to(progress, {
-    width: '100%',
-    duration: 1.8,
-    ease: 'power2.inOut'
-  })
-
-  // Letters animate in stagger
-  preloaderTl.to(chars, {
-    opacity: 1,
-    y: 0,
-    stagger: 0.05,
-    duration: 0.8,
-    ease: 'back.out(1.7)'
-  }, 0.2)
-
-  // Fade out preloader content
-  preloaderTl.to(preloaderContent, {
-    opacity: 0,
-    y: -30,
-    duration: 0.6,
-    ease: 'power2.inOut'
-  }, '+=0.2')
-
-  // Slide up and hide full preloader overlay
-  preloaderTl.to(preloader, {
-    yPercent: -100,
-    duration: 0.8,
-    ease: 'power3.inOut'
-  }, '-=0.2')
-
-  // Set body back to scrollable
-  preloaderTl.call(() => {
-    document.body.style.overflow = 'auto'
-  })
-}
-
-// Run preloader on load
-window.addEventListener('load', () => {
-  initPreloader()
-})
-
 // 4. Form submission handler
 const contactForm = document.getElementById('contact-page-form')
 if (contactForm) {
