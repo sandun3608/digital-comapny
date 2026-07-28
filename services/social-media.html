@@ -69,6 +69,181 @@
         </div>
       </section>
 
+      <!-- Added Sections Styling -->
+      <style>
+        .marketing-extra-section {
+          padding: 7rem 8%;
+          background: var(--bg);
+          position: relative;
+          overflow: hidden;
+        }
+        .marketing-extra-section.alt-bg {
+          background: var(--bg-secondary);
+          border-top: 1px solid var(--border);
+          border-bottom: 1px solid var(--border);
+        }
+        .marketing-container {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        .marketing-grid-half {
+          display: grid;
+          grid-template-columns: 1.15fr 0.85fr;
+          gap: 5rem;
+          align-items: center;
+        }
+        .marketing-grid-half.img-left {
+          grid-template-columns: 0.85fr 1.15fr;
+        }
+        .marketing-text-content {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1.5rem;
+        }
+        .marketing-text-content .sub-badge {
+          font-size: 0.7rem;
+          font-weight: 700;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: #8B5CF6;
+          background: rgba(139, 92, 246, 0.08);
+          padding: 0.5rem 1rem;
+          border-radius: 100px;
+          border: 1px solid rgba(139, 92, 246, 0.15);
+        }
+        .marketing-text-content h2 {
+          font-size: clamp(2rem, 4vw, 2.8rem);
+          font-weight: 800;
+          letter-spacing: -1px;
+          line-height: 1.2;
+          color: #fff;
+          margin: 0;
+        }
+        .marketing-text-content p {
+          font-size: 1.05rem;
+          color: var(--text-secondary);
+          line-height: 1.75;
+          margin: 0;
+        }
+        .marketing-points-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .marketing-points-list li {
+          display: flex;
+          align-items: center;
+          gap: 0.8rem;
+          font-size: 0.95rem;
+          color: var(--text-primary);
+        }
+        .marketing-points-list li i {
+          width: 1.2rem;
+          height: 1.2rem;
+          color: #8B5CF6;
+          flex-shrink: 0;
+        }
+        .marketing-image-wrapper {
+          position: relative;
+          border-radius: 24px;
+          overflow: hidden;
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .marketing-image-wrapper:hover {
+          transform: translateY(-8px) scale(1.01);
+        }
+        .marketing-showcase-img {
+          width: 100%;
+          height: auto;
+          display: block;
+          object-fit: cover;
+          position: relative;
+          z-index: 2;
+        }
+        .marketing-glow-bg {
+          position: absolute;
+          width: 250px;
+          height: 250px;
+          border-radius: 50%;
+          filter: blur(100px);
+          opacity: 0.15;
+          z-index: 1;
+          pointer-events: none;
+        }
+        .marketing-glow-bg.glow-purple {
+          background: #8B5CF6;
+          right: -50px;
+          bottom: -50px;
+        }
+        .marketing-glow-bg.glow-blue {
+          background: #3B82F6;
+          left: -50px;
+          top: -50px;
+        }
+        @media (max-width: 991px) {
+          .marketing-grid-half, .marketing-grid-half.img-left {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+          }
+          .marketing-grid-half.img-left .marketing-image-wrapper {
+            order: 2;
+          }
+          .marketing-extra-section {
+            padding: 5rem 5%;
+          }
+        }
+      </style>
+
+      <!-- Added Section 1: Organic Community Growth -->
+      <section class="marketing-extra-section">
+        <div class="marketing-container">
+          <div class="marketing-grid-half">
+            <div class="marketing-text-content">
+              <span class="sub-badge">Organic Growth Strategy</span>
+              <h2>Building Communities, Not Just Followers</h2>
+              <p>We believe in organic, meaningful brand growth. Our dedicated strategy focuses on establishing genuine relationships with your target demographic through active community management, viral hooks, and high-retention content creation.</p>
+              <ul class="marketing-points-list">
+                <li><i data-lucide="check-circle-2"></i> <strong>Interactive Posts & Reels</strong> that drive high shareability and conversations.</li>
+                <li><i data-lucide="check-circle-2"></i> <strong>Engaged Response Management</strong> to convert comments into brand advocates.</li>
+                <li><i data-lucide="check-circle-2"></i> <strong>Optimized Trend Alignment</strong> to capture viral traffic before competitors.</li>
+              </ul>
+            </div>
+            <div class="marketing-image-wrapper">
+              <img src="../assets/s_marketing.png" alt="Organic Growth Strategy" class="marketing-showcase-img" />
+              <div class="marketing-glow-bg glow-purple"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Added Section 2: Data-Driven Performance & ROI -->
+      <section class="marketing-extra-section alt-bg">
+        <div class="marketing-container">
+          <div class="marketing-grid-half img-left">
+            <div class="marketing-image-wrapper">
+              <img src="../assets/stats_bg.png" alt="Performance & ROI Tracking" class="marketing-showcase-img" />
+              <div class="marketing-glow-bg glow-blue"></div>
+            </div>
+            <div class="marketing-text-content">
+              <span class="sub-badge">Analytics & ROI</span>
+              <h2>Data-Driven Insights & Campaign Auditing</h2>
+              <p>No more guessing. Every campaign is monitored with advanced analytics tools tracking key conversion metrics. We optimize ad spend allocations dynamically to deliver maximum return on advertising spend (ROAS).</p>
+              <ul class="marketing-points-list">
+                <li><i data-lucide="trending-up"></i> <strong>Real-time ROAS Monitoring</strong> and performance optimization.</li>
+                <li><i data-lucide="trending-up"></i> <strong>A/B Split Testing</strong> on copy, visuals, and targeting groups.</li>
+                <li><i data-lucide="trending-up"></i> <strong>Transparent Performance Audits</strong> delivered monthly with actionable plans.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
 
 
