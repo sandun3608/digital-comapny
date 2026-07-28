@@ -164,7 +164,7 @@ const htmlBlock = `
       <section class="pricing-section">
         <div class="pricing-header">
           <span class="pricing-subtitle">Pricing Plans</span>
-          <h2 class="pricing-title">Social Media Management</h2>
+          <h2 class="pricing-title">Social Media Marketing</h2>
         </div>
         
         <div class="pricing-grid">
