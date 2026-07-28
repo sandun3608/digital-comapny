@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         dashboard: resolve(__dirname, 'dashboard.html'),
+        contact: resolve(__dirname, 'contact.html'),
         mobileApp: resolve(__dirname, 'services/mobile-app.html'),
         webDev: resolve(__dirname, 'services/web-dev.html'),
         uiuxDesign: resolve(__dirname, 'services/uiux-design.html'),
