@@ -2946,6 +2946,7 @@ footer.custom-footer::before {
 
   .portfolio-filter-bar {
     display: flex !important;
+    flex-wrap: nowrap !important;
     overflow-x: auto !important;
     white-space: nowrap !important;
     scroll-snap-type: x mandatory !important;
@@ -3023,9 +3024,10 @@ footer.custom-footer::before {
 
   /* Stats Section */
   .stats-section {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 2rem 1.5rem !important;
-    padding: 4rem 6% !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0.8rem !important;
+    padding: 3rem 4% !important;
   }
 
   .stat-icon-hex {
@@ -3213,10 +3215,6 @@ footer.custom-footer::before {
 @media (max-width: 480px) {
   .team-grid {
     grid-template-columns: 1fr !important;
-  }
-  .stats-section {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
   }
 }
 
