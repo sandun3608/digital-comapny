@@ -2896,34 +2896,97 @@ footer.custom-footer::before {
 
   /* Portfolio Cover Flow Section */
   .showcase-section {
-    padding: 4rem 0 !important;
+    padding: 3.5rem 0 !important;
+  }
+
+  .showcase-header {
+    margin-bottom: 2rem !important;
+    padding: 0 6% !important;
   }
 
   .showcase-header h2 {
-    font-size: 2rem !important;
+    font-size: 2.1rem !important;
+  }
+
+  .showcase-description {
+    font-size: 0.9rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .portfolio-filter-bar {
+    display: flex !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    scroll-snap-type: x mandatory !important;
+    width: 92% !important;
+    justify-content: flex-start !important;
+    padding: 0.45rem 0.8rem !important;
+    border-radius: 30px !important;
+    gap: 0.5rem !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .portfolio-filter-bar::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .filter-tab {
+    flex: 0 0 auto !important;
+    scroll-snap-align: start !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem !important;
   }
 
   .coverflow-container {
-    height: 370px !important;
+    height: 350px !important;
+    margin-bottom: 1.5rem !important;
   }
 
   .coverflow-slide {
-    width: 290px !important;
-    height: 320px !important;
+    width: 275px !important;
+    height: 305px !important;
+  }
+
+  .modern-card-frame {
+    border-radius: 16px !important;
+  }
+
+  .browser-mockup-header {
+    padding: 0.5rem 0.8rem !important;
+    border-top-left-radius: 16px !important;
+    border-top-right-radius: 16px !important;
+  }
+
+  .window-dots .dot-btn {
+    width: 7px !important;
+    height: 7px !important;
+  }
+
+  .card-bottom-bar {
+    padding: 0.6rem 1rem !important;
+    border-bottom-left-radius: 16px !important;
+    border-bottom-right-radius: 16px !important;
+  }
+
+  .card-title-preview {
+    font-size: 0.78rem !important;
   }
 
   .slide-image-wrapper {
     flex: 1 !important;
-    border-radius: 12px !important;
+    border-radius: 0 !important;
   }
 
   .coverflow-controls {
-    gap: 1.5rem !important;
+    gap: 1.2rem !important;
+    margin-top: 0.5rem !important;
   }
 
   .coverflow-prev-btn, .coverflow-next-btn {
-    width: 44px !important;
-    height: 44px !important;
+    width: 42px !important;
+    height: 42px !important;
   }
 
   /* Stats Section */

@@ -308,7 +308,7 @@ function initCoverFlow() {
         } else if (absOffset === 1) {
           slide.classList.remove('active')
           rotY = direction * (isMobile ? 3 : 5)
-          xOffset = direction * (isMobile ? 220 : 380)
+          xOffset = direction * (isMobile ? 190 : 380)
           zOffset = 0
           yOffset = 0
           opacity = 0.88
@@ -318,7 +318,7 @@ function initCoverFlow() {
         } else if (absOffset === 2) {
           slide.classList.remove('active')
           rotY = direction * (isMobile ? 5 : 8)
-          xOffset = direction * (isMobile ? 360 : 660)
+          xOffset = direction * (isMobile ? 320 : 660)
           zOffset = 0
           yOffset = 0
           opacity = 0.65
