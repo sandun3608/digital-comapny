@@ -1122,4 +1122,106 @@
   }
 }
 
+/* Service Pages Light Theme Class Overrides */
+[data-theme="light"] .ux-title,
+[data-theme="light"] .web-title,
+[data-theme="light"] .mobile-title,
+[data-theme="light"] .branding-title,
+[data-theme="light"] .post-title,
+[data-theme="light"] .social-title,
+[data-theme="light"] .seo-title,
+[data-theme="light"] .features-title,
+[data-theme="light"] .process-title,
+[data-theme="light"] .spec-title,
+[data-theme="light"] .faq-title {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .ux-content h3,
+[data-theme="light"] .web-content h3,
+[data-theme="light"] .mobile-content h3,
+[data-theme="light"] .branding-content h3,
+[data-theme="light"] .post-content h3,
+[data-theme="light"] .social-content h3,
+[data-theme="light"] .seo-content h3,
+[data-theme="light"] .spec-card h3,
+[data-theme="light"] .process-step h4,
+[data-theme="light"] .faq-question {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .ux-content p,
+[data-theme="light"] .web-content p,
+[data-theme="light"] .mobile-content p,
+[data-theme="light"] .branding-content p,
+[data-theme="light"] .post-content p,
+[data-theme="light"] .social-content p,
+[data-theme="light"] .seo-content p,
+[data-theme="light"] .spec-card p,
+[data-theme="light"] .process-step p,
+[data-theme="light"] .faq-answer {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .ux-card,
+[data-theme="light"] .web-card,
+[data-theme="light"] .mobile-card,
+[data-theme="light"] .branding-card,
+[data-theme="light"] .post-card,
+[data-theme="light"] .social-card,
+[data-theme="light"] .seo-card,
+[data-theme="light"] .spec-card,
+[data-theme="light"] .process-step,
+[data-theme="light"] .faq-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.04) !important;
+}
+
+[data-theme="light"] .ux-card:hover,
+[data-theme="light"] .web-card:hover,
+[data-theme="light"] .mobile-card:hover,
+[data-theme="light"] .branding-card:hover,
+[data-theme="light"] .post-card:hover,
+[data-theme="light"] .social-card:hover,
+[data-theme="light"] .seo-card:hover,
+[data-theme="light"] .spec-card:hover {
+  background: #ffffff !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.12) !important;
+}
+
+[data-theme="light"] .service-hero-premium {
+  background: var(--bg) !important;
+}
+
+[data-theme="light"] .service-hero-title {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .service-hero-desc {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .back-btn {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .back-btn:hover {
+  background: var(--accent) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .tech-icon-badge {
+  background: rgba(0,0,0,0.02) !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+[data-theme="light"] .tech-icon-badge:hover {
+  background: rgba(0,0,0,0.05) !important;
+  border-color: var(--accent) !important;
+}
+
 
