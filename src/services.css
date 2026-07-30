@@ -969,5 +969,157 @@
     padding: 0.5rem 1rem !important;
     font-size: 0.78rem !important;
   }
+
+  /* Extra Mobile Enhancements to WOW the user on mobile */
+  body, html {
+    overflow-x: hidden !important;
+  }
+  
+  .service-hero-title span, 
+  .service-hero-title, 
+  .why-choose-header h2, 
+  .brand-services-title, 
+  .service-detail-header h2,
+  .reviews-header h2,
+  .quote-header h2 {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+
+  /* Branding Methodology Section Slider & Stack */
+  .methodology-container {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .branding-slider-wrapper {
+    max-width: 320px !important;
+    aspect-ratio: 1 / 1 !important;
+    margin: 0 auto !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .branding-slide img {
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .methodology-step-item {
+    padding: 1.2rem 1.4rem !important;
+    gap: 1rem !important;
+  }
+
+  .step-text h4 {
+    font-size: 0.98rem !important;
+  }
+
+  /* Exclusive Deliverables (Diagram) Section */
+  .diagram-container {
+    flex-direction: column !important;
+    gap: 2rem !important;
+    min-height: auto !important;
+    padding: 1rem 0 !important;
+  }
+
+  .diagram-column {
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+
+  .diagram-center {
+    width: 100% !important;
+    max-width: 260px !important;
+    margin: 1rem auto !important;
+  }
+
+  .center-video-mockup {
+    max-width: 220px !important;
+    border-width: 4px !important;
+    border-radius: 24px !important;
+  }
+
+  .diagram-node {
+    padding: 1.2rem 1.4rem !important;
+    border-radius: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Google Reviews Section Widget */
+  .google-reviews-section {
+    padding: 4rem 6% !important;
+  }
+
+  .reviews-summary-card {
+    padding: 2rem 1.5rem !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1.5rem !important;
+    border-radius: 16px !important;
+  }
+
+  .reviews-summary-card > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .google-review-card {
+    padding: 2rem 1.5rem !important;
+    border-radius: 16px !important;
+  }
+
+  /* Boosting Brand Ideas & Marketing Sections */
+  .marketing-extra-section {
+    padding: 4rem 6% !important;
+  }
+
+  .marketing-grid-half, 
+  .marketing-grid-half.img-left {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+
+  .marketing-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .marketing-points-list {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .marketing-image-wrapper {
+    max-width: 100% !important;
+    border-radius: 16px !important;
+  }
+
+  .marketing-showcase-img {
+    max-height: 250px !important;
+    object-fit: cover !important;
+  }
+
+  /* Custom dropdown styling on mobile */
+  .custom-select-trigger {
+    padding: 1rem 1.2rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .custom-select-options {
+    max-height: 250px !important;
+    overflow-y: auto !important;
+  }
 }
+
 
