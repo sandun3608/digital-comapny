@@ -3948,6 +3948,125 @@ footer.custom-footer::before {
   }
 }
 
+/* Premium Light Theme Contrast Fixes */
+[data-theme="light"] {
+  --nav-bg: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="light"] #navbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] #navbar .logo {
+  color: #0f0f0f;
+}
+
+[data-theme="light"] #navbar .nav-links a {
+  color: rgba(15, 15, 15, 0.7);
+}
+
+[data-theme="light"] #navbar .nav-links a:hover,
+[data-theme="light"] #navbar .nav-links a.active {
+  color: var(--accent);
+}
+
+[data-theme="light"] .theme-toggle {
+  color: #0f0f0f !important;
+}
+
+[data-theme="light"] .member-desc {
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group select,
+[data-theme="light"] .form-group textarea {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .form-group select option {
+  background: #ffffff;
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .portfolio-filter-bar {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .filter-tab {
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .filter-tab:hover {
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .coverflow-prev-btn,
+[data-theme="light"] .coverflow-next-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #0f0f0f;
+}
+
+[data-theme="light"] .creative-showcase-section {
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .circular-text-badge {
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .creative-main-title {
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .creative-main-title .highlight-text {
+  color: var(--accent);
+}
+
+[data-theme="light"] .creative-bottom-row {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .quote-mark {
+  color: rgba(15, 15, 15, 0.15);
+}
+
+[data-theme="light"] .quote-content p {
+  color: rgba(15, 15, 15, 0.7);
+}
+
+[data-theme="light"] .quote-author {
+  color: rgba(15, 15, 15, 0.95);
+}
+
+[data-theme="light"] .feature-num {
+  color: #0f0f0f;
+}
+
+[data-theme="light"] .feature-tag {
+  color: rgba(15, 15, 15, 0.5);
+}
+
+[data-theme="light"] .feature-info h4 {
+  color: #0f0f0f;
+}
+
+[data-theme="light"] .feature-arrow-btn {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #0f0f0f;
+}
+
+[data-theme="light"] .feature-arrow-btn:hover {
+  background: #0f0f0f;
+  color: #ffffff;
+}
+
 
 
 
