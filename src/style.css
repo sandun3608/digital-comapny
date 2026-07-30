@@ -2837,9 +2837,17 @@ footer.custom-footer::before {
     gap: 3rem !important;
   }
 
+  .intro-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
   .intro-content h2 {
     font-size: 2rem !important;
     margin: 1rem 0 1.5rem !important;
+    text-align: center !important;
   }
 
   .hex-container {
@@ -2856,6 +2864,12 @@ footer.custom-footer::before {
 
   .benefits-list {
     margin-bottom: 2rem !important;
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: left !important;
   }
 
   .benefits-list li {
@@ -2865,7 +2879,7 @@ footer.custom-footer::before {
 
   .intro-btns {
     flex-wrap: wrap !important;
-    justify-content: center;
+    justify-content: center !important;
     width: 100%;
     gap: 0.8rem !important;
     margin-bottom: 2rem !important;
@@ -2883,8 +2897,9 @@ footer.custom-footer::before {
     padding: 1.2rem !important;
     gap: 1.2rem !important;
     width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 1rem !important;
+    max-width: 280px !important; /* Cap width for centering */
+    margin: 0 auto 1rem auto !important;
+    justify-content: center !important;
   }
 
   .contact-tile .info p {
