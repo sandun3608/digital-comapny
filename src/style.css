@@ -887,7 +887,7 @@ footer.custom-footer::before {
 
 /* Introduction Section */
 .intro-section {
-  padding: 5rem 10% 3rem 10%;
+  padding: 5rem 10% 1rem 10%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8rem;
@@ -987,7 +987,7 @@ footer.custom-footer::before {
   gap: 1.2rem;
   align-items: center;
   flex-wrap: nowrap;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .intro-btns .btn {
@@ -1042,7 +1042,7 @@ footer.custom-footer::before {
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   max-width: fit-content;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -2802,7 +2802,7 @@ footer.custom-footer::before {
 
   /* Introduction Section */
   .intro-section {
-    padding: 4rem 6% 2rem 6% !important;
+    padding: 4rem 6% 1rem 6% !important;
     gap: 3rem !important;
   }
 
@@ -2853,7 +2853,7 @@ footer.custom-footer::before {
     gap: 1.2rem !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin-bottom: 2rem !important;
+    margin-bottom: 1rem !important;
   }
 
   .contact-tile .info p {
