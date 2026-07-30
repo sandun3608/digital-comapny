@@ -992,6 +992,15 @@ footer.custom-footer::before {
   gap: 2rem;
   margin-bottom: 3rem;
   max-width: fit-content;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contact-tile:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--accent);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(139, 92, 246, 0.15);
 }
 
 .contact-tile i {
@@ -999,6 +1008,13 @@ footer.custom-footer::before {
   color: #000;
   padding: 1rem;
   border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.contact-tile:hover i {
+  transform: rotate(-10deg) scale(1.1);
+  background: #fff;
+  color: var(--accent);
 }
 
 .contact-tile .info h5 {
