@@ -982,6 +982,14 @@ footer.custom-footer::before {
   height: 22px;
 }
 
+.intro-btns {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
 .contact-tile {
   background: var(--glass);
   border: 1px solid var(--border);
@@ -2778,6 +2786,21 @@ footer.custom-footer::before {
   .benefits-list li {
     gap: 1rem !important;
     font-size: 0.95rem;
+  }
+
+  .intro-btns {
+    justify-content: center;
+    width: 100%;
+    gap: 0.8rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .intro-btns .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+    text-align: center;
+    padding: 1.1rem 2rem !important;
   }
 
   .contact-tile {
