@@ -2862,7 +2862,7 @@ footer.custom-footer::before {
 
   /* Services Grid Section */
   #services {
-    padding: 4rem 0 2rem 0 !important;
+    padding: 1rem 0 2rem 0 !important;
   }
 
   #services h2 {
