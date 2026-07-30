@@ -3788,25 +3788,18 @@ footer.custom-footer::before {
 
 @media (max-width: 768px) {
   .creative-bento-grid {
-    display: flex !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    gap: 1rem !important;
-    padding: 1rem 6% 2rem 6% !important;
-    margin-left: -6% !important;
-    margin-right: -6% !important;
-    width: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    scroll-behavior: smooth !important;
-  }
-  .creative-bento-grid::-webkit-scrollbar {
-    display: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.8rem !important;
+    padding: 0 4% !important;
+    width: 100% !important;
   }
   .bento-col {
-    flex: 0 0 280px !important;
-    scroll-snap-align: start !important;
-    height: 400px !important;
-    justify-content: space-between !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.8rem !important;
+    height: auto !important;
+    width: 100% !important;
   }
   .bento-col.col-stacked:last-child {
     display: flex !important;
@@ -3814,36 +3807,40 @@ footer.custom-footer::before {
   .col-stacked {
     display: flex !important;
     flex-direction: column !important;
-    gap: 0.85rem !important;
+    gap: 0.8rem !important;
   }
   .col-stacked .card-med {
-    height: 230px !important;
+    height: 200px !important;
     border-radius: 20px !important;
   }
   .col-stacked .card-small {
-    height: 150px !important;
+    height: 120px !important;
     border-radius: 20px !important;
   }
   .col-tall {
     margin-top: 0 !important;
   }
   .col-tall .card-full-tall {
-    height: 400px !important;
-    border-radius: 24px !important;
+    height: 328px !important;
+    border-radius: 20px !important;
   }
   .col-center {
-    height: 400px !important;
-    justify-content: space-between !important;
+    grid-column: span 2 !important;
+    height: auto !important;
+    padding: 0.5rem 0 !important;
   }
   .col-center .card-center-main {
-    height: 320px !important;
+    height: 220px !important;
     border-radius: 24px !important;
   }
   .col-center .bento-action-btn {
     width: 100% !important;
-    padding: 0.8rem 1rem !important;
-    font-size: 0.85rem !important;
-    margin-top: 0.5rem !important;
+    max-width: 100% !important;
+    padding: 1rem !important;
+    font-size: 0.9rem !important;
+    margin-top: 0.8rem !important;
+    border-radius: 50px !important;
+    justify-content: center !important;
   }
   .creative-bottom-row {
     grid-template-columns: 1fr;
