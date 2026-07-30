@@ -2918,14 +2918,15 @@ footer.custom-footer::before {
     overflow-x: auto !important;
     white-space: nowrap !important;
     scroll-snap-type: x mandatory !important;
-    width: 92% !important;
+    width: 100% !important;
     justify-content: flex-start !important;
-    padding: 0.45rem 0.8rem !important;
-    border-radius: 30px !important;
-    gap: 0.5rem !important;
+    padding: 0.5rem 6% !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    gap: 0.6rem !important;
     -webkit-overflow-scrolling: touch !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin: 0 !important;
   }
 
   .portfolio-filter-bar::-webkit-scrollbar {
