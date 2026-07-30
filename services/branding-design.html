@@ -1235,6 +1235,231 @@
         [data-theme="light"] .custom-option.selected {
           background: rgba(139, 92, 246, 0.12);
         }
+
+        /* Google Reviews Styling */
+        .google-reviews-section {
+          padding: 6rem 10%;
+          background: var(--bg);
+          position: relative;
+        }
+        .google-reviews-container {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        .reviews-header {
+          text-align: center;
+          margin-bottom: 4rem;
+        }
+        .reviews-header .subtitle {
+          font-size: 0.72rem;
+          font-weight: 700;
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          color: var(--accent);
+          margin-bottom: 1rem;
+          display: inline-block;
+          opacity: 0.9;
+        }
+        .reviews-header h2 {
+          font-size: clamp(2rem, 5vw, 3.5rem);
+          font-weight: 800;
+          letter-spacing: -1px;
+          text-transform: uppercase;
+          margin: 0 0 1rem 0;
+          color: #fff;
+        }
+        .reviews-header p {
+          font-size: 1rem;
+          color: var(--text-secondary);
+          margin: 0;
+        }
+        
+        /* Summary Card */
+        .reviews-summary-card {
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.06);
+          border-radius: 20px;
+          padding: 2rem 3rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 4rem;
+          flex-wrap: wrap;
+          gap: 2rem;
+        }
+        .summary-left {
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+          flex-wrap: wrap;
+        }
+        .rating-stars {
+          display: flex;
+          gap: 4px;
+          color: #ffb800;
+        }
+        .rating-value {
+          font-size: 2.2rem;
+          font-weight: 800;
+          color: #fff;
+        }
+        .reviews-count {
+          font-size: 0.95rem;
+          color: var(--text-secondary);
+        }
+        .write-review-btn {
+          background: linear-gradient(135deg, #b91c1c, #7f1d1d) !important;
+          color: #fff !important;
+          border: none;
+          padding: 0.9rem 2rem;
+          border-radius: 10px;
+          font-size: 0.85rem;
+          font-weight: 700;
+          letter-spacing: 0.5px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          box-shadow: 0 4px 15px rgba(127, 29, 29, 0.5), inset 0 1px 0 rgba(255,255,255,0.12);
+          position: relative;
+          overflow: hidden;
+        }
+        .write-review-btn::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 50%;
+          background: rgba(255,255,255,0.07);
+          border-radius: 10px 10px 0 0;
+          pointer-events: none;
+        }
+        .write-review-btn:hover {
+          background: linear-gradient(135deg, #991b1b, #6b1c1c) !important;
+          color: #fff !important;
+          transform: translateY(-2px);
+          box-shadow: 0 12px 28px rgba(127, 29, 29, 0.6), inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+
+        /* Reviews Grid */
+        .reviews-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2.5rem;
+          margin-bottom: 3rem;
+        }
+        @media (max-width: 1024px) {
+          .reviews-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 768px) {
+          .reviews-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .review-item-card {
+          background: rgba(255, 255, 255, 0.01);
+          border: 1px solid rgba(255, 255, 255, 0.04);
+          border-radius: 20px;
+          padding: 2.5rem;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          transition: all 0.3s;
+        }
+        .review-item-card:hover {
+          background: rgba(255, 255, 255, 0.02);
+          border-color: rgba(139, 92, 246, 0.2);
+          transform: translateY(-5px);
+        }
+        .review-card-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1.5rem;
+        }
+        .review-stars-time {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+        .review-stars-row {
+          display: flex;
+          gap: 3px;
+          color: #ffb800;
+        }
+        .review-time {
+          font-size: 0.8rem;
+          color: rgba(255, 255, 255, 0.35);
+        }
+        .google-icon {
+          width: 18px;
+          height: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .review-card-text {
+          font-size: 0.95rem;
+          color: rgba(255, 255, 255, 0.7);
+          line-height: 1.7;
+          margin: 0 0 2rem 0;
+          flex-grow: 1;
+        }
+        .review-card-user {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+        .user-avatar {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: rgba(139, 92, 246, 0.1);
+          border: 1px solid rgba(139, 92, 246, 0.2);
+          color: var(--accent);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 700;
+          font-size: 0.9rem;
+        }
+        .user-info-name {
+          font-weight: 600;
+          font-size: 0.95rem;
+          color: #fff;
+        }
+
+        /* Carousel Navigation at the bottom */
+        .reviews-nav {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          margin-top: 1rem;
+        }
+        .nav-arrow-btn {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: rgba(255, 255, 255, 0.02);
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.3s;
+        }
+        .nav-arrow-btn:hover {
+          background: var(--accent);
+          border-color: var(--accent);
+          color: #000;
+          transform: scale(1.05);
+        }
       </style>
 
       <!-- Get a Quote Section -->
