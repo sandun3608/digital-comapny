@@ -3573,6 +3573,10 @@ footer.custom-footer::before {
   margin-bottom: 3.5rem;
 }
 
+.bento-dots-indicator {
+  display: none;
+}
+
 .bento-col {
   display: flex;
   flex-direction: column;
@@ -3837,6 +3841,27 @@ footer.custom-footer::before {
   }
   .center-star-top {
     display: none !important;
+  }
+  .bento-dots-indicator {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .bento-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+  .bento-dot.active {
+    width: 24px;
+    background: var(--accent, #8b2cff);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
   }
   .creative-bottom-row {
     grid-template-columns: 1fr;

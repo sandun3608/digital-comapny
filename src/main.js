@@ -901,3 +901,53 @@ function initCardScrollAnimations() {
   });
 }
 
+// 5. Mobile Bento Carousel Scroll and Click Handler
+function initBentoMobileSlider() {
+  const grid = document.querySelector('.creative-bento-grid');
+  const dots = document.querySelectorAll('.bento-dot');
+  
+  if (grid && dots.length > 0) {
+    grid.addEventListener('scroll', () => {
+      if (window.innerWidth > 768) return;
+      
+      const scrollLeft = grid.scrollLeft;
+      const scrollWidth = grid.scrollWidth;
+      const clientWidth = grid.clientWidth;
+      
+      // Calculate active index based on scroll position ratio
+      const maxScroll = scrollWidth - clientWidth;
+      if (maxScroll <= 0) return;
+      
+      const ratio = scrollLeft / maxScroll;
+      const index = Math.min(dots.length - 1, Math.max(0, Math.round(ratio * (dots.length - 1))));
+      
+      dots.forEach((dot, idx) => {
+        if (idx === index) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    });
+
+    // Make dots clickable
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        const scrollWidth = grid.scrollWidth;
+        const clientWidth = grid.clientWidth;
+        const maxScroll = scrollWidth - clientWidth;
+        const targetScroll = (maxScroll / (dots.length - 1)) * idx;
+        
+        grid.scrollTo({
+          left: targetScroll,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
+}
+
+// Initialize on load
+initBentoMobileSlider();
+window.addEventListener('resize', initBentoMobileSlider);
+
