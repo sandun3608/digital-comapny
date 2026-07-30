@@ -1224,4 +1224,34 @@
   border-color: var(--accent) !important;
 }
 
+[data-theme="light"] .why-choose-header h2,
+[data-theme="light"] .why-choose-card h3 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .why-choose-header p,
+[data-theme="light"] .why-choose-card p {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .why-choose-card p strong {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .why-choose-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.04) !important;
+}
+
+[data-theme="light"] .why-choose-card:hover {
+  background: #ffffff !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 16px 40px rgba(139, 92, 246, 0.12) !important;
+}
+
+[data-theme="light"] .backdrop-letter {
+  color: rgba(0, 0, 0, 0.025) !important;
+}
+
 
