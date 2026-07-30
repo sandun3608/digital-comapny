@@ -2971,7 +2971,7 @@ footer.custom-footer::before {
     border-radius: 0 !important;
     background: transparent !important;
     border: none !important;
-    gap: 0.6rem !important;
+    gap: 0.45rem !important;
     -webkit-overflow-scrolling: touch !important;
     margin: 0 !important;
   }
@@ -2983,8 +2983,8 @@ footer.custom-footer::before {
   .filter-tab {
     flex: 0 0 auto !important;
     scroll-snap-align: start !important;
-    padding: 0.5rem 1rem !important;
-    font-size: 0.8rem !important;
+    padding: 0.45rem 0.8rem !important;
+    font-size: 0.76rem !important;
   }
 
   .coverflow-container {
