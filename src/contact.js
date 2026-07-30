@@ -140,3 +140,20 @@ function showFormToast(message, isError = false) {
     setTimeout(() => toast.remove(), 400)
   }, 4000)
 }
+
+// Pre-fill service dropdown from URL parameters
+const prefillService = () => {
+  const urlParams = new URLSearchParams(window.location.search)
+  const service = urlParams.get('service')
+  if (service) {
+    const serviceSelect = document.getElementById('quote-service')
+    if (serviceSelect) {
+      serviceSelect.value = service
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', prefillService)
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  prefillService()
+}
