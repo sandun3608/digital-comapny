@@ -132,7 +132,7 @@
         .methodology-header h2 {
           font-size: clamp(2rem, 3.5vw, 2.5rem);
           font-weight: 800;
-          color: #fff;
+          color: var(--text-primary);
           margin: 0;
           letter-spacing: -1.5px;
           line-height: 1.15;
@@ -145,8 +145,8 @@
         .methodology-step-item {
           display: flex;
           gap: 1.5rem;
-          background: rgba(255, 255, 255, 0.015);
-          border: 1px solid rgba(255, 255, 255, 0.05);
+          background: var(--glass);
+          border: 1px solid var(--border);
           padding: 1.4rem 1.6rem;
           border-radius: 20px;
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -183,7 +183,7 @@
         .step-text h4 {
           font-size: 1.05rem;
           font-weight: 700;
-          color: #fff;
+          color: var(--text-primary);
           margin: 0 0 0.4rem 0;
         }
         .step-text p {
@@ -207,8 +207,8 @@
           position: relative;
           border-radius: 28px;
           overflow: hidden;
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: var(--glass);
+          border: 1px solid var(--border);
           box-shadow: 0 35px 70px rgba(0, 0, 0, 0.6);
         }
         .branding-slider-track {
@@ -294,8 +294,8 @@
           height: 46px;
           border-radius: 50%;
           background: rgba(15, 15, 15, 0.75);
-          border: 1px solid rgba(255,255,255,0.08);
-          color: #fff;
+          border: 1px solid var(--border);
+          color: var(--text-primary);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -565,8 +565,8 @@
         
         /* Interactive Glowing Nodes */
         .diagram-node {
-          background: rgba(255, 255, 255, 0.015);
-          border: 1px solid rgba(255, 255, 255, 0.05);
+          background: var(--glass);
+          border: 1px solid var(--border);
           padding: 1.5rem 1.8rem;
           border-radius: 20px;
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -577,7 +577,7 @@
           background: rgba(139, 92, 246, 0.04);
           border-color: rgba(139, 92, 246, 0.3);
           transform: translateY(-4px);
-          box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+          box-shadow: var(--card-shadow);
         }
         .diagram-node-icon {
           width: 44px;
@@ -600,12 +600,12 @@
         .diagram-node h4 {
           font-size: 1.05rem;
           font-weight: 700;
-          color: #fff;
+          color: var(--text-primary);
           margin: 0 0 0.5rem 0;
         }
         .diagram-node p {
           font-size: 0.85rem;
-          color: rgba(255, 255, 255, 0.45);
+          color: var(--text-secondary);
           line-height: 1.5;
           margin: 0;
         }
@@ -812,7 +812,7 @@
         .brand-services-title {
           font-size: clamp(2rem, 4vw, 3rem);
           font-weight: 800;
-          color: #fff;
+          color: var(--text-primary);
           margin: 0;
           letter-spacing: -1px;
         }
@@ -827,8 +827,8 @@
         @media (max-width: 768px) { .brand-services-grid { grid-template-columns: 1fr; } }
 
         .brand-service-card {
-          background: rgba(255,255,255,0.015);
-          border: 1px solid rgba(255,255,255,0.05);
+          background: var(--glass);
+          border: 1px solid var(--border);
           border-radius: 24px;
           padding: 2.5rem 2rem;
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -868,7 +868,7 @@
         .brand-service-card h3 {
           font-size: 1.2rem;
           font-weight: 700;
-          color: #fff;
+          color: var(--text-primary);
           margin: 0;
         }
         .brand-service-features {
@@ -880,7 +880,7 @@
           gap: 0.6rem;
         }
         .brand-service-features li {
-          color: rgba(255,255,255,0.6);
+          color: var(--text-secondary);
           font-size: 0.85rem;
           display: flex;
           align-items: center;
@@ -1124,7 +1124,7 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          background: rgba(255, 255, 255, 0.02);
+          background: var(--glass);
           border: 1px solid var(--border);
           padding: 1.2rem 1.5rem;
           border-radius: 12px;
@@ -1158,7 +1158,7 @@
           left: 0;
           right: 0;
           background: rgba(20, 20, 20, 0.85);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          border: 1px solid var(--border);
           border-radius: 12px;
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
@@ -1192,7 +1192,7 @@
         .custom-option {
           padding: 1rem 1.5rem;
           font-size: 0.95rem;
-          color: rgba(255, 255, 255, 0.7);
+          color: var(--text-secondary);
           cursor: pointer;
           transition: all 0.2s ease;
         }
@@ -1206,7 +1206,7 @@
         }
         .custom-option:hover {
           background: rgba(139, 92, 246, 0.1);
-          color: #fff;
+          color: var(--text-primary);
           padding-left: 1.75rem;
         }
         .custom-option.selected {
@@ -1265,7 +1265,7 @@
           letter-spacing: -1px;
           text-transform: uppercase;
           margin: 0 0 1rem 0;
-          color: #fff;
+          color: var(--text-primary);
         }
         .reviews-header p {
           font-size: 1rem;
@@ -1275,8 +1275,8 @@
         
         /* Summary Card */
         .reviews-summary-card {
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid rgba(255, 255, 255, 0.06);
+          background: var(--glass);
+          border: 1px solid var(--border);
           border-radius: 20px;
           padding: 2rem 3rem;
           display: flex;
@@ -1300,7 +1300,7 @@
         .rating-value {
           font-size: 2.2rem;
           font-weight: 800;
-          color: #fff;
+          color: var(--text-primary);
         }
         .reviews-count {
           font-size: 0.95rem;
@@ -1360,8 +1360,8 @@
         }
 
         .review-item-card {
-          background: rgba(255, 255, 255, 0.01);
-          border: 1px solid rgba(255, 255, 255, 0.04);
+          background: var(--glass);
+          border: 1px solid var(--border);
           border-radius: 20px;
           padding: 2.5rem;
           position: relative;
@@ -1371,7 +1371,7 @@
           transition: all 0.3s;
         }
         .review-item-card:hover {
-          background: rgba(255, 255, 255, 0.02);
+          background: var(--glass);
           border-color: rgba(139, 92, 246, 0.2);
           transform: translateY(-5px);
         }
@@ -1404,7 +1404,7 @@
         }
         .review-card-text {
           font-size: 0.95rem;
-          color: rgba(255, 255, 255, 0.7);
+          color: var(--text-secondary);
           line-height: 1.7;
           margin: 0 0 2rem 0;
           flex-grow: 1;
@@ -1430,7 +1430,7 @@
         .user-info-name {
           font-weight: 600;
           font-size: 0.95rem;
-          color: #fff;
+          color: var(--text-primary);
         }
 
         /* Carousel Navigation at the bottom */
@@ -1444,9 +1444,9 @@
           width: 50px;
           height: 50px;
           border-radius: 50%;
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          background: rgba(255, 255, 255, 0.02);
-          color: #fff;
+          border: 1px solid var(--border);
+          background: var(--glass);
+          color: var(--text-primary);
           display: flex;
           align-items: center;
           justify-content: center;
