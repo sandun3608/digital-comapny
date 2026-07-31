@@ -898,62 +898,74 @@ footer.custom-footer::before {
   position: relative;
 }
 
-.hex-container {
+.intro-image-container {
   width: 100%;
-  aspect-ratio: 1/1.1;
   position: relative;
   z-index: 1;
 }
 
-.hex-shape {
+.intro-image-wrapper {
   width: 100%;
-  height: 100%;
-  background: var(--accent);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  padding: 15px; /* Border width */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hex-inner {
-  width: 100%;
-  height: 100%;
-  background: var(--bg);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  border-radius: 24px;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 50px rgba(139, 92, 246, 0.15);
+  background: var(--bg);
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.hex-inner img {
+.intro-image-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 60px rgba(139, 92, 246, 0.25);
+}
+
+.intro-grid-img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
   object-fit: cover;
   transition: transform 1.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.hex-container:hover .hex-inner img {
-  transform: scale(1.1);
+.intro-image-wrapper:hover .intro-grid-img {
+  transform: scale(1.03);
 }
 
-.since-badge {
+.since-badge-new {
   position: absolute;
-  top: 50%;
-  right: -30px;
+  bottom: -20px;
+  right: -20px;
   background: var(--accent);
   color: #000;
-  padding: 2rem;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  text-align: center;
-  z-index: 2;
+  padding: 1.25rem 1.75rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-weight: 800;
-  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
 }
 
-.since-badge span {
-  display: block;
-  font-size: 0.7rem;
+.since-badge-new:hover {
+  transform: scale(1.05);
+}
+
+.since-badge-new .since-year {
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.since-badge-new .since-text {
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+  margin-top: 0.25rem;
 }
 
 .intro-content h2 {
@@ -2850,16 +2862,15 @@ footer.custom-footer::before {
     text-align: center !important;
   }
 
-  .hex-container {
-    max-width: 320px;
+  .intro-image-container {
+    max-width: 420px;
     margin: 0 auto;
   }
 
-  .since-badge {
-    padding: 1.2rem !important;
+  .since-badge-new {
+    padding: 0.8rem 1.2rem !important;
     right: -10px !important;
-    top: 40% !important;
-    font-size: 0.9rem !important;
+    bottom: -10px !important;
   }
 
   .benefits-list {
