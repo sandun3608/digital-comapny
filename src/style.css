@@ -889,8 +889,8 @@ footer.custom-footer::before {
 .intro-section {
   padding: 5rem 10% 1rem 10%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8rem;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4.5rem;
   align-items: center;
 }
 
