@@ -887,7 +887,7 @@ footer.custom-footer::before {
 
 /* Introduction Section */
 .intro-section {
-  padding: 5rem 10% 1rem 10%;
+  padding: 3rem 10% 1rem 10%;
   display: grid;
   grid-template-columns: 1.35fr 0.65fr;
   gap: 4rem;
@@ -896,6 +896,7 @@ footer.custom-footer::before {
 
 .intro-visual {
   position: relative;
+  margin-top: -30px;
 }
 
 .intro-image-container {
@@ -1104,6 +1105,7 @@ footer.custom-footer::before {
   .intro-visual {
     max-width: 500px;
     margin: 0 auto;
+    margin-top: 0;
   }
 }
 
