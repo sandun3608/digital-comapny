@@ -2508,6 +2508,21 @@ footer.custom-footer::before {
 }
 
 /* -------------------------------------------------------------
+   EXPLICIT DESKTOP SAFEGUARDS
+------------------------------------------------------------- */
+@media (min-width: 769px) {
+  #navbar {
+    padding: 3rem 8% !important;
+  }
+  #navbar.scrolled {
+    padding: 1.5rem 5% !important;
+  }
+  #navbar .logo {
+    font-size: 2.2rem !important;
+  }
+}
+
+/* -------------------------------------------------------------
    MOBILE OPTIMIZATIONS (Only active on screens <= 768px)
 ------------------------------------------------------------- */
 @media (max-width: 768px) {
