@@ -131,7 +131,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 3rem 8%;
+  padding: 2rem 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -140,7 +140,7 @@ nav {
 }
 
 nav.scrolled {
-  padding: 1.5rem 5%;
+  padding: 1.2rem 5%;
   background: var(--nav-bg);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
@@ -2512,10 +2512,10 @@ footer.custom-footer::before {
 ------------------------------------------------------------- */
 @media (min-width: 769px) {
   #navbar {
-    padding: 3rem 8% !important;
+    padding: 2rem 8% !important;
   }
   #navbar.scrolled {
-    padding: 1.5rem 5% !important;
+    padding: 1.2rem 5% !important;
   }
   #navbar .logo {
     font-size: 2.2rem !important;
