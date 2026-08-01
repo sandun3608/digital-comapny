@@ -5,6 +5,7 @@
        url('./assets/fonts/ArchitypeBallmer.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 
 :root {
@@ -910,7 +911,7 @@ footer.custom-footer::before {
 
 .intro-visual {
   position: relative;
-  margin-top: -70px;
+  margin-top: -160px;
 }
 
 .intro-image-container {
