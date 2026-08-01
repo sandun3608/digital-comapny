@@ -67,16 +67,53 @@
 
     <main id="app">
       <!-- Premium Hero Section -->
+      <style>
+        .post-hero-wrapper {
+          display: flex; 
+          flex-direction: column; 
+          align-items: center; 
+          justify-content: center; 
+          text-align: center; 
+          max-width: 1200px; 
+          margin: 0 auto; 
+          padding: 6rem 5% 4rem; 
+          min-height: 60vh;
+        }
+        .post-hero-title {
+          font-size: clamp(2.5rem, 8vw, 6rem); 
+          line-height: 1.05; 
+          margin-bottom: 2rem; 
+          font-weight: 800; 
+          letter-spacing: -2px;
+        }
+        .post-hero-desc {
+          margin: 0 auto; 
+          max-width: 750px; 
+          font-size: 1.15rem; 
+          line-height: 1.6; 
+          color: var(--text-secondary);
+        }
+        @media (max-width: 768px) {
+          .post-hero-wrapper {
+            padding: 2rem 5% 2rem;
+            min-height: 40vh;
+          }
+          .post-hero-title {
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+          }
+        }
+      </style>
       <section class="service-hero-premium">
         <div class="service-hero-bg"></div>
-        <div class="service-hero-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; max-width: 1200px; margin: 0 auto; padding: 6rem 5% 4rem; min-height: 60vh;">
+        <div class="service-hero-container post-hero-wrapper">
           <div class="service-hero-left" style="width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <span class="hero-subtitle" style="display: inline-block; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.2); color: var(--accent); padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: 700; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 2rem;">SOCIAL MEDIA POST DESIGN</span>
-            <h1 class="service-hero-title" style="font-size: clamp(3.2rem, 8vw, 6rem); line-height: 1.05; margin-bottom: 2.5rem; font-weight: 800; letter-spacing: -2px;">
+            <span class="hero-subtitle" style="display: inline-block; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.2); color: var(--accent); padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: 700; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 1.5rem;">SOCIAL MEDIA POST DESIGN</span>
+            <h1 class="service-hero-title post-hero-title">
               We design engaging <br />
               <span style="display: inline-block;">Social Creatives</span>
             </h1>
-            <p class="service-hero-desc" style="margin: 0 auto; max-width: 750px; font-size: 1.25rem; line-height: 1.7; color: var(--text-secondary);">
+            <p class="service-hero-desc post-hero-desc">
               Capture attention instantly with high-converting ad creatives, seamless carousels, and aesthetic grid layouts crafted to elevate your brand.
             </p>
           </div>
@@ -154,13 +191,20 @@
         }
 
         @media (max-width: 768px) {
+          .portfolio-gallery-section {
+            padding: 2rem 5% 4rem;
+          }
           .gallery-grid {
-            grid-template-columns: 1fr;
-            grid-auto-rows: 300px;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 120px;
+            gap: 0.8rem;
           }
           .gallery-item:nth-child(1), .gallery-item:nth-child(5), .gallery-item:nth-child(9) {
-             grid-column: span 1;
-             grid-row: span 1;
+             grid-column: span 2;
+             grid-row: span 2;
+          }
+          .gallery-item:nth-child(3), .gallery-item:nth-child(8) {
+             grid-row: span 2;
           }
         }
       </style>
