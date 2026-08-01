@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Architype Ballmer';
-  src: url('/font/Architype Ballmer W90/Web Fonts/52fd53e2724192d3a6a69234cf753faf.woff2') format('woff2'),
-       url('/font/Architype Ballmer W90/Web Fonts/52fd53e2724192d3a6a69234cf753faf.woff') format('woff'),
-       url('/font/Architype Ballmer W90/Architype Ballmer W90.ttf') format('truetype');
+  src: url('./assets/fonts/ArchitypeBallmer.woff2') format('woff2'),
+       url('./assets/fonts/ArchitypeBallmer.woff') format('woff'),
+       url('./assets/fonts/ArchitypeBallmer.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -147,7 +147,7 @@ nav.scrolled {
 
 .logo {
   font-family: 'Architype Ballmer', sans-serif;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: normal;
   letter-spacing: -0.5px;
   text-transform: lowercase;
@@ -774,7 +774,7 @@ footer.custom-footer::before {
 
 .footer-logo-area h2 {
   font-family: 'Architype Ballmer', sans-serif;
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: normal;
   letter-spacing: -0.5px;
   text-transform: lowercase;

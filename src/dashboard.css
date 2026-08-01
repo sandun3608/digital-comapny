@@ -1,4 +1,13 @@
 /* Dashboard Premium CSS Styles */
+@font-face {
+  font-family: 'Architype Ballmer';
+  src: url('./assets/fonts/ArchitypeBallmer.woff2') format('woff2'),
+       url('./assets/fonts/ArchitypeBallmer.woff') format('woff'),
+       url('./assets/fonts/ArchitypeBallmer.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --bg-admin: #070708;
   --bg-card: rgba(255, 255, 255, 0.02);
@@ -59,7 +68,7 @@ body.dashboard-body {
 
 .auth-logo {
   font-family: 'Architype Ballmer', sans-serif;
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   font-weight: normal;
   letter-spacing: -0.5px;
   text-transform: lowercase;
