@@ -361,14 +361,12 @@
   font-size: clamp(1.6rem, 3.5vw, 3.2rem);
   font-weight: 800;
   line-height: 1.15;
-  color: var(--text-primary);
+  color: #ffffff;
   margin-bottom: 2rem;
 }
 
 .service-hero-title span {
-  background: linear-gradient(135deg, var(--accent), #b894ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
   display: inline-block;
   padding-bottom: 0.1em;
 }
@@ -1195,8 +1193,9 @@
   background: var(--bg) !important;
 }
 
-[data-theme="light"] .service-hero-title {
-  color: var(--text-primary) !important;
+[data-theme="light"] .service-hero-title,
+[data-theme="light"] .service-hero-title span {
+  color: var(--accent) !important;
 }
 
 [data-theme="light"] .service-hero-desc {
