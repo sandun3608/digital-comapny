@@ -3192,48 +3192,53 @@ footer.custom-footer::before {
   }
 
   .team-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1.2rem !important;
-    padding: 0 !important;
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    padding: 0 1rem !important;
   }
 
   .team-card {
-    padding: 2rem 0.8rem 1.2rem !important;
-    border-radius: 16px !important;
-    gap: 1rem !important;
+    padding: 3.5rem 1.5rem 2.5rem !important;
+    border-radius: 20px !important;
+    gap: 1.2rem !important;
   }
 
   .member-avatar {
-    width: 90px !important;
-    height: 90px !important;
-    border-radius: 20px !important;
+    width: 130px !important;
+    height: 130px !important;
+    border-radius: 35px !important;
   }
 
   .member-avatar img {
-    border-radius: 20px !important;
+    border-radius: 35px !important;
   }
 
   .role-badge {
-    padding: 0.3rem 1rem !important;
-    font-size: 0.65rem !important;
+    padding: 0.4rem 1.2rem !important;
+    font-size: 0.75rem !important;
+    top: -15px !important;
   }
 
   .member-info h3 {
-    font-size: 1rem !important;
-    margin-bottom: 0.25rem !important;
+    font-size: 1.35rem !important;
+    margin-bottom: 0.3rem !important;
   }
 
   .member-info p.role-title {
-    font-size: 0.7rem !important;
+    font-size: 0.85rem !important;
   }
 
   .member-desc {
-    display: none !important; /* Hide long description on mobile grid to keep cards compact */
+    display: block !important;
+    font-size: 0.95rem !important;
+    margin-top: 0.8rem !important;
+    opacity: 0.8 !important;
+    line-height: 1.6 !important;
   }
 
   .member-socials {
-    margin-top: 0.8rem !important;
-    gap: 0.8rem !important;
+    margin-top: 1.5rem !important;
+    gap: 1.2rem !important;
   }
 
   /* Contact & Form Section */
