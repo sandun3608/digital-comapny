@@ -128,6 +128,62 @@
         color: #fff !important;
         box-shadow: 0 0 15px var(--accent);
       }
+
+      /* Grid Layout and padding overrides */
+      .contact-content-section {
+        padding: 2rem 8% 6rem 8%;
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 4rem;
+        max-width: 1300px;
+        margin: 0 auto;
+        align-items: start;
+        position: relative;
+      }
+      .social-channels-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      .map-section-wrapper {
+        max-width: 1300px;
+        margin: 4rem auto 0 auto;
+      }
+
+      /* Media Queries for responsiveness */
+      @media (max-width: 1024px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .contact-content-section {
+          padding: 2rem 5% 5rem 5%;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .contact-hero-section {
+          padding: 5rem 5% 2rem 5% !important;
+        }
+        .contact-hero-section h1 {
+          font-size: 2.0rem !important;
+        }
+        .contact-hero-section p {
+          font-size: 0.95rem !important;
+          margin-top: 1rem !important;
+        }
+        .premium-glass-card {
+          padding: 2rem 1.5rem !important;
+        }
+        .social-channels-grid {
+          grid-template-columns: 1fr;
+        }
+        .map-section-wrapper {
+          margin-top: 3rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -178,8 +234,8 @@
       </section>
 
       <!-- Main Columns -->
-      <section style="padding: 2rem 8% 6rem 8%;">
-        <div class="contact-grid" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; max-width: 1300px; margin: 0 auto; align-items: start;">
+      <section class="contact-content-section">
+        <div class="contact-grid">
           <!-- Left Column: Form -->
           <div class="reveal-item">
             <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.5px;">Send Us A Message</h2>
@@ -257,7 +313,7 @@
             <!-- Social Media Cards -->
             <div>
               <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1.2rem; letter-spacing: -0.3px;">Our Social Channels</h3>
-              <div class="social-channels-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+              <div class="social-channels-grid">
                 
                 <a href="https://web.facebook.com/profile.php?id=61581934980767" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 12px; padding: 1rem; background: rgba(24, 119, 242, 0.08); border: 1px solid rgba(24, 119, 242, 0.15); border-radius: 16px; color: #fff; transition: all 0.3s;" onmouseover="this.style.background='rgba(24, 119, 242, 0.15)'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='rgba(24, 119, 242, 0.08)'; this.style.transform='translateY(0)';">
                   <div style="background: #1877f2; padding: 8px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
@@ -305,7 +361,7 @@
         </div>
 
         <!-- Modern Location Map Section -->
-        <div class="reveal-item" style="max-width: 1300px; margin: 4rem auto 0 auto;">
+        <div class="map-section-wrapper reveal-item">
           <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.5px; text-align: center;">Our Headquarters</h2>
           <div class="modern-map-container" style="margin-top: 1rem;">
             <div class="map-glow-backdrop"></div>
