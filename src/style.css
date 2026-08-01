@@ -2646,13 +2646,13 @@ footer.custom-footer::before {
     position: fixed;
     top: 0;
     right: 0;
-    width: 320px;
-    max-width: 85vw;
+    width: 270px;
+    max-width: 75vw;
     height: 100vh;
-    background: rgba(11, 11, 15, 0.85) !important;
-    backdrop-filter: blur(35px) !important;
-    -webkit-backdrop-filter: blur(35px) !important;
-    border-left: 1px solid rgba(139, 92, 246, 0.15) !important;
+    background: linear-gradient(135deg, rgba(13, 13, 18, 0.85) 0%, rgba(8, 8, 12, 0.95) 100%) !important;
+    backdrop-filter: blur(40px) !important;
+    -webkit-backdrop-filter: blur(40px) !important;
+    border-left: 2px solid rgba(139, 92, 246, 0.25) !important;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
     gap: 1.2rem;
@@ -2662,7 +2662,7 @@ footer.custom-footer::before {
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     transform: translateX(100%);
     margin: 0;
-    padding: 6.5rem 2.5rem 3rem 2.5rem;
+    padding: 6rem 1.8rem 3rem 1.8rem;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     box-shadow: -15px 0 50px rgba(0, 0, 0, 0.6);
@@ -2671,12 +2671,12 @@ footer.custom-footer::before {
   .nav-links::before {
     content: 'mylab.lk';
     font-family: 'Architype Ballmer', sans-serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-transform: lowercase;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     display: block;
     width: 100%;
-    padding-bottom: 1rem;
+    padding-bottom: 0.8rem;
     letter-spacing: -0.5px;
     background: linear-gradient(135deg, #ffffff 60%, var(--accent) 100%);
     -webkit-background-clip: text;
@@ -2691,16 +2691,22 @@ footer.custom-footer::before {
   }
 
   .nav-links a {
-    font-size: 1.25rem !important;
+    font-size: 1.15rem !important;
     font-weight: 700 !important;
-    letter-spacing: -0.5px !important;
+    letter-spacing: -0.3px !important;
     width: 100%;
-    padding: 0.8rem 0 !important;
+    padding: 0.7rem 0 !important;
     text-align: left;
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     color: var(--text-primary);
     display: block;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-links a:hover,
+  .nav-links a:active {
+    color: var(--accent) !important;
+    padding-left: 8px !important;
   }
   
   [data-theme="light"] .nav-links a {
