@@ -129,9 +129,16 @@
         box-shadow: 0 0 15px var(--accent);
       }
 
+      html, body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+      }
+
       /* Grid Layout and padding overrides */
       .contact-content-section {
         padding: 2rem 8% 6rem 8%;
+        overflow: hidden;
       }
       .contact-grid {
         display: grid;
