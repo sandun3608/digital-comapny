@@ -2646,8 +2646,8 @@ footer.custom-footer::before {
     position: fixed;
     top: 0;
     right: 0;
-    width: 320px !important;
-    max-width: 85vw !important;
+    width: 88vw !important;
+    max-width: 340px !important;
     height: 100vh;
     background: linear-gradient(135deg, rgba(13, 13, 18, 0.85) 0%, rgba(8, 8, 12, 0.95) 100%) !important;
     backdrop-filter: blur(40px) !important;
@@ -2662,7 +2662,7 @@ footer.custom-footer::before {
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     transform: translateX(100%);
     margin: 0;
-    padding: 6rem 1.8rem 3rem 1.8rem;
+    padding: 6rem 1.2rem 3rem 1.2rem;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     box-shadow: -15px 0 50px rgba(0, 0, 0, 0.6);
@@ -2768,13 +2768,13 @@ footer.custom-footer::before {
     left: 0 !important;
     transform: none !important;
     width: 100% !important;
-    margin: 0.5rem 0 0 0.5rem !important;
+    margin: 0.5rem 0 0 0.2rem !important;
     background: rgba(139, 92, 246, 0.03) !important;
     border: none !important;
     border-left: 2px solid rgba(139, 92, 246, 0.4) !important;
     box-shadow: none !important;
     border-radius: 0 !important;
-    padding: 0.2rem 0 0 0.8rem !important;
+    padding: 0.2rem 0 0 0.5rem !important;
     display: none;
     opacity: 1 !important;
     visibility: visible !important;
@@ -2792,10 +2792,10 @@ footer.custom-footer::before {
 
   .dropdown-grid a {
     text-align: left;
-    font-size: 0.82rem !important;
+    font-size: 0.8rem !important;
     font-weight: 500 !important;
     color: var(--text-secondary) !important;
-    padding: 0.5rem 0.8rem !important;
+    padding: 0.4rem 0.5rem !important;
     border-radius: 6px;
     transition: all 0.3s ease;
     text-transform: none !important;
