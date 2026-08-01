@@ -58,11 +58,11 @@ body.dashboard-body {
 }
 
 .auth-logo {
-  font-family: var(--font-heading);
+  font-family: 'Architype Ballmer', sans-serif;
   font-size: 2.2rem;
-  font-weight: 900;
-  letter-spacing: -1.5px;
-  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: -0.5px;
+  text-transform: lowercase;
   margin-bottom: 1.5rem;
 }
 

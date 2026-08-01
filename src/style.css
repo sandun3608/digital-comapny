@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Architype Ballmer';
+  src: url('/font/Architype Ballmer W90/Web Fonts/52fd53e2724192d3a6a69234cf753faf.woff2') format('woff2'),
+       url('/font/Architype Ballmer W90/Web Fonts/52fd53e2724192d3a6a69234cf753faf.woff') format('woff'),
+       url('/font/Architype Ballmer W90/Architype Ballmer W90.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --bg: #0B0B0B;
   --bg-secondary: #0F0F0F;
@@ -137,11 +146,11 @@ nav.scrolled {
 }
 
 .logo {
-  font-family: var(--font-heading);
+  font-family: 'Architype Ballmer', sans-serif;
   font-size: 1.8rem;
-  font-weight: 900;
-  letter-spacing: -1.5px;
-  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: -0.5px;
+  text-transform: lowercase;
   color: var(--text-primary);
   display: flex;
   align-items: center;
@@ -764,11 +773,16 @@ footer.custom-footer::before {
 }
 
 .footer-logo-area h2 {
-  font-family: var(--font-heading);
+  font-family: 'Architype Ballmer', sans-serif;
   font-size: 2rem;
-  font-weight: 900;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: -0.5px;
+  text-transform: lowercase;
+}
+
+.footer-logo-area h2 span {
+  color: var(--accent);
+  text-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
 }
 
 .footer-links {
@@ -3353,12 +3367,12 @@ footer.custom-footer::before {
 }
 
 .preloader-title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Architype Ballmer', sans-serif;
   font-size: 3.8rem;
-  font-weight: 800;
+  font-weight: normal;
   color: #ffffff;
-  letter-spacing: 1.2rem; /* wide letters for premium feel */
-  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  text-transform: lowercase;
   margin: 0;
   display: flex;
   gap: 0.2rem;
