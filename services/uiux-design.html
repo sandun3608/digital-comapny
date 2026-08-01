@@ -576,7 +576,27 @@
           .wyg-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 600px) {
-          .wyg-grid { grid-template-columns: 1fr; }
+          .wyg-grid { 
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+          }
+          .wyg-card {
+            padding: 1.5rem 1rem;
+            gap: 0.8rem;
+            border-radius: 16px;
+          }
+          .wyg-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+          }
+          .wyg-icon i {
+            width: 22px;
+            height: 22px;
+          }
+          .wyg-card p {
+            font-size: 0.85rem;
+          }
           .what-you-get-section { padding: 4rem 5%; }
         }
       </style>
