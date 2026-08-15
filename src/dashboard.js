@@ -698,25 +698,46 @@ const renderMediaManager = async () => {
 const setupTabs = () => {
   const inquiriesBtn = document.getElementById('tab-inquiries-btn')
   const mediaBtn = document.getElementById('tab-media-btn')
+  const analyticsBtn = document.getElementById('tab-analytics-btn')
+  
   const inquiriesContent = document.getElementById('tab-content-inquiries')
   const mediaContent = document.getElementById('tab-content-media')
+  const analyticsContent = document.getElementById('tab-content-analytics')
 
   if (!inquiriesBtn || !mediaBtn) return
 
   inquiriesBtn.addEventListener('click', () => {
     inquiriesBtn.classList.add('active')
     mediaBtn.classList.remove('active')
+    if (analyticsBtn) analyticsBtn.classList.remove('active')
+    
     inquiriesContent.style.display = 'block'
     mediaContent.style.display = 'none'
+    if (analyticsContent) analyticsContent.style.display = 'none'
   })
 
   mediaBtn.addEventListener('click', () => {
     mediaBtn.classList.add('active')
     inquiriesBtn.classList.remove('active')
+    if (analyticsBtn) analyticsBtn.classList.remove('active')
+    
     inquiriesContent.style.display = 'none'
     mediaContent.style.display = 'block'
+    if (analyticsContent) analyticsContent.style.display = 'none'
     renderMediaManager()
   })
+
+  if (analyticsBtn) {
+    analyticsBtn.addEventListener('click', () => {
+      analyticsBtn.classList.add('active')
+      inquiriesBtn.classList.remove('active')
+      mediaBtn.classList.remove('active')
+      
+      if (analyticsContent) analyticsContent.style.display = 'block'
+      inquiriesContent.style.display = 'none'
+      mediaContent.style.display = 'none'
+    })
+  }
 }
 
 // Run auth check on DOMContentLoaded
