@@ -740,13 +740,22 @@ async function applyMediaOverrides() {
   // First apply whatever is in localStorage for instant rendering
   let overrides = JSON.parse(safeStorage.getItem('mylab_media_overrides') || '{}');
   const apply = (data) => {
-    if (Object.keys(data).length === 0) return;
+    if (!data || Object.keys(data).length === 0) return;
     const imgs = document.querySelectorAll('img');
     imgs.forEach(img => {
-      const srcAttr = img.getAttribute('src');
-      if (!srcAttr) return;
+      const srcAttr = img.getAttribute('src') || '';
+      const fullSrc = img.src || '';
       for (const key in data) {
-        if (srcAttr === key || srcAttr.endsWith(key)) {
+        if (!data[key]) continue;
+        const cleanKey = key.replace(/^\/+/, '');
+        const filename = key.split('/').pop().split('?')[0];
+        const filenameNoExt = filename ? filename.replace(/\.[^/.]+$/, '') : '';
+
+        if (
+          (srcAttr && (srcAttr === key || srcAttr.endsWith(key) || srcAttr.endsWith(cleanKey))) ||
+          (fullSrc && (fullSrc.endsWith(key) || fullSrc.endsWith(cleanKey))) ||
+          (filenameNoExt && filenameNoExt.length > 3 && (srcAttr.includes(filenameNoExt) || fullSrc.includes(filenameNoExt)))
+        ) {
           img.src = data[key];
         }
       }
