@@ -737,38 +737,48 @@ function showFormToast(message, isError = false) {
 
 // Media Overrides Loader
 async function applyMediaOverrides() {
-  // First apply whatever is in localStorage for instant rendering
-  let overrides = JSON.parse(safeStorage.getItem('mylab_media_overrides') || '{}');
   const apply = (data) => {
-    if (!data || Object.keys(data).length === 0) return;
     const imgs = document.querySelectorAll('img');
     imgs.forEach(img => {
-      const srcAttr = img.getAttribute('src') || '';
-      const fullSrc = img.src || '';
-      for (const key in data) {
-        if (!data[key]) continue;
-        const cleanKey = key.replace(/^\/+/, '');
-        const filename = key.split('/').pop().split('?')[0];
-        const filenameNoExt = filename ? filename.replace(/\.[^/.]+$/, '') : '';
+      if (!img.getAttribute('data-original-src')) {
+        img.setAttribute('data-original-src', img.getAttribute('src') || img.src);
+      }
+      const originalSrc = img.getAttribute('data-original-src');
+      let foundMatch = false;
 
-        if (
-          (srcAttr && (srcAttr === key || srcAttr.endsWith(key) || srcAttr.endsWith(cleanKey))) ||
-          (fullSrc && (fullSrc.endsWith(key) || fullSrc.endsWith(cleanKey))) ||
-          (filenameNoExt && filenameNoExt.length > 3 && (srcAttr.includes(filenameNoExt) || fullSrc.includes(filenameNoExt)))
-        ) {
-          img.src = data[key];
+      if (data && Object.keys(data).length > 0) {
+        for (const key in data) {
+          if (!data[key]) continue;
+          const cleanKey = key.replace(/^\/+/, '');
+          const filename = key.split('/').pop().split('?')[0];
+          const filenameNoExt = filename ? filename.replace(/\.[^/.]+$/, '') : '';
+
+          if (
+            (originalSrc && (originalSrc === key || originalSrc.endsWith(key) || originalSrc.endsWith(cleanKey))) ||
+            (filenameNoExt && filenameNoExt.length > 3 && originalSrc.includes(filenameNoExt))
+          ) {
+            img.src = data[key];
+            foundMatch = true;
+            break;
+          }
         }
+      }
+
+      if (!foundMatch && originalSrc && img.src !== originalSrc) {
+        img.src = originalSrc;
       }
     });
   };
   
+  // First apply whatever is in localStorage for instant rendering
+  let overrides = JSON.parse(safeStorage.getItem('mylab_media_overrides') || '{}');
   apply(overrides);
 
   // Then fetch from Firebase to update in the background
   try {
     const cloudOverrides = await getMediaOverrides();
-    safeStorage.setItem('mylab_media_overrides', JSON.stringify(cloudOverrides));
-    apply(cloudOverrides);
+    safeStorage.setItem('mylab_media_overrides', JSON.stringify(cloudOverrides || {}));
+    apply(cloudOverrides || {});
   } catch (e) {
     console.error("Failed to fetch media overrides from Firebase:", e);
   }
