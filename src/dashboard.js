@@ -587,7 +587,7 @@ const renderMediaManager = async () => {
         </div>
         <div class="media-actions">
           <button class="media-btn-save"><i data-lucide="check"></i> Save</button>
-          <button class="media-btn-reset"><i data-lucide="rotate-ccw"></i> Reset</button>
+          <button class="media-btn-reset"><i data-lucide="trash-2"></i> Delete</button>
         </div>
       </div>
     `
@@ -662,7 +662,7 @@ const renderMediaManager = async () => {
 
     resetBtn.addEventListener('click', async () => {
       resetBtn.disabled = true
-      resetBtn.innerHTML = '<i data-lucide="loader"></i> Resetting...'
+      resetBtn.innerHTML = '<i data-lucide="loader"></i> Deleting...'
 
       // Delete from Firebase
       await deleteMediaOverride(key)
@@ -683,10 +683,10 @@ const renderMediaManager = async () => {
       previewImg.src = asset ? asset.defaultUrl : key
 
       resetBtn.disabled = false
-      resetBtn.innerHTML = '<i data-lucide="rotate-ccw"></i> Reset'
+      resetBtn.innerHTML = '<i data-lucide="trash-2"></i> Delete'
       createIcons({ icons })
       
-      showToast('Reset to original default asset.')
+      showToast('Permanently deleted from Database & Cache! 🗑️')
     })
   })
 
